@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FightScript : MonoBehaviour
 {
+    
+
     //attack
     public float attackCooldown;
     private float CoolDown;
+    public int Damage;
+    public GameObject _hpBar;
 
     //defence
     private bool block;
@@ -14,9 +19,10 @@ public class FightScript : MonoBehaviour
     public void _attack()
     {
 
-        if(attackCooldown <= 0)
+        if(attackCooldown <= 0 && !block)
         {
             attackCooldown = CoolDown;
+            _hpBar.GetComponent<HealthbarScript>().currentHealth -= Damage;
             Debug.Log("Attack");
         }
 
@@ -37,6 +43,7 @@ public class FightScript : MonoBehaviour
 
     void Start()
     {
+        
         //tallennan alkuperaisen cooldownin
         CoolDown = attackCooldown;
         attackCooldown = 0;
@@ -45,10 +52,16 @@ public class FightScript : MonoBehaviour
    
     void Update()
     {
-        //Tarkistaa suojaako pelaaja
-        if (block)
+        //Tarkistaa suojaako pelaaja ja jos pelaaja lyo niin ei voi suojata heti samaan aikaan
+        if (block && attackCooldown <= 0)
         {
+            block = true;
             Debug.Log("Defence Active");
+        }
+        else
+        {
+            block = false;
+           
         }
 
         
