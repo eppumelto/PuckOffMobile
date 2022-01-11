@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthbarScript : MonoBehaviour
 {
     public Slider slider;
-
+    public float hp = 100;
 
 
     // Pelaajan maksimi health
@@ -22,15 +22,9 @@ public class HealthbarScript : MonoBehaviour
         slider.value = health;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Update()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        slider.value = hp; //paivittaa hp mittaria
     }
 
 }
