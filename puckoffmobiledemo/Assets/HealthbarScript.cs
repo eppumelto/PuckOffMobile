@@ -7,8 +7,7 @@ public class HealthbarScript : MonoBehaviour
 {
     public Slider slider;
 
-    public int maxHealth = 100;
-    public int currentHealth;
+
 
     // Pelaajan maksimi health
     public void MaxHealth (int health)
@@ -26,7 +25,6 @@ public class HealthbarScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -35,8 +33,4 @@ public class HealthbarScript : MonoBehaviour
         
     }
 
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-    }
 }

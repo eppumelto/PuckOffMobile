@@ -10,8 +10,9 @@ public class FightScript : MonoBehaviour
     //attack
     public float attackCooldown;
     private float CoolDown;
-    public int Damage;
+    public int Damage = 100;
     public GameObject _hpBar;
+    public GameObject Character;
 
     //defence
     private bool block;
@@ -22,8 +23,10 @@ public class FightScript : MonoBehaviour
         if(attackCooldown <= 0 && !block)
         {
             attackCooldown = CoolDown;
-            _hpBar.GetComponent<HealthbarScript>().currentHealth -= Damage;
+            //_hpBar.GetComponent<HealthbarScript>().currentHealth -= Damage;
             Debug.Log("Attack");
+
+            TakeDmg.currentHealth -= Damage;
         }
 
     }
@@ -47,6 +50,9 @@ public class FightScript : MonoBehaviour
         //tallennan alkuperaisen cooldownin
         CoolDown = attackCooldown;
         attackCooldown = 0;
+
+        
+
     }
 
    

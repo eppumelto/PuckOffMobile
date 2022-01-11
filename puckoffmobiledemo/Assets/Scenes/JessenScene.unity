@@ -435,6 +435,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 422151496788597722, guid: 341d2aae0ca9bf84e905a7c5765f0c64, type: 3}
   m_PrefabInstance: {fileID: 104844162}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &111243487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 422151496788597721, guid: 341d2aae0ca9bf84e905a7c5765f0c64, type: 3}
+  m_PrefabInstance: {fileID: 104844162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111243485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c5fec444aeb9842996a26af9c9f8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &111243488 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 422151496788597720, guid: 341d2aae0ca9bf84e905a7c5765f0c64, type: 3}
@@ -744,6 +755,7 @@ GameObject:
   - component: {fileID: 1229048993}
   - component: {fileID: 1229048992}
   - component: {fileID: 1229048991}
+  - component: {fileID: 1229048994}
   m_Layer: 0
   m_Name: vihu
   m_TagString: Untagged
@@ -842,6 +854,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229048994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229048990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d74c81dc35d2064282394b066fe97ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 111243487}
 --- !u!1 &1257581615
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,8 +898,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
-  Damage: 10
+  Damage: 100
   _hpBar: {fileID: 111243485}
+  Character: {fileID: 0}
 --- !u!4 &1257581617
 Transform:
   m_ObjectHideFlags: 0
