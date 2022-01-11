@@ -25,7 +25,7 @@ public class TakeDmg : MonoBehaviour
 
         if (currentHealth == 0)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
             Destroy(healthBar);
         }
     }

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class HealthbarScript : MonoBehaviour
 {
     public Slider slider;
-
+    public Gradient gradient;
+    public Image fill; 
 
 
     // Pelaajan maksimi health
@@ -14,12 +15,15 @@ public class HealthbarScript : MonoBehaviour
     {
         slider.maxValue = health;
         slider.value = health;
+
+        fill.color = gradient.Evaluate(1f);
     }
 
 
     public void SetHealth(int health)
     {
         slider.value = health;
+        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
     // Start is called before the first frame update
