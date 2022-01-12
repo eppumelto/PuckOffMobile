@@ -12,10 +12,13 @@ public class FightScript : MonoBehaviour
     public float attackCooldown;
     private float CoolDown;
     public int Damage;
+    public int BlockedDamage;
     public GameObject _hpBar;
+    public ParticleSystem enemyBlood;
 
     //defence
     public static bool block;
+    public ParticleSystem enemyBlock;
 
     public void _attack()
     {
@@ -25,11 +28,19 @@ public class FightScript : MonoBehaviour
            
             
             attackCooldown = CoolDown;        //resettaa cooldownin
-           
+            
             //tarkistaa ettei vastustaja suojaa
             if(AIScript.AiDefence == false)
             {
-                TakeDmg.currentHealth -= Damage; //tekee dmg vastustajaan
+                //TakeDmg.currentHealth -= Damage; //tekee dmg vastustajaan
+                _hpBar.GetComponent<HealthbarScript>().hp -= Damage;
+                enemyBlood.Play();
+                Debug.Log("Hit");
+            }
+            else if(AIScript.AiDefence == true)
+            {
+                enemyBlock.Play(); //lyonti blokattiin
+                _hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage; //tekee vahan dmg jos lyonti blokataan
             }
 
            

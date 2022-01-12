@@ -5,46 +5,62 @@ using UnityEngine.UI;
 
 public class AIScript : MonoBehaviour
 {
-    public float CoolDown;
-    public int dmg;
-    private float _originalCoolDown;
-    private float healt;
-    private int rnd;
+    public float CoolDown; //cooldown jota kaytetaan
+    public int dmg;       //paljon ai tekee dmg lyonnilla
+    public int blockedDmg; //paljon ai tekee dmg jos pelaaja blokkaa lyonnin
+    private float _originalCoolDown; //otetaan alkuperainen cooldown talteen
+    public static float healt;      //kertoo paljon AI lla on hp
     public static HealthbarScript HealtScript;
-    public GameObject PlayerHealtbar;
-   
+
     
+    public GameObject PlayerHealtbar; //Pelaajan healtbar
+    public ParticleSystem blood;     //Pelaajan veri
+    public ParticleSystem blockParticle;
+
     private FightScript FightScript;
     private bool playerDef; //vastustajan block
     public static bool AiDefence; //AI defence
     private float AiDefTime;     //kertoo kauan AI suojaa
+   
+    
+  
+    
     public void agressive()
     {
         //isompi mahis lyoda
-       rnd = Random.Range(0, 10);
+      int rnd = Random.Range(0, 10);
 
-        if(rnd >= 4)
+        if(rnd >= 3)
         {
-            Debug.Log("Attack " + rnd);
+            
             if (!playerDef)
             {
                 PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+                
+                blood.Play();
+                
+                Debug.Log("Attack agressive" + rnd);
+            }
+            else if (playerDef)
+            {
+                blockParticle.Play(); //Lyonti suojattiin
+                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
             }
 
         }
-        else if(rnd <= 3)
+        else if(rnd <= 2)
         {
             Debug.Log("Defence " + rnd);
-            AiDefTime = 5; // aloittaa suojauksen
+            AiDefTime = 3; // aloittaa suojauksen
             
         }
-        CoolDown = _originalCoolDown;
+        CoolDown = _originalCoolDown; //resettaa cooldownin
     }
 
     public void Defencive()
     {
         //Isompi mahis suojata
-        rnd = Random.Range(0, 10);
+       int rnd = Random.Range(0, 10);
 
         if (rnd >= 7)
         {
@@ -52,13 +68,19 @@ public class AIScript : MonoBehaviour
             if (!playerDef)
             {
                 PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+                blood.Play();
+            }
+            else if (playerDef)
+            {
+                blockParticle.Play(); //Lyonti suojattiin
+                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
             }
 
         }
         else if (rnd <= 6)
         {
             Debug.Log("Defence " + rnd);
-            AiDefTime = 5; // aloittaa suojauksen
+            AiDefTime = 3; // aloittaa suojauksen
 
         }
         CoolDown = _originalCoolDown;
@@ -68,26 +90,39 @@ public class AIScript : MonoBehaviour
     public void normal()
     {
         //tekee molempia yhta paljon
-        rnd = Random.Range(0, 10);
+       int rnd = Random.Range(0, 10);
 
         if (rnd >= 5)
         {
-            Debug.Log("Attack " + rnd);
+            
             if (!playerDef)
             {
                 PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+                blood.Play();
+                Debug.Log("Attack " + rnd);
+            }
+            else if (playerDef)
+            {
+                blockParticle.Play(); //Lyonti suojattiin
+                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
             }
 
         }
         else if (rnd <= 4)
         {
             Debug.Log("Defence " + rnd);
-            AiDefTime = 5; // aloittaa suojauksen
+            AiDefTime = 3; // aloittaa suojauksen
 
         }
         CoolDown = _originalCoolDown;
 
     }
+
+
+
+
+
+
 
     private void Start()
     {
@@ -125,6 +160,13 @@ public class AIScript : MonoBehaviour
             Defencive();
         }
         CoolDown -= Time.deltaTime;
+
+        if(healt <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+
 
     }
 }

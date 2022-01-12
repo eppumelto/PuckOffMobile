@@ -7,7 +7,7 @@ public class HealthbarScript : MonoBehaviour
 {
     public Slider slider;
     public float hp = 100;
-
+    
 
     // Pelaajan maksimi health
     public void MaxHealth (int health)
@@ -25,6 +25,10 @@ public class HealthbarScript : MonoBehaviour
     public void Update()
     {
         slider.value = hp; //paivittaa hp mittaria
+        if(hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }
