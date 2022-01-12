@@ -7,7 +7,6 @@ public class TakeDmg : MonoBehaviour
     public int maxHealth = 100;
     public static int currentHealth;
 
-
     public HealthbarScript healthBar;
 
     // Start is called before the first frame update
