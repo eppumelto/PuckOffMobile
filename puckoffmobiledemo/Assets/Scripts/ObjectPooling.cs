@@ -14,6 +14,15 @@ public class ObjectPooling : MonoBehaviour
         public int size;
     }
 
+    #region Singleton
+    public static ObjectPooling Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    #endregion
     public List<Pool> pools;
 
     public Dictionary<string, Queue<GameObject>> PoolDictionary;
@@ -35,6 +44,25 @@ public class ObjectPooling : MonoBehaviour
             PoolDictionary.Add(pool.tag, objectPool);
 
         }
+    }
+
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
+    {   
+        if (!PoolDictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with tag" + tag + " does not exist");
+            return null;
+        }
+
+       GameObject objectToSpawn = PoolDictionary[tag].Dequeue();
+
+        objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
+
+        PoolDictionary[tag].Enqueue(objectToSpawn);
+
+        return objectToSpawn;
     }
 
     // Update is called once per frame
