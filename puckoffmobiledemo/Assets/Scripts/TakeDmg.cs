@@ -5,8 +5,9 @@ using UnityEngine;
 public class TakeDmg : MonoBehaviour
 {
     public int maxHealth = 100;
-    public static int currentHealth;
+    public int currentHealth;
 
+    public static bool isAlive;
 
     public HealthbarScript healthBar;
 
@@ -15,6 +16,7 @@ public class TakeDmg : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.MaxHealth(maxHealth);
+        isAlive = true;
     }
 
     // Update is called once per frame
@@ -29,10 +31,17 @@ public class TakeDmg : MonoBehaviour
 
             this.gameObject.SetActive(false);
 
-
-            Destroy(healthBar);
-            Destroy(this.gameObject);            
+            Kuolema();
+                  
         }
+    }
+
+    void Kuolema()
+    {
+        //Destroy(healthBar);
+        //Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
+        isAlive = false;
     }
 
     //public void TakeDamage(int damage)

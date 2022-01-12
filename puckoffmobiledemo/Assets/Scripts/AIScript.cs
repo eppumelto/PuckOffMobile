@@ -35,8 +35,8 @@ public class AIScript : MonoBehaviour
             
             if (!playerDef)
             {
-                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
-                
+                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
                 
                 Debug.Log("Attack agressive" + rnd);
@@ -44,7 +44,12 @@ public class AIScript : MonoBehaviour
             else if (playerDef)
             {
                 blockParticle.Play(); //Lyonti suojattiin
-                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
+                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.left);
+                //if (hit.collider.tag == "Player")
+                //{
+                    GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
+                //}
             }
 
         }
@@ -67,13 +72,23 @@ public class AIScript : MonoBehaviour
             Debug.Log("Attack " + rnd);
             if (!playerDef)
             {
-                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.left);
+                //if (hit.collider.tag == "Player")
+                //{
+                    GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
+                //}
+                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
                 blood.Play();
             }
             else if (playerDef)
             {
                 blockParticle.Play(); //Lyonti suojattiin
-                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
+                                      //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.left);
+                //if (hit.collider.tag == "Player")
+                //{
+                    GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
+                //}
             }
 
         }
@@ -97,14 +112,14 @@ public class AIScript : MonoBehaviour
             
             if (!playerDef)
             {
-                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
                 blood.Play();
                 Debug.Log("Attack " + rnd);
             }
             else if (playerDef)
             {
                 blockParticle.Play(); //Lyonti suojattiin
-                PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
+                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
             }
 
         }
@@ -144,7 +159,8 @@ public class AIScript : MonoBehaviour
 
 
         playerDef = FightScript.block;
-        healt = TakeDmg.currentHealth;
+
+        healt = GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth;
         //AI tappelee oman healtin mukaan
         if (healt >= 70 && CoolDown <= 0 && !AiDefence)
         {

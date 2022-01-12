@@ -16,7 +16,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+        if (TakeDmg.isAlive == false)
+        {
+            objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+        }
     }
 
 

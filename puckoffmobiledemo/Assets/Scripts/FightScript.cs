@@ -13,12 +13,33 @@ public class FightScript : MonoBehaviour
     private float CoolDown;
     public int Damage;
     public int BlockedDamage;
-    public GameObject _hpBar;
     public ParticleSystem enemyBlood;
 
     //defence
     public static bool block;
     public ParticleSystem enemyBlock;
+
+    void Start()
+    {
+
+        //tallennan alkuperaisen cooldownin
+        CoolDown = attackCooldown;
+        attackCooldown = 0;
+
+        //GameObject thePlayer = GameObject.Find("Pelaaja");
+        //TakeDmg takeDmg = thePlayer.GetComponent<TakeDmg>();
+
+    }
+
+    public void attackCast()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right);
+
+        if (hit.collider.tag == "Enemy")
+        {
+            GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= Damage; 
+        }
+    }
 
     public void _attack()
     {
@@ -33,14 +54,27 @@ public class FightScript : MonoBehaviour
             if(AIScript.AiDefence == false)
             {
                 //TakeDmg.currentHealth -= Damage; //tekee dmg vastustajaan
-                _hpBar.GetComponent<HealthbarScript>().hp -= Damage;
+                //_hpBar.GetComponent<HealthbarScript>().hp -= Damage;
+                
                 enemyBlood.Play();
                 Debug.Log("Hit");
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right);
+
+                //if (hit.collider.tag == "Enemy")
+                //{
+                    GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= Damage;
+                //}
             }
             else if(AIScript.AiDefence == true)
             {
                 enemyBlock.Play(); //lyonti blokattiin
-                _hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage; //tekee vahan dmg jos lyonti blokataan
+                                   /*_hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage;*/ //tekee vahan dmg jos lyonti blokataan
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right);
+
+                //if (hit.collider.tag == "Enemy")
+                //{
+                    GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
+                //}
             }
 
            
@@ -61,16 +95,7 @@ public class FightScript : MonoBehaviour
     }
 
 
-    void Start()
-    {
-        
-        //tallennan alkuperaisen cooldownin
-        CoolDown = attackCooldown;
-        attackCooldown = 0;
-
-        
-
-    }
+  
 
    
     void Update()
