@@ -8,10 +8,11 @@ public class TakeDmg : MonoBehaviour
     public int currentHealth;
 
     public static bool isAlive;
+    private bool PlayerAlive = true;
 
     public HealthbarScript healthBar;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -19,7 +20,7 @@ public class TakeDmg : MonoBehaviour
         isAlive = true;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
@@ -32,8 +33,19 @@ public class TakeDmg : MonoBehaviour
             this.gameObject.SetActive(false);
 
             Kuolema();
-                  
+            PlayerAlive = GameObject.Find("Pelaaja");
+
         }
+
+        //kattoo jos haviaa pelin
+        if (!PlayerAlive)
+        {
+            //tanne tulee sitte panelit ja muut actiiviseks, slowmotion vois olla siisti
+            Debug.Log("Havisit");
+            
+        }
+
+
     }
 
     void Kuolema()
@@ -44,9 +56,6 @@ public class TakeDmg : MonoBehaviour
         isAlive = false;
     }
 
-    //public void TakeDamage(int damage)
-    //{
-    //    currentHealth -= damage;
-    //}
+   
 
 }
