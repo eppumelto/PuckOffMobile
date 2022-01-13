@@ -76,6 +76,7 @@ public class AIScript : MonoBehaviour
                 //if (hit.collider.tag == "Player")
                 //{
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
+
                 //}
                 //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
                 blood.Play();
