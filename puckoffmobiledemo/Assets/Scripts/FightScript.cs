@@ -49,7 +49,7 @@ public class FightScript : MonoBehaviour
                 enemyBlood.Play();
                 Debug.Log("Hit");
                
-                    GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= Damage;
+                    GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
                
             }
             else if(AIScript.AiDefence == true)
@@ -60,7 +60,7 @@ public class FightScript : MonoBehaviour
 
                 //if (hit.collider.tag == "Enemy")
                 //{
-                    GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
+                    GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
                 //}
             }
 

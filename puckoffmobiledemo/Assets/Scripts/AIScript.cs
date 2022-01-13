@@ -13,18 +13,25 @@ public class AIScript : MonoBehaviour
     public static HealthbarScript HealtScript;
 
     
-    public GameObject PlayerHealtbar; //Pelaajan healtbar
+    /*public GameObject PlayerHealtbar;*/ //Pelaajan healtbar
     public ParticleSystem blood;     //Pelaajan veri
     public ParticleSystem blockParticle;
+    public GameObject player;
 
     private FightScript FightScript;
     private bool playerDef; //vastustajan block
     public static bool AiDefence; //AI defence
     private float AiDefTime;     //kertoo kauan AI suojaa
-   
-    
-  
-    
+
+    public void Start()
+    {
+        _originalCoolDown = CoolDown;
+
+        blood = player.transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
+        blockParticle = player.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+    }
+
+
     public void agressive()
     {
         //isompi mahis lyoda
@@ -140,10 +147,7 @@ public class AIScript : MonoBehaviour
 
 
 
-    private void Start()
-    {
-        _originalCoolDown = CoolDown;
-    }
+ 
 
     void Update()
     {
@@ -161,7 +165,7 @@ public class AIScript : MonoBehaviour
 
         playerDef = FightScript.block;
 
-        healt = GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth;
+        healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
         //AI tappelee oman healtin mukaan
         if (healt >= 70 && CoolDown <= 0 && !AiDefence)
         {

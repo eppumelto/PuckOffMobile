@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
+    public float spawnCooldown;
+    public  float cooldown;
 
     ObjectPooling objectPooler;
 
@@ -12,11 +14,12 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooling.Instance;
+        cooldown = Time.time + spawnCooldown;
     }
 
     private void FixedUpdate()
     {
-        if (TakeDmg.isAlive == false)
+        if (TakeDmg.isAlive == false && cooldown < Time.time)
         {
             objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
         }
