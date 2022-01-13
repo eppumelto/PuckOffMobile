@@ -49,7 +49,7 @@ public class BossAI : MonoBehaviour
     void Update()
     {
         //Boss lyo
-        if (cooldown <= 0)
+        if (cooldown <= 0 && TakeDmg.PlayerAlive)
         {
             
             BossAttack();
