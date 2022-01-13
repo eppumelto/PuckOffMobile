@@ -135,7 +135,7 @@ public class AIScript : MonoBehaviour
         else if (rnd <= 4)
         {
 
-            AiDefTime = 3.5f; // aloittaa suojauksen
+            AiDefTime = 2f; // aloittaa suojauksen
             CoolDown = AiDefTime;
         }
 
