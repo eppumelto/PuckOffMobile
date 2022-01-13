@@ -13,25 +13,18 @@ public class AIScript : MonoBehaviour
     public static HealthbarScript HealtScript;
 
     
-    /*public GameObject PlayerHealtbar;*/ //Pelaajan healtbar
+    public GameObject PlayerHealtbar; //Pelaajan healtbar
     public ParticleSystem blood;     //Pelaajan veri
     public ParticleSystem blockParticle;
-    public GameObject player;
 
     private FightScript FightScript;
     private bool playerDef; //vastustajan block
     public static bool AiDefence; //AI defence
     private float AiDefTime;     //kertoo kauan AI suojaa
-
-    public void Start()
-    {
-        _originalCoolDown = CoolDown;
-
-        blood = player.transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
-        blockParticle = player.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
-    }
-
-
+   
+    
+  //botin cooldown toimii sen perusteella suojaako se vai ei, jos se suojaa cooldown kestaa yhta kauan kun suojaus muuten se kestaa original cooldownin verran
+    
     public void agressive()
     {
         //isompi mahis lyoda
@@ -39,34 +32,36 @@ public class AIScript : MonoBehaviour
 
         if(rnd >= 3)
         {
-            
+            //lyo
             if (!playerDef)
             {
                 //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
                 
-                Debug.Log("Attack agressive" + rnd);
+   
             }
             else if (playerDef)
             {
                 blockParticle.Play(); //Lyonti suojattiin
-                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.left);
-                //if (hit.collider.tag == "Player")
-                //{
+               
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
-                //}
             }
-
+            //defendaa
         }
         else if(rnd <= 2)
         {
-            Debug.Log("Defence " + rnd);
-            AiDefTime = 3; // aloittaa suojauksen
-            
+   
+            AiDefTime = 1.5f; // aloittaa suojauksen
+            CoolDown = AiDefTime;
         }
-        CoolDown = _originalCoolDown; //resettaa cooldownin
+
+
+       if(CoolDown <= 0)
+        {
+            CoolDown = _originalCoolDown;
+        }
+
     }
 
     public void Defencive()
@@ -76,7 +71,7 @@ public class AIScript : MonoBehaviour
 
         if (rnd >= 7)
         {
-            Debug.Log("Attack " + rnd);
+
             if (!playerDef)
             {
                 //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.left);
@@ -102,11 +97,17 @@ public class AIScript : MonoBehaviour
         }
         else if (rnd <= 6)
         {
-            Debug.Log("Defence " + rnd);
-            AiDefTime = 3; // aloittaa suojauksen
 
+            AiDefTime = 3.5f; // aloittaa suojauksen
+            CoolDown = AiDefTime;
         }
-        CoolDown = _originalCoolDown;
+
+
+        if (CoolDown <= 0)
+        {
+            CoolDown = _originalCoolDown;
+        }
+
 
     }
 
@@ -120,24 +121,30 @@ public class AIScript : MonoBehaviour
             
             if (!playerDef)
             {
-                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
-                Debug.Log("Attack " + rnd);
+             
             }
             else if (playerDef)
             {
                 blockParticle.Play(); //Lyonti suojattiin
-                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
             }
 
         }
         else if (rnd <= 4)
         {
-            Debug.Log("Defence " + rnd);
-            AiDefTime = 3; // aloittaa suojauksen
 
+            AiDefTime = 3.5f; // aloittaa suojauksen
+            CoolDown = AiDefTime;
         }
-        CoolDown = _originalCoolDown;
+
+
+        if (CoolDown <= 0)
+        {
+            CoolDown = _originalCoolDown;
+        }
+
 
     }
 
@@ -147,7 +154,10 @@ public class AIScript : MonoBehaviour
 
 
 
- 
+    private void Start()
+    {
+        _originalCoolDown = CoolDown;
+    }
 
     void Update()
     {
@@ -165,7 +175,7 @@ public class AIScript : MonoBehaviour
 
         playerDef = FightScript.block;
 
-        healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
+        healt = GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth;
         //AI tappelee oman healtin mukaan
         if (healt >= 70 && CoolDown <= 0 && !AiDefence)
         {
@@ -187,7 +197,7 @@ public class AIScript : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
+ 
 
     }
 }

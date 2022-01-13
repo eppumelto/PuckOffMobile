@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4efd19279051ed4baa2bacb9dffa82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDown: 1
+  CoolDown: 2
   dmg: 10
   blockedDmg: 5
   PlayerHealtbar: {fileID: 0}
