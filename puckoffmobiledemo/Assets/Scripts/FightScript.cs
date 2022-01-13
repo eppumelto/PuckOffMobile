@@ -31,15 +31,7 @@ public class FightScript : MonoBehaviour
 
     }
 
-    public void attackCast()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right);
-
-        if (hit.collider.tag == "Enemy")
-        {
-            GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= Damage; 
-        }
-    }
+  
 
     public void _attack()
     {
@@ -51,19 +43,14 @@ public class FightScript : MonoBehaviour
             attackCooldown = CoolDown;        //resettaa cooldownin
             
             //tarkistaa ettei vastustaja suojaa
-            if(AIScript.AiDefence == false)
+            if(AIScript.AiDefence == false && !block)
             {
-                //TakeDmg.currentHealth -= Damage; //tekee dmg vastustajaan
-                //_hpBar.GetComponent<HealthbarScript>().hp -= Damage;
-                
+               
                 enemyBlood.Play();
                 Debug.Log("Hit");
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right);
-
-                //if (hit.collider.tag == "Enemy")
-                //{
-                    GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= Damage;
-                //}
+               
+                    GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
+               
             }
             else if(AIScript.AiDefence == true)
             {
@@ -73,7 +60,7 @@ public class FightScript : MonoBehaviour
 
                 //if (hit.collider.tag == "Enemy")
                 //{
-                    GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
+                    GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
                 //}
             }
 
@@ -101,18 +88,16 @@ public class FightScript : MonoBehaviour
     void Update()
     {
         //Tarkistaa suojaako pelaaja ja jos pelaaja lyo niin ei voi suojata heti samaan aikaan
-        if (block && attackCooldown <= 0)
+        if (block)
         {
             block = true;
-            
         }
         else
         {
             block = false;
-           
         }
 
-        
+       
         attackCooldown -= Time.deltaTime;
 
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
+    public float spawnCooldown = 2;
+    private  float cooldown;
 
     ObjectPooling objectPooler;
 
@@ -12,13 +14,15 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooling.Instance;
+      
     }
 
     private void FixedUpdate()
     {
-        if (TakeDmg.isAlive == false)
+        if (TakeDmg.isAlive == false && spawnCooldown <= 0)
         {
             objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+            spawnCooldown = 2;
         }
     }
 
@@ -27,6 +31,10 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (TakeDmg.isAlive == false)
+        {
+            spawnCooldown -= Time.deltaTime;
+        }
     }
 }
