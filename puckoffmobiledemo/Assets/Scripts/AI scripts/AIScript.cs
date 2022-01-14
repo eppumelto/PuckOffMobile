@@ -5,27 +5,37 @@ using UnityEngine.UI;
 
 public class AIScript : MonoBehaviour
 {
-    public float CoolDown; //cooldown jota kaytetaan
-    public int dmg;       //paljon ai tekee dmg lyonnilla
-    public int blockedDmg; //paljon ai tekee dmg jos pelaaja blokkaa lyonnin
-    private float _originalCoolDown; //otetaan alkuperainen cooldown talteen
-    public static float healt;      //kertoo paljon AI lla on hp
-    public static HealthbarScript HealtScript;
-   
-    public int healtToPlayer; //kun ai kuolee antaa hp pelaajalle
-    
-    public GameObject PlayerHealtbar; //Pelaajan healtbar
-    public ParticleSystem blood;     //Pelaajan veri
-    public ParticleSystem blockParticle;
 
+
+    //AI statseja
+    public static HealthbarScript HealtScript;
+
+    public static float healt;          //kertoo paljon AI lla on hp
+
+    public float CoolDown;            //cooldown jota kaytetaan
+    private float _originalCoolDown; //otetaan alkuperainen cooldown talteen
+
+    public int dmg;                //paljon ai tekee dmg lyonnilla
+    public int blockedDmg;        //paljon ai tekee dmg jos pelaaja blokkaa lyonnin
+    
+
+     //Defence ja fight juttuja
     private FightScript FightScript;
-    private bool playerDef; //vastustajan block
-    public static bool AiDefence; //AI defence
-    private float AiDefTime;     //kertoo kauan AI suojaa
-   
+
+    private bool playerDef;                    //vastustajan block
+    public static bool AiDefence;             //AI defence
+    private float AiDefTime;                 //kertoo kauan AI suojaa
     
-  //botin cooldown toimii sen perusteella suojaako se vai ei, jos se suojaa cooldown kestaa yhta kauan kun suojaus muuten se kestaa original cooldownin verran
-    
+    public ParticleSystem blood;           //Pelaajan veri
+    public ParticleSystem blockParticle;  //pelaajan blockp partikkeli
+
+    public int healtToPlayer;           //kun ai kuolee antaa hp:ta pelaajalle
+    public GameObject PlayerHealtbar;  //Pelaajan healtbar
+
+
+
+    //botin cooldown toimii sen perusteella suojaako se vai ei, jos se suojaa cooldown kestaa yhta kauan kun suojaus muuten se kestaa original cooldownin verran
+
     public void agressive()
     {
         //isompi mahis lyoda
@@ -75,24 +85,18 @@ public class AIScript : MonoBehaviour
 
             if (!playerDef)
             {
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.left);
-                //if (hit.collider.tag == "Player")
-                //{
+   
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
 
-                //}
-                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
+      
                 blood.Play();
             }
             else if (playerDef)
             {
                 blockParticle.Play(); //Lyonti suojattiin
-                                      //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= blockedDmg;
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.left);
-                //if (hit.collider.tag == "Player")
-                //{
+               
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
-                //}
+                
             }
 
         }
