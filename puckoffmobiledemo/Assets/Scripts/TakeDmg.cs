@@ -13,6 +13,7 @@ public class TakeDmg : MonoBehaviour
     public static bool PlayerAlive = true;
     private bool firstime;
 
+    private AIScript _aiScript;
     public HealthbarScript healthBar;
     private eventScript _eventScript;
 
@@ -24,6 +25,8 @@ public class TakeDmg : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.MaxHealth(maxHealth);
         isAlive = true;
+
+        _aiScript = GameObject.Find("vihu").GetComponent<AIScript>();
         _eventScript = GameObject.Find("ScriptManager").GetComponent<eventScript>();
     }
 
@@ -34,20 +37,24 @@ public class TakeDmg : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
-
             this.gameObject.SetActive(false);
-   
-            Kuolema();
+
             PlayerAlive = GameObject.Find("Pelaaja");
+            if (PlayerAlive)
+            {
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth += _aiScript.healtToPlayer;
+            }
 
+
+            Kuolema();
         }
-
+   
         //kattoo jos haviaa pelin
         if (!PlayerAlive && firstime)
         {
-            //tanne tulee sitte panelit ja muut actiiviseks, slowmotion vois olla siisti
+            //eventScriptista voi muokata playerdead methodia tekemaan asiat
             _eventScript.PlayerDead();
             firstime = false;
         }

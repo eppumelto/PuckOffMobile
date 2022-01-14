@@ -11,7 +11,8 @@ public class AIScript : MonoBehaviour
     private float _originalCoolDown; //otetaan alkuperainen cooldown talteen
     public static float healt;      //kertoo paljon AI lla on hp
     public static HealthbarScript HealtScript;
-
+   
+    public int healtToPlayer; //kun ai kuolee antaa hp pelaajalle
     
     public GameObject PlayerHealtbar; //Pelaajan healtbar
     public ParticleSystem blood;     //Pelaajan veri
@@ -192,10 +193,8 @@ public class AIScript : MonoBehaviour
         }
         CoolDown -= Time.deltaTime;
 
-        if(healt <= 0)
-        {
-            Destroy(this.gameObject);
-        }
+
+      
 
  
 

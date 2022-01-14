@@ -35,7 +35,7 @@ public class Menu : MonoBehaviour
     }
     public void MenuButton()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
     }
     public void Quit()
