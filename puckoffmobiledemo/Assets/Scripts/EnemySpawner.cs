@@ -7,14 +7,14 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public float spawnCooldown = 2;
     private  float cooldown;
-
-    public int bossNumber;
+    private eventScript _eventScript;
 
     ObjectPooling objectPooler;
 
     // Start is called before the first frame update
     void Start()
     {
+        _eventScript = GameObject.Find("ScriptManager").GetComponent<eventScript>();
         objectPooler = ObjectPooling.Instance;
       
     }
@@ -27,7 +27,12 @@ public class EnemySpawner : MonoBehaviour
             spawnCooldown = 2;
         }
 
-        objectPooler.SpawnFromPool("Boss", transform.position, Quaternion.identity);
+        else if (_eventScript.listOfEnemies.Count <= 0 && TakeDmg.isAlive == false)
+        {
+            objectPooler.SpawnFromPool("Boss", transform.position, Quaternion.identity);
+        }
+
+        
     }
 
 

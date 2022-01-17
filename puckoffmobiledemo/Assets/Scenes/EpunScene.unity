@@ -488,7 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7353524902832209553, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
   spawnCooldown: 2
-  cooldown: 0
+  bossNumber: 0
 --- !u!4 &900588510
 Transform:
   m_ObjectHideFlags: 0
@@ -497,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900588508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -1.7, z: 0}
+  m_LocalPosition: {x: 14.8, y: -1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

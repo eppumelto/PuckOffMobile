@@ -68,6 +68,8 @@ public class TakeDmg : MonoBehaviour
         //Destroy(this.gameObject);
         this.gameObject.SetActive(false);
         isAlive = false;
+
+        _eventScript.EnemyDead(gameObject);
     }
 
    
