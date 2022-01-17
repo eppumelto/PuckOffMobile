@@ -17,7 +17,7 @@ public class TakeDmg : MonoBehaviour
     public HealthbarScript healthBar;
     private eventScript _eventScript;
 
-    public int enemiesKilled;
+    public static int enemiesKilled;
 
     void Start()
     {
@@ -73,7 +73,7 @@ public class TakeDmg : MonoBehaviour
         this.gameObject.SetActive(false);
         isAlive = false;
 
-        enemiesKilled = +1;
+        enemiesKilled = enemiesKilled +1;
         //_eventScript.EnemyDead(gameObject);
     }
 

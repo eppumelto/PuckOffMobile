@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
             spawnCooldown = 2;
         }
 
-        else if ( TakeDmg.enem&& TakeDmg.isAlive == false)
+        else if ( TakeDmg.enemiesKilled == 5 && TakeDmg.isAlive == false)
         {
             objectPooler.SpawnFromPool("Boss", transform.position, Quaternion.identity);
         }
