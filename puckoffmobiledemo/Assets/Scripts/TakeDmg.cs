@@ -17,6 +17,8 @@ public class TakeDmg : MonoBehaviour
     public HealthbarScript healthBar;
     private eventScript _eventScript;
 
+    public int enemiesKilled;
+
     void Start()
     {
         PlayerAlive = true;
@@ -26,8 +28,10 @@ public class TakeDmg : MonoBehaviour
         healthBar.MaxHealth(maxHealth);
         isAlive = true;
 
-        _aiScript = GameObject.Find("vihu").GetComponent<AIScript>();
+        _aiScript = GameObject.FindWithTag("Enemy").GetComponent<AIScript>();
         _eventScript = GameObject.Find("ScriptManager").GetComponent<eventScript>();
+
+        enemiesKilled = 0;
     }
 
 
@@ -69,7 +73,8 @@ public class TakeDmg : MonoBehaviour
         this.gameObject.SetActive(false);
         isAlive = false;
 
-        _eventScript.EnemyDead(gameObject);
+        enemiesKilled = +1;
+        //_eventScript.EnemyDead(gameObject);
     }
 
    

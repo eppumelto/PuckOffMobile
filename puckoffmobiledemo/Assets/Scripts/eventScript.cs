@@ -8,7 +8,7 @@ public class eventScript : MonoBehaviour
     //PlayerDead
     public GameObject deathPanel;
 
-    public List<GameObject> listOfEnemies = new List<GameObject>();
+    //public List<GameObject> listOfEnemies = new List<GameObject>();
 
 
     public void PlayerDead()
@@ -19,13 +19,13 @@ public class eventScript : MonoBehaviour
 
     }
 
-    public void EnemyDead(GameObject enemy)
-    {
-        if (listOfEnemies.Contains(enemy))
-        {
-            listOfEnemies.Remove(enemy);
-        }
-    }
+    //public void EnemyDead(GameObject enemy)
+    //{
+    //    if (listOfEnemies.Contains(enemy))
+    //    {
+    //        listOfEnemies.Remove(enemy);
+    //    }
+    //}
 
 
     void Start()
@@ -33,7 +33,7 @@ public class eventScript : MonoBehaviour
         deathPanel.SetActive(false);
         Time.timeScale = 1;
 
-        listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        //listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
     }
 
 
