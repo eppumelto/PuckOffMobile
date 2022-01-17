@@ -7,15 +7,16 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public float spawnCooldown = 2;
     private  float cooldown;
-
-    public int bossNumber;
+    private TakeDmg takeDmg;
 
     ObjectPooling objectPooler;
 
     // Start is called before the first frame update
     void Start()
     {
+        takeDmg = GameObject.Find("Pelaaja").GetComponent<TakeDmg>();
         objectPooler = ObjectPooling.Instance;
+
       
     }
 
@@ -27,7 +28,12 @@ public class EnemySpawner : MonoBehaviour
             spawnCooldown = 2;
         }
 
-        objectPooler.SpawnFromPool("Boss", transform.position, Quaternion.identity);
+        else if ( TakeDmg.enem&& TakeDmg.isAlive == false)
+        {
+            objectPooler.SpawnFromPool("Boss", transform.position, Quaternion.identity);
+        }
+
+        
     }
 
 
