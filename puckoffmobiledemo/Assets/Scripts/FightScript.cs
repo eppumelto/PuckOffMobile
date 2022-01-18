@@ -19,14 +19,19 @@ public class FightScript : MonoBehaviour
     public static bool block;
     public ParticleSystem enemyBlock;
 
+    public GameObject theEnemy;
+
     void Start()
     {
 
         //tallennan alkuperaisen cooldownin
         CoolDown = attackCooldown;
         attackCooldown = 0;
+        theEnemy = GameObject.FindWithTag("Enemy");
 
-        //GameObject thePlayer = GameObject.Find("Pelaaja");
+        enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+        enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
+
         //TakeDmg takeDmg = thePlayer.GetComponent<TakeDmg>();
 
     }
@@ -87,6 +92,8 @@ public class FightScript : MonoBehaviour
    
     void Update()
     {
+        theEnemy = GameObject.FindWithTag("Enemy");
+
         //Tarkistaa suojaako pelaaja ja jos pelaaja lyo niin ei voi suojata heti samaan aikaan
         if (block)
         {
@@ -95,6 +102,19 @@ public class FightScript : MonoBehaviour
         else
         {
             block = false;
+        }
+
+        if (TakeDmg.isAlive == false)
+        {
+            theEnemy = null;
+            enemyBlock = null;
+            enemyBlood = null;
+        }
+
+        else if (TakeDmg.isAlive == true)
+        {
+            enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+            enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
         }
 
        

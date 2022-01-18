@@ -30,11 +30,19 @@ public class AIScript : MonoBehaviour
     public ParticleSystem blockParticle;  //pelaajan blockp partikkeli
 
     public int healtToPlayer;           //kun ai kuolee antaa hp:ta pelaajalle
-    public GameObject PlayerHealtbar;  //Pelaajan healtbar
-
+/*    public GameObject PlayerHealtbar;*/  //Pelaajan healtbar
 
 
     //botin cooldown toimii sen perusteella suojaako se vai ei, jos se suojaa cooldown kestaa yhta kauan kun suojaus muuten se kestaa original cooldownin verran
+
+    private void Start()
+    {
+        _originalCoolDown = CoolDown;
+        GameObject thePlayer = GameObject.Find("Pelaaja");
+
+        blockParticle = thePlayer.transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
+        blood = thePlayer.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+    }
 
     public void agressive()
     {
@@ -159,10 +167,7 @@ public class AIScript : MonoBehaviour
 
 
 
-    private void Start()
-    {
-        _originalCoolDown = CoolDown;
-    }
+
 
     void Update()
     {
@@ -180,7 +185,7 @@ public class AIScript : MonoBehaviour
 
         playerDef = FightScript.block;
 
-        healt = GameObject.Find("vihu").GetComponent<TakeDmg>().currentHealth;
+        healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
         //AI tappelee oman healtin mukaan
         if (healt >= 70 && CoolDown <= 0 && !AiDefence)
         {
