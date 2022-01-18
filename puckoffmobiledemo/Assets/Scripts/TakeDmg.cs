@@ -19,6 +19,8 @@ public class TakeDmg : MonoBehaviour
 
     public static int enemiesKilled;
 
+    private Animator mAnimator;
+
     void Start()
     {
         PlayerAlive = true;
@@ -32,6 +34,8 @@ public class TakeDmg : MonoBehaviour
         _eventScript = GameObject.Find("ScriptManager").GetComponent<eventScript>();
 
         enemiesKilled = 0;
+
+        mAnimator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
 
@@ -75,6 +79,7 @@ public class TakeDmg : MonoBehaviour
 
         enemiesKilled = enemiesKilled +1;
         //_eventScript.EnemyDead(gameObject);
+        mAnimator.SetTrigger("Die");
     }
 
    

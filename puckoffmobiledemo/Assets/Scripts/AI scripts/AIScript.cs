@@ -30,10 +30,12 @@ public class AIScript : MonoBehaviour
     public ParticleSystem blockParticle;  //pelaajan blockp partikkeli
 
     public int healtToPlayer;           //kun ai kuolee antaa hp:ta pelaajalle
-/*    public GameObject PlayerHealtbar;*/  //Pelaajan healtbar
+                                        /*    public GameObject PlayerHealtbar;*/  //Pelaajan healtbar
 
 
     //botin cooldown toimii sen perusteella suojaako se vai ei, jos se suojaa cooldown kestaa yhta kauan kun suojaus muuten se kestaa original cooldownin verran
+
+    private Animator mAnimator;
 
     private void Start()
     {
@@ -42,6 +44,8 @@ public class AIScript : MonoBehaviour
 
         blockParticle = thePlayer.transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
         blood = thePlayer.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+
+        mAnimator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
     public void agressive()
@@ -57,8 +61,8 @@ public class AIScript : MonoBehaviour
                 //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
-                
-   
+                mAnimator.SetTrigger("TakeDmg");
+
             }
             else if (playerDef)
             {
@@ -95,8 +99,9 @@ public class AIScript : MonoBehaviour
             {
    
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
+                mAnimator.SetTrigger("TakeDmg");
 
-      
+
                 blood.Play();
             }
             else if (playerDef)
@@ -136,7 +141,8 @@ public class AIScript : MonoBehaviour
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
-             
+                mAnimator.SetTrigger("TakeDmg");
+
             }
             else if (playerDef)
             {
