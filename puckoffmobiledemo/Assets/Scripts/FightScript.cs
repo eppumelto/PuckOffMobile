@@ -21,8 +21,13 @@ public class FightScript : MonoBehaviour
 
     public GameObject theEnemy;
 
+    private Animator mAnimator;
+
     void Start()
-    {
+    {   
+
+
+        mAnimator = GameObject.Find("Player").GetComponent<Animator>();
 
         //tallennan alkuperaisen cooldownin
         CoolDown = attackCooldown;
@@ -43,8 +48,8 @@ public class FightScript : MonoBehaviour
 
         if(attackCooldown <= 0 && !block)
         {
-           
-            
+
+            mAnimator.SetTrigger("Punch");
             attackCooldown = CoolDown;        //resettaa cooldownin
             
             //tarkistaa ettei vastustaja suojaa
