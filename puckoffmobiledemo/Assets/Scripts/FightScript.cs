@@ -84,11 +84,13 @@ public class FightScript : MonoBehaviour
     public void ButtonInHold()
     {
         block = true;
+        mAnimator.SetTrigger("Block");
     }
 
     public void ButtonReleased()
     {
         block = false;
+        mAnimator.SetTrigger("UnBlock");
     }
 
 
