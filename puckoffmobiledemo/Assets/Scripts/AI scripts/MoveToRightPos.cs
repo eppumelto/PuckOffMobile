@@ -11,10 +11,6 @@ public class MoveToRightPos : MonoBehaviour
     public float speed;
 
 
-    private void Start()
-    {
-        newPos = Vector3.MoveTowards(gameObject.transform.position, targetPos,50);
-    }
 
     void Update()
     {
@@ -27,5 +23,6 @@ public class MoveToRightPos : MonoBehaviour
         {
             Destroy(gameObject.GetComponent<MoveToRightPos>());
         }
+
     }
 }
