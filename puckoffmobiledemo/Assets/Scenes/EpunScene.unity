@@ -232,11 +232,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &225332651 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7197010246539736222, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
-  m_PrefabInstance: {fileID: 7353524903707779356}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &427420898
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,11 +452,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &894981095 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5449730713785883685, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
-  m_PrefabInstance: {fileID: 7353524903707779356}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &900588508
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,11 +606,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!198 &1443690250 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7099914002284032971, guid: 4dcd4a5e6a082734cba7bfa215f50f5d, type: 3}
-  m_PrefabInstance: {fileID: 7452308853752702408}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1464857582
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,10 +882,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
-  Damage: 100
-  BlockedDamage: 100
-  enemyBlood: {fileID: 894981095}
-  enemyBlock: {fileID: 225332651}
+  Damage: 25
+  BlockedDamage: 25
+  enemyBlood: {fileID: 0}
+  enemyBlock: {fileID: 0}
+  theEnemy: {fileID: 0}
 --- !u!4 &1612200868
 Transform:
   m_ObjectHideFlags: 0
@@ -1048,11 +1034,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!198 &2145860510 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5388075018189277179, guid: 4dcd4a5e6a082734cba7bfa215f50f5d, type: 3}
-  m_PrefabInstance: {fileID: 7452308853752702408}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7353524903707779356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1115,7 +1096,7 @@ PrefabInstance:
     - target: {fileID: 7353524902832209550, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: blood
       value: 
-      objectReference: {fileID: 2145860510}
+      objectReference: {fileID: 0}
     - target: {fileID: 7353524902832209550, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: player
       value: 
@@ -1123,7 +1104,7 @@ PrefabInstance:
     - target: {fileID: 7353524902832209550, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: blockParticle
       value: 
-      objectReference: {fileID: 1443690250}
+      objectReference: {fileID: 0}
     - target: {fileID: 7353524902832209550, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: healtToPlayer
       value: 10
