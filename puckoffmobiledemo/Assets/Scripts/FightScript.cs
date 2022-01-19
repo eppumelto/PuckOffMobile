@@ -45,8 +45,8 @@ public class FightScript : MonoBehaviour
 
     public void _attack()
     {
-
-        if(attackCooldown <= 0 && !block)
+        //attackCooldown pitaa olla 0 ei suojaa ja vihu on oikealla paikalla
+        if(attackCooldown <= 0 && !block && MoveToRightPos.cantHit)
         {
 
             mAnimator.SetTrigger("Punch");

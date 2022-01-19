@@ -72,8 +72,7 @@ public class TakeDmg : MonoBehaviour
 
     void Kuolema()
     {
-        //Destroy(healthBar);
-        //Destroy(this.gameObject);
+        MoveToRightPos.cantHit = false;
         this.gameObject.SetActive(false);
         isAlive = false;
 
