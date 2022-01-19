@@ -2304,6 +2304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lumisade
       objectReference: {fileID: 0}
+    - target: {fileID: 849500552001504834, guid: 7a99b9c51959d5e4b926ee23bc504d9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1793310404258898429, guid: 7a99b9c51959d5e4b926ee23bc504d9b, type: 3}
       propertyPath: m_RootOrder
       value: 1
