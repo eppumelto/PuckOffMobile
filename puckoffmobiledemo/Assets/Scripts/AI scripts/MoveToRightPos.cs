@@ -6,10 +6,10 @@ public class MoveToRightPos : MonoBehaviour
 {
     //Positio mihin liikutaan
     public Vector3 targetPos;
+    public static bool cantHit; //boolia muokataan myos TakeDmg scriptissa
     private Vector3 newPos;
 
     public float speed;
-
 
 
     void Update()
@@ -21,6 +21,7 @@ public class MoveToRightPos : MonoBehaviour
 
         if(transform.position == targetPos)
         {
+            cantHit = true;
             Destroy(gameObject.GetComponent<MoveToRightPos>());
         }
 

@@ -192,17 +192,18 @@ public class AIScript : MonoBehaviour
         playerDef = FightScript.block;
 
         healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
-        //AI tappelee oman healtin mukaan
-        if (healt >= 70 && CoolDown <= 0 && !AiDefence)
+      
+        //AI tappelee oman healtin mukaan.  Tarkistan etta vihu on oikealla kohdalla, ettei se puollusta ja cooldown on 0
+        if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit)
         {
             agressive();
 
         }
-        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence)
+        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit)
         {
             normal();
         }
-        else if(healt <= 30 && CoolDown <= 0 && !AiDefence)
+        else if(healt <= 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit)
         {
             Defencive();
         }
