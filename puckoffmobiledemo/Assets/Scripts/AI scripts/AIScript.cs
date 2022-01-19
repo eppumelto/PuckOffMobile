@@ -36,6 +36,7 @@ public class AIScript : MonoBehaviour
     //botin cooldown toimii sen perusteella suojaako se vai ei, jos se suojaa cooldown kestaa yhta kauan kun suojaus muuten se kestaa original cooldownin verran
 
     private Animator mAnimator;
+    private Animator enemyAnimator;
 
     private void Start()
     {
@@ -46,6 +47,7 @@ public class AIScript : MonoBehaviour
         blood = thePlayer.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        enemyAnimator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
     public void agressive()
