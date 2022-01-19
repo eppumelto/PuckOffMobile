@@ -22,11 +22,12 @@ public class FightScript : MonoBehaviour
     public GameObject theEnemy;
 
     private Animator mAnimator;
+    private Animator enemyAnimator;
 
     void Start()
-    {   
+    {
 
-
+        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
 
         //tallennan alkuperaisen cooldownin
@@ -60,6 +61,7 @@ public class FightScript : MonoBehaviour
                 Debug.Log("Hit");
                
                     GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
+                enemyAnimator.SetTrigger("EnemyDmg");
                
             }
             else if(AIScript.AiDefence == true)
@@ -71,6 +73,7 @@ public class FightScript : MonoBehaviour
                 //if (hit.collider.tag == "Enemy")
                 //{
                     GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
+
                 //}
             }
 

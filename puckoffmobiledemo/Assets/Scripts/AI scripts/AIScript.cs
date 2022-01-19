@@ -47,7 +47,7 @@ public class AIScript : MonoBehaviour
         blood = thePlayer.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        enemyAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
     }
 
     public void agressive()
@@ -57,6 +57,7 @@ public class AIScript : MonoBehaviour
 
         if(rnd >= 3)
         {
+            enemyAnimator.SetTrigger("EnemHit");
             //lyo
             if (!playerDef)
             {
@@ -64,6 +65,7 @@ public class AIScript : MonoBehaviour
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
                 mAnimator.SetTrigger("TakeDmg");
+                
 
             }
             else if (playerDef)
@@ -72,11 +74,12 @@ public class AIScript : MonoBehaviour
                
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
             }
-            //defendaa
+           
         }
-        else if(rnd <= 2)
+        //defendaa
+        else if (rnd <= 2)
         {
-   
+            
             AiDefTime = 1.5f; // aloittaa suojauksen
             CoolDown = AiDefTime;
         }
@@ -96,6 +99,7 @@ public class AIScript : MonoBehaviour
 
         if (rnd >= 7)
         {
+            enemyAnimator.SetTrigger("EnemHit");
 
             if (!playerDef)
             {
@@ -138,7 +142,7 @@ public class AIScript : MonoBehaviour
 
         if (rnd >= 5)
         {
-            
+            enemyAnimator.SetTrigger("EnemHit");
             if (!playerDef)
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
@@ -179,15 +183,17 @@ public class AIScript : MonoBehaviour
 
     void Update()
     {
-
+        //ai suojaa
         if(AiDefTime > 0)
         {
+            enemyAnimator.SetTrigger("EnemyBlock");
             AiDefence = true;
             AiDefTime -= Time.deltaTime;
         }
         else
         {
             AiDefence = false;
+            enemyAnimator.SetTrigger("EnemUnBlock");
         }
 
 

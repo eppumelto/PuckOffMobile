@@ -11,15 +11,20 @@ public class MoveToRightPos : MonoBehaviour
 
     public float speed;
 
+    public Transform target;
 
+    private void Start()
+    {
+        target = GameObject.Find("Target").transform;
+    }
     void Update()
     {
 
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
 
-        if(transform.position == targetPos)
+        if(transform.position == target.position)
         {
             cantHit = true;
             Destroy(gameObject.GetComponent<MoveToRightPos>());
