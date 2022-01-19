@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5161257758663484562}
   - component: {fileID: 5161257758663484563}
   - component: {fileID: 5161257758663484560}
+  - component: {fileID: 3052807521729779169}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Enemy
@@ -147,6 +148,20 @@ MonoBehaviour:
   cooldown: 5
   blood: {fileID: 0}
   BlockParticle: {fileID: 0}
+--- !u!114 &3052807521729779169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161257758663484561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928afdadcc271014a973ea591cf36b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPos: {x: 4.08, y: -1.71, z: 0}
+  speed: 4
 --- !u!1 &5161257758711382273
 GameObject:
   m_ObjectHideFlags: 0
