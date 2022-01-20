@@ -37,8 +37,5 @@ public class eventScript : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        
-    }
+  
 }

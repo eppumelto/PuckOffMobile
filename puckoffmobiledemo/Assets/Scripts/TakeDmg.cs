@@ -49,15 +49,17 @@ public class TakeDmg : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
 
             PlayerAlive = GameObject.Find("Pelaaja");
             if (PlayerAlive)
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth += _aiScript.healtToPlayer;
+                //otetaan ai koodissa defence pois
+                _aiScript.AiDefTime = 0;
             }
 
-
+           
             Kuolema();
         }
    
@@ -74,16 +76,33 @@ public class TakeDmg : MonoBehaviour
 
     void Kuolema()
     {
-        enemyAnimator.SetTrigger("Die");
         MoveToRightPos.cantHit = false;
-
-            this.gameObject.SetActive(false);
+       Destroy(GameObject.FindWithTag("Enemy").GetComponent<AIScript>());
+        enemyAnimator.SetTrigger("Die");
+        Debug.Log("Moi");
         
-        if()
-        
-        isAlive = false;
+        if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        {
 
-        enemiesKilled = enemiesKilled +1;
+
+            Debug.Log("´Hehheee");
+                this.gameObject.SetActive(false);
+                isAlive = false;
+                enemiesKilled = enemiesKilled + 1;
+
+            
+
+        }
+
+
+
+
+
+
+
+        
+
+        
         //_eventScript.EnemyDead(gameObject);
         
 

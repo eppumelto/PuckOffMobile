@@ -26,7 +26,7 @@ public class AIScript : MonoBehaviour
 
     private bool playerDef;                    //vastustajan block
     public static bool AiDefence;             //AI defence
-    private float AiDefTime;                 //kertoo kauan AI suojaa
+    public float AiDefTime;                 //kertoo kauan AI suojaa
     
     public ParticleSystem blood;           //Pelaajan veri
     public ParticleSystem blockParticle;  //pelaajan blockp partikkeli
