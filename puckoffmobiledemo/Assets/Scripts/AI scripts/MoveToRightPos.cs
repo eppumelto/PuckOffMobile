@@ -13,9 +13,14 @@ public class MoveToRightPos : MonoBehaviour
 
     public Transform target;
 
+    private Animator enemAnimator;
+
     private void Start()
     {
         target = GameObject.Find("Target").transform;
+        enemAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+        enemAnimator.SetTrigger("EnemWalk");
+
     }
     void Update()
     {
@@ -28,6 +33,7 @@ public class MoveToRightPos : MonoBehaviour
         {
             cantHit = true;
             Destroy(gameObject.GetComponent<MoveToRightPos>());
+            enemAnimator.SetTrigger("WalkStop");
         }
 
     }
