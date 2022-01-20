@@ -26,7 +26,7 @@ public class FightScript : MonoBehaviour
 
     void Start()
     {
-
+        //otetaan animaattorit vihusta ja pelaajasta
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
 
@@ -35,6 +35,7 @@ public class FightScript : MonoBehaviour
         attackCooldown = 0;
         theEnemy = GameObject.FindWithTag("Enemy");
 
+        //otetaan particlet vastustajalta
         enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
         enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
 
@@ -50,15 +51,14 @@ public class FightScript : MonoBehaviour
         if(attackCooldown <= 0 && !block && MoveToRightPos.cantHit)
         {
 
-            mAnimator.SetTrigger("Punch");
+            mAnimator.SetTrigger("Punch");     //aloittaa animaation
             attackCooldown = CoolDown;        //resettaa cooldownin
             
-            //tarkistaa ettei vastustaja suojaa
+             //tarkistaa ettei vastustaja suojaa
             if(AIScript.AiDefence == false && !block)
             {
-               
+               //veri particle, miinustetaan hp vastustajalta, laitetaan animaatio
                 enemyBlood.Play();
-                Debug.Log("Hit");
                
                     GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
                 enemyAnimator.SetTrigger("EnemyDmg");
@@ -68,13 +68,10 @@ public class FightScript : MonoBehaviour
             {
                 enemyBlock.Play(); //lyonti blokattiin
                                    /*_hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage;*/ //tekee vahan dmg jos lyonti blokataan
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right);
-
-                //if (hit.collider.tag == "Enemy")
-                //{
+               
                     GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
 
-                //}
+               
             }
 
            
@@ -83,7 +80,7 @@ public class FightScript : MonoBehaviour
     }
 
    
-    //Defence nappiin tarkistus onko se pohjassa vai ei
+    //Defence nappiin tarkistus onko se pohjassa vai ei samalla laitetaan animaatio
     public void ButtonInHold()
     {
         block = true;
