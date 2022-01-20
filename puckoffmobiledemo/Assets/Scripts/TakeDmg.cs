@@ -76,7 +76,7 @@ public class TakeDmg : MonoBehaviour
     {
         enemyAnimator.SetTrigger("Die");
         MoveToRightPos.cantHit = false;
-        if (this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+        if (enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
         {
             this.gameObject.SetActive(false);
         }
