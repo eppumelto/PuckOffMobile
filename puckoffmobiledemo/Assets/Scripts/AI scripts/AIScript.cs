@@ -21,6 +21,8 @@ public class AIScript : MonoBehaviour
 
      //Defence ja fight juttuja
     private FightScript FightScript;
+    public float PlayerStunTime; //kertoo kauan pelaaja stunaantuu kun osuu iskun
+    public static float AIStunausAika; 
 
     private bool playerDef;                    //vastustajan block
     public static bool AiDefence;             //AI defence
@@ -65,7 +67,7 @@ public class AIScript : MonoBehaviour
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
                 mAnimator.SetTrigger("TakeDmg");
-                
+                FightScript.StunTime += PlayerStunTime; //Stunaa pelaajan pieneksi ajaksi
 
             }
             else if (playerDef)
@@ -106,7 +108,7 @@ public class AIScript : MonoBehaviour
    
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 mAnimator.SetTrigger("TakeDmg");
-
+                FightScript.StunTime += PlayerStunTime; //Stunaa pelaajan pieneksi ajaksi
 
                 blood.Play();
             }
@@ -148,7 +150,7 @@ public class AIScript : MonoBehaviour
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
                 mAnimator.SetTrigger("TakeDmg");
-
+                FightScript.StunTime += PlayerStunTime; //Stunaa pelaajan pieneksi ajaksi
             }
             else if (playerDef)
             {
@@ -202,25 +204,29 @@ public class AIScript : MonoBehaviour
         healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
       
         //AI tappelee oman healtin mukaan.  Tarkistan etta vihu on oikealla kohdalla, ettei se puollusta ja cooldown on 0
-        if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit)
+        if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
         {
             agressive();
 
         }
-        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit)
+        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
         {
             normal();
         }
-        else if(healt <= 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit)
+        else if(healt <= 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
         {
             Defencive();
         }
-        CoolDown -= Time.deltaTime;
-
-
-      
-
+        
  
+        
+        if(AIStunausAika > 0)
+        {
+            AIStunausAika -= Time.deltaTime;
+        }
 
+        CoolDown -= Time.deltaTime;
+        
+ 
     }
 }

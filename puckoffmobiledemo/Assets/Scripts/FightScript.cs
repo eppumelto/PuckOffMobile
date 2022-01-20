@@ -18,6 +18,8 @@ public class FightScript : MonoBehaviour
     //defence
     public static bool block;
     public ParticleSystem enemyBlock;
+    public static float StunTime;
+    public float PunchStunTime;
 
     public GameObject theEnemy;
 
@@ -48,19 +50,19 @@ public class FightScript : MonoBehaviour
     public void _attack()
     {
         //attackCooldown pitaa olla 0 ei suojaa ja vihu on oikealla paikalla
-        if(attackCooldown <= 0 && !block && MoveToRightPos.cantHit)
+        if(attackCooldown <= 0 && !block && MoveToRightPos.cantHit && StunTime <= 0)
         {
-
             mAnimator.SetTrigger("Punch");     //aloittaa animaation
             attackCooldown = CoolDown;        //resettaa cooldownin
             
+
              //tarkistaa ettei vastustaja suojaa
             if(AIScript.AiDefence == false && !block)
             {
                //veri particle, miinustetaan hp vastustajalta, laitetaan animaatio
                 enemyBlood.Play();
-               
-                    GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
+                AIScript.AIStunausAika += PunchStunTime;
+                GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
                 enemyAnimator.SetTrigger("EnemyDmg");
                
             }
@@ -81,16 +83,23 @@ public class FightScript : MonoBehaviour
 
    
     //Defence nappiin tarkistus onko se pohjassa vai ei samalla laitetaan animaatio
+    //ei voi blokata jos sinua on juuri osuttu naamaan
     public void ButtonInHold()
     {
-        block = true;
-        mAnimator.SetTrigger("Block");
+        if(StunTime <= 0)
+        {
+            block = true;
+            mAnimator.SetTrigger("Block");
+        }
     }
-
+    
     public void ButtonReleased()
     {
-        block = false;
-        mAnimator.SetTrigger("UnBlock");
+        if(StunTime <= 0)
+        {
+            block = false;
+            mAnimator.SetTrigger("UnBlock");
+        }
     }
 
 
@@ -124,7 +133,13 @@ public class FightScript : MonoBehaviour
             enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
         }
 
-       
+
+
+        if(StunTime > 0)
+        {
+            StunTime -= Time.deltaTime;
+        }
+
         attackCooldown -= Time.deltaTime;
 
     }
