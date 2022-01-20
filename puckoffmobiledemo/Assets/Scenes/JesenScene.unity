@@ -6858,7 +6858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1984282226536229702, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: PlayerStunTime
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1984282226536229703, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: target
@@ -12648,7 +12648,7 @@ MonoBehaviour:
   BlockedDamage: 5
   enemyBlood: {fileID: 0}
   enemyBlock: {fileID: 0}
-  AIStunTime: 0.5
+  PunchStunTime: 0.7
   theEnemy: {fileID: 0}
 --- !u!4 &2109315291
 Transform:
