@@ -20,6 +20,7 @@ public class TakeDmg : MonoBehaviour
     public static int enemiesKilled;
 
     private Animator mAnimator;
+    private Animator enemyAnimator;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class TakeDmg : MonoBehaviour
         enemiesKilled = 0;
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
     }
 
 
@@ -72,13 +74,19 @@ public class TakeDmg : MonoBehaviour
 
     void Kuolema()
     {
+        enemyAnimator.SetTrigger("Die");
         MoveToRightPos.cantHit = false;
-        this.gameObject.SetActive(false);
+        if (this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+        {
+            this.gameObject.SetActive(false);
+        }
+        
         isAlive = false;
 
         enemiesKilled = enemiesKilled +1;
         //_eventScript.EnemyDead(gameObject);
-        mAnimator.SetTrigger("Die");
+        
+
     }
 
    
