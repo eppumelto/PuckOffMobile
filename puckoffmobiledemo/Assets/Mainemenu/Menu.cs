@@ -31,7 +31,7 @@ public class Menu : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("AaronScene");
+        SceneManager.LoadScene(1);
     }
     public void MenuButton()
     {
