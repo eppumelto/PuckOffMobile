@@ -23,6 +23,7 @@ public class FightScript : MonoBehaviour
 
     public GameObject theEnemy;
 
+    private float Defendingfloat;
     private Animator mAnimator;
     private Animator enemyAnimator;
 
@@ -86,10 +87,11 @@ public class FightScript : MonoBehaviour
     //ei voi blokata jos sinua on juuri osuttu naamaan
     public void ButtonInHold()
     {
-        if(StunTime <= 0)
+  
+        if (StunTime <= 0)
         {
             block = true;
-            mAnimator.SetTrigger("Block");
+            //mAnimator.SetTrigger("Block");
         }
     }
     
@@ -98,7 +100,8 @@ public class FightScript : MonoBehaviour
         if(StunTime <= 0)
         {
             block = false;
-            mAnimator.SetTrigger("UnBlock");
+            
+            //mAnimator.SetTrigger("UnBlock");
         }
     }
 
@@ -109,15 +112,19 @@ public class FightScript : MonoBehaviour
     void Update()
     {
         theEnemy = GameObject.FindWithTag("Enemy");
-
+        Debug.Log(Defendingfloat);
         //Tarkistaa suojaako pelaaja ja jos pelaaja lyo niin ei voi suojata heti samaan aikaan
-        if (block)
+        if (block && Defendingfloat <= 0.11)
         {
             block = true;
+            Defendingfloat += Time.deltaTime;
+            mAnimator.SetFloat("Defending", Defendingfloat);
         }
-        else
+        else if(!block && Defendingfloat > 0)
         {
             block = false;
+            Defendingfloat -= Time.deltaTime;
+            mAnimator.SetFloat("Defending", Defendingfloat);
         }
 
         if (TakeDmg.isAlive == false)
