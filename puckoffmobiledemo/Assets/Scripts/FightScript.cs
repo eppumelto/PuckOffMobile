@@ -112,7 +112,8 @@ public class FightScript : MonoBehaviour
     void Update()
     {
         theEnemy = GameObject.FindWithTag("Enemy");
-        Debug.Log(Defendingfloat);
+
+
         //Tarkistaa suojaako pelaaja ja jos pelaaja lyo niin ei voi suojata heti samaan aikaan
         if (block && Defendingfloat <= 0.11)
         {
