@@ -6,9 +6,11 @@ public class TakeDmg : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    private float DesPawnTime = 2;
 
     public static bool isAlive;
-    
+    private bool firstDeath = true;
+
     //pelaajan kuolema
     public static bool PlayerAlive = true;
     private bool firstime;
@@ -21,6 +23,8 @@ public class TakeDmg : MonoBehaviour
 
     private Animator mAnimator;
     private Animator enemyAnimator;
+
+
 
     void Start()
     {
@@ -43,13 +47,30 @@ public class TakeDmg : MonoBehaviour
 
     void Update()
     {
-        
+
+        if (!firstDeath && DesPawnTime <= 100f)
+        {
+
+            DesPawnTime -= Time.deltaTime;
+
+            if(DesPawnTime <= -1)
+            {
+                Debug.Log("´Hehheee");
+                this.gameObject.SetActive(false);
+                isAlive = false;
+                enemiesKilled = enemiesKilled + 1;
+
+            }
+
+        }
+
 
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && firstDeath)
         {
-            //this.gameObject.SetActive(false);
+            firstDeath = false;
+
 
             PlayerAlive = GameObject.Find("Pelaaja");
             if (PlayerAlive)
@@ -59,7 +80,8 @@ public class TakeDmg : MonoBehaviour
                 _aiScript.AiDefTime = 0;
             }
 
-           
+            enemyAnimator.Rebind();
+            enemyAnimator.SetTrigger("Die");
             Kuolema();
         }
    
@@ -77,10 +99,10 @@ public class TakeDmg : MonoBehaviour
     void Kuolema()
     {
         MoveToRightPos.cantHit = false;
-       Destroy(GameObject.FindWithTag("Enemy").GetComponent<AIScript>());
-        enemyAnimator.SetTrigger("Die");
-        Debug.Log("Moi");
-        
+        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+
+
+        Debug.Log("Moooi");
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
 
@@ -90,20 +112,16 @@ public class TakeDmg : MonoBehaviour
                 isAlive = false;
                 enemiesKilled = enemiesKilled + 1;
 
-            
 
+
+        }
+        else
+        {
+            Debug.Log("Elseee");
+            DesPawnTime = 0;
         }
 
 
-
-
-
-
-
-        
-
-        
-        //_eventScript.EnemyDead(gameObject);
         
 
     }

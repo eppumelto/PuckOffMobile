@@ -217,7 +217,6 @@ public class AIScript : MonoBehaviour
         {
             Defencive();
         }
-        
  
         
         if(AIStunausAika > 0)
