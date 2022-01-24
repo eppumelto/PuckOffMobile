@@ -50,7 +50,7 @@ public class TakeDmg : MonoBehaviour
 
     void Update()
     {
-
+        HeadChange();
         if (!firstDeath && DesPawnTime <= 100f)
         {
 
@@ -128,6 +128,17 @@ public class TakeDmg : MonoBehaviour
 
     }
 
-   
+   public void HeadChange()
+    {
+        if (currentHealth <= 60 && currentHealth != 0)
+        {
+            enemyHead.sprite = headSprites[1];
+        }
+
+        else if (currentHealth <= 20 && currentHealth != 0)
+        {
+            enemyHead.sprite = headSprites[2];
+        }
+    }
 
 }
