@@ -53,6 +53,7 @@ public class FightScript : MonoBehaviour
         //attackCooldown pitaa olla 0 ei suojaa ja vihu on oikealla paikalla
         if(attackCooldown <= 0 && !block && MoveToRightPos.cantHit && StunTime <= 0)
         {
+            mAnimator.Rebind();
             mAnimator.SetTrigger("Punch");     //aloittaa animaation
             attackCooldown = CoolDown;        //resettaa cooldownin
             
@@ -64,7 +65,11 @@ public class FightScript : MonoBehaviour
                 enemyBlood.Play();
                 AIScript.AIStunausAika += PunchStunTime;
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
-                enemyAnimator.SetTrigger("EnemyDmg");
+                
+
+                enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>(); //otetaan animator
+                enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
+                enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
                
             }
             else if(AIScript.AiDefence == true)
@@ -128,6 +133,7 @@ public class FightScript : MonoBehaviour
             mAnimator.SetFloat("Defending", Defendingfloat);
         }
 
+       
         if (TakeDmg.isAlive == false)
         {
             theEnemy = null;

@@ -24,7 +24,8 @@ public class TakeDmg : MonoBehaviour
     private Animator mAnimator;
     private Animator enemyAnimator;
 
-
+    public SpriteRenderer enemyHead;
+    public Sprite[] headSprites;
 
     void Start()
     {
@@ -42,12 +43,14 @@ public class TakeDmg : MonoBehaviour
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+
+        enemyHead = GameObject.Find("EnemyHeadChanger").GetComponent<SpriteRenderer>();
     }
 
 
     void Update()
     {
-
+        HeadChange();
         if (!firstDeath && DesPawnTime <= 100f)
         {
 
@@ -67,7 +70,7 @@ public class TakeDmg : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0 && enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && firstDeath)
+        if (currentHealth <= 0 && firstDeath)
         {
             firstDeath = false;
 
@@ -82,6 +85,8 @@ public class TakeDmg : MonoBehaviour
 
             enemyAnimator.Rebind();
             enemyAnimator.SetTrigger("Die");
+            enemyHead.sprite = headSprites[0];
+
             Kuolema();
         }
    
@@ -101,13 +106,10 @@ public class TakeDmg : MonoBehaviour
         MoveToRightPos.cantHit = false;
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
 
-
-        Debug.Log("Moooi");
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
 
 
-            Debug.Log("´Hehheee");
                 this.gameObject.SetActive(false);
                 isAlive = false;
                 enemiesKilled = enemiesKilled + 1;
@@ -117,7 +119,6 @@ public class TakeDmg : MonoBehaviour
         }
         else
         {
-            Debug.Log("Elseee");
             DesPawnTime = 0;
         }
 
@@ -126,6 +127,19 @@ public class TakeDmg : MonoBehaviour
 
     }
 
-   
+   public void HeadChange()
+    {
+        if (currentHealth <= 60 && currentHealth > 20)
+        {
+            enemyHead.sprite = headSprites[1];
+        }
+        else if (currentHealth <= 20 && currentHealth > 0)
+        {
+            enemyHead.sprite = headSprites[2];
+        }
+      
+
+
+    }
 
 }

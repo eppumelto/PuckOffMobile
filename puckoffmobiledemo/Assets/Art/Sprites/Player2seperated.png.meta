@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: 1668b597bd07cf143bc8e4cdc1f59949
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2724510970939335582
+    second: Player2seperated_0
+  - first:
+      213: -1690852763887612268
+    second: Player2seperated_1
+  - first:
+      213: 4194492610548426310
+    second: Player2seperated_2
+  - first:
+      213: 8863315494972995565
+    second: Player2seperated_3
+  - first:
+      213: 9187188259858224731
+    second: Player2seperated_4
+  - first:
+      213: -1530910191292646746
+    second: Player2seperated_5
+  - first:
+      213: 5203367180273272924
+    second: Player2seperated_6
+  - first:
+      213: 5622832772599347355
+    second: Player2seperated_7
+  - first:
+      213: 8163364237163889241
+    second: Player2seperated_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +128,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Player2seperated_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 1152
+        height: 1702
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 166}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ecdf8ae52e888e0800000000000000
+      internalID: -1690852763887612268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player2seperated_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1365
+        width: 532
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e936e710b486fc520800000000000000
+      internalID: 2724510970939335582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones:
