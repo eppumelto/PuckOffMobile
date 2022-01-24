@@ -10341,6 +10341,10 @@ MonoBehaviour:
   blood: {fileID: 0}
   blockParticle: {fileID: 0}
   healtToPlayer: 10
+  ShakeDuration: 0.3
+  ShakeAmplitude: 1.2
+  ShakeFrequency: 2
+  VirtualCamera: {fileID: 2263736700433435654, guid: dd40994c5d51e2547acb4e8aa0732303, type: 3}
 --- !u!114 &8894609445222044019
 MonoBehaviour:
   m_ObjectHideFlags: 0
