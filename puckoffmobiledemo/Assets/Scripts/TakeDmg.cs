@@ -106,7 +106,6 @@ public class TakeDmg : MonoBehaviour
         MoveToRightPos.cantHit = false;
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
 
-
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
 
@@ -130,15 +129,17 @@ public class TakeDmg : MonoBehaviour
 
    public void HeadChange()
     {
-        if (currentHealth <= 60 && currentHealth != 0)
+        if (currentHealth <= 60 && currentHealth > 20)
         {
             enemyHead.sprite = headSprites[1];
         }
-
-        else if (currentHealth <= 20 && currentHealth != 0)
+        else if (currentHealth <= 20 && currentHealth > 0)
         {
             enemyHead.sprite = headSprites[2];
         }
+      
+
+
     }
 
 }

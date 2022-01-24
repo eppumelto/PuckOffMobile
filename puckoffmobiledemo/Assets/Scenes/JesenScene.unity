@@ -12814,8 +12814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  Damage: 100
-  BlockedDamage: 100
+  Damage: 30
+  BlockedDamage: 30
   enemyBlood: {fileID: 0}
   enemyBlock: {fileID: 0}
   PunchStunTime: 0.7
