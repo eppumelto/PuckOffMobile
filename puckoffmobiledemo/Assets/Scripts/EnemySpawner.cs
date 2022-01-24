@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -11,12 +12,13 @@ public class EnemySpawner : MonoBehaviour
 
     ObjectPooling objectPooler;
 
-    // Start is called before the first frame update
+    //Boss juttuja
+    public GameObject BossTxt;
+
     void Start()
     {
         takeDmg = GameObject.Find("Pelaaja").GetComponent<TakeDmg>();
         objectPooler = ObjectPooling.Instance;
-
       
     }
 
@@ -30,6 +32,8 @@ public class EnemySpawner : MonoBehaviour
 
         else if ( TakeDmg.enemiesKilled == 5 && TakeDmg.isAlive == false)
         {
+            BossTxt.SetActive(true);
+            
             objectPooler.SpawnFromPool("Boss", transform.position, Quaternion.identity);
         }
 
@@ -38,7 +42,6 @@ public class EnemySpawner : MonoBehaviour
 
 
 
-    // Update is called once per frame
     void Update()
     {
 
