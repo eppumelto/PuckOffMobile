@@ -24,7 +24,8 @@ public class TakeDmg : MonoBehaviour
     private Animator mAnimator;
     private Animator enemyAnimator;
 
-
+    public SpriteRenderer enemyHead;
+    public Sprite[] headSprites;
 
     void Start()
     {
@@ -42,6 +43,8 @@ public class TakeDmg : MonoBehaviour
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+
+        enemyHead = GameObject.Find("EnemyHeadChanger").GetComponent<SpriteRenderer>();
     }
 
 
@@ -82,6 +85,8 @@ public class TakeDmg : MonoBehaviour
 
             enemyAnimator.Rebind();
             enemyAnimator.SetTrigger("Die");
+            enemyHead.sprite = headSprites[0];
+
             Kuolema();
         }
    
