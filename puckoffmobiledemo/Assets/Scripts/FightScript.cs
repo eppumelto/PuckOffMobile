@@ -53,6 +53,7 @@ public class FightScript : MonoBehaviour
         //attackCooldown pitaa olla 0 ei suojaa ja vihu on oikealla paikalla
         if(attackCooldown <= 0 && !block && MoveToRightPos.cantHit && StunTime <= 0)
         {
+            mAnimator.Rebind();
             mAnimator.SetTrigger("Punch");     //aloittaa animaation
             attackCooldown = CoolDown;        //resettaa cooldownin
             
@@ -64,6 +65,7 @@ public class FightScript : MonoBehaviour
                 enemyBlood.Play();
                 AIScript.AIStunausAika += PunchStunTime;
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
+                enemyAnimator.Rebind();
                 enemyAnimator.SetTrigger("EnemyDmg");
                
             }

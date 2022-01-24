@@ -609,6 +609,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 2069609119}
+  enemyHead: {fileID: 0}
+  headSprites: []
 --- !u!212 &297531121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6868,6 +6870,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: vihu
       objectReference: {fileID: 0}
+    - target: {fileID: 8894609445222044022, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609445368441141, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609445368441141, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
 --- !u!1 &1438959896
@@ -12316,7 +12330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dab4c8bf31b7774e9f17b0fee7f6517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1984282226536229720, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+  enemy: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
   spawnCooldown: 0
 --- !u!4 &2050066352
 Transform:
@@ -12626,7 +12640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Enemy
-    prefab: {fileID: 1984282226536229720, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+    prefab: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
     size: 5
   - tag: Boss
     prefab: {fileID: 5161257758663484561, guid: fa5a3cd7d26ea5a4e8e1b9aa6c526ad8, type: 3}
@@ -12649,7 +12663,7 @@ MonoBehaviour:
   enemyBlood: {fileID: 0}
   enemyBlock: {fileID: 0}
   PunchStunTime: 0.7
-  theEnemy: {fileID: 0}
+  theEnemy: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
 --- !u!4 &2109315291
 Transform:
   m_ObjectHideFlags: 0

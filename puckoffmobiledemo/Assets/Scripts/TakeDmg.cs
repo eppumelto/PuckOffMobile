@@ -107,12 +107,10 @@ public class TakeDmg : MonoBehaviour
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
 
 
-        Debug.Log("Moooi");
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
 
 
-            Debug.Log("´Hehheee");
                 this.gameObject.SetActive(false);
                 isAlive = false;
                 enemiesKilled = enemiesKilled + 1;
@@ -122,7 +120,6 @@ public class TakeDmg : MonoBehaviour
         }
         else
         {
-            Debug.Log("Elseee");
             DesPawnTime = 0;
         }
 
