@@ -6858,7 +6858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1984282226536229702, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: PlayerStunTime
-      value: 0.7
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1984282226536229703, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: target
