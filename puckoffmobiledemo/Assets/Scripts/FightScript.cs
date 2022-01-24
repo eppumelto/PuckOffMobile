@@ -65,8 +65,11 @@ public class FightScript : MonoBehaviour
                 enemyBlood.Play();
                 AIScript.AIStunausAika += PunchStunTime;
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
-                enemyAnimator.Rebind();
-                enemyAnimator.SetTrigger("EnemyDmg");
+                
+
+                enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>(); //otetaan animator
+                enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
+                enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
                
             }
             else if(AIScript.AiDefence == true)
@@ -130,6 +133,7 @@ public class FightScript : MonoBehaviour
             mAnimator.SetFloat("Defending", Defendingfloat);
         }
 
+       
         if (TakeDmg.isAlive == false)
         {
             theEnemy = null;
