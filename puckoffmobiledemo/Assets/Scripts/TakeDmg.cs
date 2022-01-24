@@ -70,7 +70,7 @@ public class TakeDmg : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0 && enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && firstDeath)
+        if (currentHealth <= 0 && firstDeath)
         {
             firstDeath = false;
 
