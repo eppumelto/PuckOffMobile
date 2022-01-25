@@ -94,7 +94,8 @@ public class TakeDmg : MonoBehaviour
             }
             else if (_playerHealt <= 0)
             {
-                //Pelaaja kuoli joten kutsutaan method PlayerDead
+                //Pelaaja kuoli joten kutsutaan method PlayerDead ja laitetaan bool falseksi
+                PlayerAlive = false;
                 _eventScript.PlayerDead();
             }
             

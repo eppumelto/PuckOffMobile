@@ -226,15 +226,15 @@ public class AIScript : MonoBehaviour
       
 
         //AI tappelee oman healtin mukaan.  Tarkistan etta vihu on oikealla kohdalla, ettei se puollusta ja cooldown on 0
-        if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
+        if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
         {
             agressive();
         }
-        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
+        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
         {
             normal();
         }
-        else if(healt <= 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
+        else if(healt <= 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
         {
             Defencive();
         }
