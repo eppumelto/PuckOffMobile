@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8aa31dccb11024cbd1f3a09c38cc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShakeDuration: 1
+  ShakeDuration: 0.5
   ShakeAmplitude: 0.1
   ShakeFrequency: 2
   VirtualCamera: {fileID: 1604917516877228208}
@@ -12750,6 +12750,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8894609444751910253, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609444751910253, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: ShapeModule.m_Texture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609444751910253, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609444751910253, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 2735
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609444899004879, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: m_Name
       value: vihu

@@ -10316,7 +10316,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 8894609445195473775}
-  enemyHead: {fileID: 0}
+  Head: {fileID: 0}
   headSprites:
   - {fileID: 21300000, guid: 221de14e58edc984589452b9620e2cb1, type: 3}
   - {fileID: 21300000, guid: 275394b81a1d57c4dbcf2b05a8df277b, type: 3}
@@ -10341,10 +10341,7 @@ MonoBehaviour:
   blood: {fileID: 0}
   blockParticle: {fileID: 0}
   healtToPlayer: 10
-  ShakeDuration: 0.3
-  ShakeAmplitude: 1.2
-  ShakeFrequency: 2
-  VirtualCamera: {fileID: 2263736700433435654, guid: dd40994c5d51e2547acb4e8aa0732303, type: 3}
+  shake: {fileID: 0}
 --- !u!114 &8894609445222044019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10510,7 +10507,7 @@ GameObject:
   - component: {fileID: 8894609445393118934}
   - component: {fileID: 8894609445393118889}
   m_Layer: 0
-  m_Name: EnemyHeadChanger
+  m_Name: enemyHeadChanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -46,7 +46,7 @@ public class TakeDmg : MonoBehaviour
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
 
-        enemyHead = GameObject.Find("EnemyHeadChanger").GetComponent<SpriteRenderer>();
+        enemyHead = GameObject.Find("enemyHeadChanger").GetComponent<SpriteRenderer>();
     }
 
 
@@ -132,19 +132,18 @@ public class TakeDmg : MonoBehaviour
    public void HeadChange()
     {
 
-       
-
-
-        if (currentHealth <= 60 && currentHealth > 20)
+        if (this.tag == "Enemy")
         {
-            enemyHead.sprite = headSprites[1];
-            Debug.Log("Moi");
+
+            if (currentHealth <= 60 && currentHealth > 20)
+            {
+                enemyHead.sprite = headSprites[1];               
+            }
+            else if (currentHealth <= 20 && currentHealth > 0)
+            {
+                enemyHead.sprite = headSprites[2];
+            }
         }
-        else if (currentHealth <= 20 && currentHealth > 0)
-        {
-            enemyHead.sprite = headSprites[2];
-        }
-      
 
 
     }
