@@ -4,10 +4,10 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.Events;
 
-public class SimpleCameraShakeInCinemachine : MonoBehaviour
+public class CameraShake : MonoBehaviour
 {
 
-    public float ShakeDuration = 0.3f;          // Time the Camera Shake effect will last
+    public float ShakeDuration = 0.3f;          // Efektin kesto
     public float ShakeAmplitude = 1.2f;         // Cinemachine Noise Profile Parameter
     public float ShakeFrequency = 2.0f;         // Cinemachine Noise Profile Parameter
 
@@ -20,7 +20,7 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // Get Virtual Camera Noise Profile
+        // Etsit‰‰n virtuaalinen kamera
         if (VirtualCamera != null)
             virtualCameraNoise = VirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
     }
@@ -28,31 +28,35 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TODO: Replace with your trigger
-        if (Input.GetKey(KeyCode.S))
-        {
-            ShakeElapsedTime = ShakeDuration;
-        }
-
-        // If the Cinemachine componet is not set, avoid update
+        // Jos cinemachinea ei ole, koodi ei updatee
         if (VirtualCamera != null && virtualCameraNoise != null)
         {
-            // If Camera Shake effect is still playing
+            // Jos efekti on p‰‰ll‰
             if (ShakeElapsedTime > 0)
             {
-                // Set Cinemachine Camera Noise parameters
+                // Laitetaan parametrit
                 virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
                 virtualCameraNoise.m_FrequencyGain = ShakeFrequency;
 
-                // Update Shake Timer
+                // P‰ivitet‰‰n timeri
                 ShakeElapsedTime -= Time.deltaTime;
             }
             else
             {
-                // If Camera Shake effect is over, reset variables
+                // Jos efekti loppuu, resetoidaan
                 virtualCameraNoise.m_AmplitudeGain = 0f;
                 ShakeElapsedTime = 0f;
             }
         }
+
+    }
+
+    public void Effect1()
+    {
+
+        ShakeElapsedTime = ShakeDuration;
+
+
+        
     }
 }
