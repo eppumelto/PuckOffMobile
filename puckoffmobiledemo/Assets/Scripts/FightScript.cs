@@ -21,6 +21,7 @@ public class FightScript : MonoBehaviour
     public static float StunTime;
     public float PunchStunTime;
 
+
     public GameObject theEnemy;
 
     private float Defendingfloat;
@@ -93,27 +94,25 @@ public class FightScript : MonoBehaviour
     public void ButtonInHold()
     {
   
-        if (StunTime <= 0)
-        {
+        
             block = true;
             //mAnimator.SetTrigger("Block");
-        }
+       
     }
     
     public void ButtonReleased()
     {
-        if(StunTime <= 0)
-        {
+       
             block = false;
             
             //mAnimator.SetTrigger("UnBlock");
-        }
+        
     }
 
 
   
 
-   
+
     void Update()
     {
         theEnemy = GameObject.FindWithTag("Enemy");
