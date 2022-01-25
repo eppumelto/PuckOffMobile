@@ -36,6 +36,8 @@ public class TakeDmg : MonoBehaviour
         healthBar.MaxHealth(maxHealth);
         isAlive = true;
 
+        
+
         _aiScript = GameObject.FindWithTag("Enemy").GetComponent<AIScript>();
         _eventScript = GameObject.Find("ScriptManager").GetComponent<eventScript>();
 
@@ -129,9 +131,14 @@ public class TakeDmg : MonoBehaviour
 
    public void HeadChange()
     {
+
+       
+
+
         if (currentHealth <= 60 && currentHealth > 20)
         {
             enemyHead.sprite = headSprites[1];
+            Debug.Log("Moi");
         }
         else if (currentHealth <= 20 && currentHealth > 0)
         {
