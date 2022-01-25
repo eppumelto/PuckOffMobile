@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  Damage: 10
+  Damage: 100
   BlockedDamage: 5
   enemyBlood: {fileID: 0}
   enemyBlock: {fileID: 0}
@@ -5963,6 +5963,10 @@ PrefabInstance:
     - target: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: m_Name
       value: vihu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609445222044018, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: dmg
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8894609445222044018, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: PlayerStunTime

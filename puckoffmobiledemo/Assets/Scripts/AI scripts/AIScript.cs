@@ -56,6 +56,11 @@ public class AIScript : MonoBehaviour
         shake = GameObject.Find("ScriptManager").GetComponent<CameraShake>();
     }
 
+
+
+
+
+
     public void agressive()
     {
         //isompi mahis lyoda
@@ -91,13 +96,18 @@ public class AIScript : MonoBehaviour
             CoolDown = AiDefTime;
         }
 
-
+        
        if(CoolDown <= 0)
         {
             CoolDown = _originalCoolDown;
         }
 
     }
+
+
+
+
+
 
     public void Defencive()
     {
@@ -133,7 +143,6 @@ public class AIScript : MonoBehaviour
             CoolDown = AiDefTime;
         }
 
-
         if (CoolDown <= 0)
         {
             CoolDown = _originalCoolDown;
@@ -141,6 +150,12 @@ public class AIScript : MonoBehaviour
 
 
     }
+
+
+
+
+
+
 
     public void normal()
     {
@@ -209,11 +224,11 @@ public class AIScript : MonoBehaviour
 
         healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
       
+
         //AI tappelee oman healtin mukaan.  Tarkistan etta vihu on oikealla kohdalla, ettei se puollusta ja cooldown on 0
         if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
         {
             agressive();
-
         }
         else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
         {
@@ -224,7 +239,7 @@ public class AIScript : MonoBehaviour
             Defencive();
         }
  
-        
+        //jos AIStunattu
         if(AIStunausAika > 0)
         {
             AIStunausAika -= Time.deltaTime;
