@@ -96,7 +96,7 @@ public class FightScript : MonoBehaviour
   
         
             block = true;
-            //mAnimator.SetTrigger("Block");
+
        
     }
     
@@ -105,7 +105,6 @@ public class FightScript : MonoBehaviour
        
             block = false;
             
-            //mAnimator.SetTrigger("UnBlock");
         
     }
 
