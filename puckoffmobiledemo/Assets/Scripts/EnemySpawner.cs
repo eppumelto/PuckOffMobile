@@ -15,6 +15,8 @@ public class EnemySpawner : MonoBehaviour
     //Boss juttuja
     public GameObject BossTxt;
 
+    public AudioSource BossSpawn;
+
     void Start()
     {
         takeDmg = GameObject.Find("Pelaaja").GetComponent<TakeDmg>();
@@ -33,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
         else if ( TakeDmg.enemiesKilled == 5 && TakeDmg.isAlive == false && TakeDmg.PlayerAlive)
         {
             BossTxt.SetActive(true);
+            BossSpawn.Play();
             
             objectPooler.SpawnFromPool("Boss", transform.position, Quaternion.identity);
         }
