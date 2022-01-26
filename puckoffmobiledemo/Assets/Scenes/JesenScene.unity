@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1.08
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -2021,6 +2021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vihu
       objectReference: {fileID: 0}
+    - target: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8894609445222044018, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: PlayerStunTime
       value: 0.5
@@ -2166,8 +2170,8 @@ MonoBehaviour:
   - {fileID: 1433982423}
   - {fileID: 871091251}
   m_Bounds:
-    m_Center: {x: 0.75907755, y: 0.019473076, z: 0}
-    m_Extent: {x: 4.246442, y: 8.421765, z: 0}
+    m_Center: {x: 0.811568, y: 0.019470215, z: 0}
+    m_Extent: {x: 4.2989354, y: 8.421768, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!212 &1080792600
@@ -2720,9 +2724,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RenderShadows: 0
+  m_RequiresDepthTextureOption: 0
+  m_RequiresOpaqueTextureOption: 0
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: 0
@@ -2733,7 +2737,7 @@ MonoBehaviour:
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 2
-  m_AntialiasingQuality: 2
+  m_AntialiasingQuality: 0
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
