@@ -44,7 +44,7 @@ public class eventScript : MonoBehaviour
     void Start()
     {
         deathPanel.SetActive(false);
-        Time.timeScale = 1;
+       // Time.timeScale = 1;
         PlayerAnimator = GameObject.Find("Player").GetComponent<Animator>();
         //listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
     }
