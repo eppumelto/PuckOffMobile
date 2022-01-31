@@ -13,6 +13,7 @@ public class TakeDmg : MonoBehaviour
 
     //pelaajan kuolema
     public static bool PlayerAlive = true;
+    private float _playerHealt;
     private bool firstime;
 
     private AIScript _aiScript;
@@ -36,6 +37,8 @@ public class TakeDmg : MonoBehaviour
         healthBar.MaxHealth(maxHealth);
         isAlive = true;
 
+        
+
         _aiScript = GameObject.FindWithTag("Enemy").GetComponent<AIScript>();
         _eventScript = GameObject.Find("ScriptManager").GetComponent<eventScript>();
 
@@ -44,13 +47,14 @@ public class TakeDmg : MonoBehaviour
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
 
-        enemyHead = GameObject.Find("EnemyHeadChanger").GetComponent<SpriteRenderer>();
+        enemyHead = GameObject.Find("enemyHeadChanger").GetComponent<SpriteRenderer>();
     }
 
 
     void Update()
     {
         HeadChange();
+       //pieni cooldown vihun kuolemaan
         if (!firstDeath && DesPawnTime <= 100f)
         {
 
@@ -58,7 +62,6 @@ public class TakeDmg : MonoBehaviour
 
             if(DesPawnTime <= -1)
             {
-                Debug.Log("´Hehheee");
                 this.gameObject.SetActive(false);
                 isAlive = false;
                 enemiesKilled = enemiesKilled + 1;
@@ -74,20 +77,30 @@ public class TakeDmg : MonoBehaviour
         {
             firstDeath = false;
 
-
-            PlayerAlive = GameObject.Find("Pelaaja");
-            if (PlayerAlive)
+            //tarkistetaan onko pelaaja hengissa ja jos on annetaan pieni healt regen pelaajalle
+            //PlayerAlive
+            _playerHealt = GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth;
+            if (_playerHealt > 0)
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth += _aiScript.healtToPlayer;
-                //otetaan ai koodissa defence pois
+                //otetaan ai koodissa defence pois ja laitetaan vastustajan animaatioksi kuolema
                 _aiScript.AiDefTime = 0;
+                enemyAnimator.Rebind();
+                enemyAnimator.SetTrigger("Die");
+
+                //Vaihdetaan vastustajan paa ja kutsutaan Kuolema methdoia
+                enemyHead.sprite = headSprites[0];
+                Kuolema();
             }
+            else if (_playerHealt <= 0)
+            {
+                //Pelaaja kuoli joten kutsutaan method PlayerDead ja laitetaan bool falseksi
+                PlayerAlive = false;
+                _eventScript.PlayerDead();
+            }
+            
 
-            enemyAnimator.Rebind();
-            enemyAnimator.SetTrigger("Die");
-            enemyHead.sprite = headSprites[0];
-
-            Kuolema();
+            
         }
    
         //kattoo jos haviaa pelin
@@ -129,15 +142,19 @@ public class TakeDmg : MonoBehaviour
 
    public void HeadChange()
     {
-        if (currentHealth <= 60 && currentHealth > 20)
+
+        if (this.tag == "Enemy")
         {
-            enemyHead.sprite = headSprites[1];
+
+            if (currentHealth <= 60 && currentHealth > 20)
+            {
+                enemyHead.sprite = headSprites[1];               
+            }
+            else if (currentHealth <= 20 && currentHealth > 0)
+            {
+                enemyHead.sprite = headSprites[2];
+            }
         }
-        else if (currentHealth <= 20 && currentHealth > 0)
-        {
-            enemyHead.sprite = headSprites[2];
-        }
-      
 
 
     }

@@ -40,6 +40,8 @@ public class AIScript : MonoBehaviour
     private Animator mAnimator;
     private Animator enemyAnimator;
 
+    public CameraShake shake;
+
     private void Start()
     {
         _originalCoolDown = CoolDown;
@@ -50,7 +52,14 @@ public class AIScript : MonoBehaviour
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
         enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+
+        shake = GameObject.Find("ScriptManager").GetComponent<CameraShake>();
     }
+
+
+
+
+
 
     public void agressive()
     {
@@ -68,6 +77,7 @@ public class AIScript : MonoBehaviour
                 blood.Play();
                 mAnimator.SetTrigger("TakeDmg");
                 FightScript.StunTime += PlayerStunTime; //Stunaa pelaajan pieneksi ajaksi
+                shake.Effect1();
 
             }
             else if (playerDef)
@@ -86,13 +96,18 @@ public class AIScript : MonoBehaviour
             CoolDown = AiDefTime;
         }
 
-
+        
        if(CoolDown <= 0)
         {
             CoolDown = _originalCoolDown;
         }
 
     }
+
+
+
+
+
 
     public void Defencive()
     {
@@ -109,7 +124,7 @@ public class AIScript : MonoBehaviour
                     GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 mAnimator.SetTrigger("TakeDmg");
                 FightScript.StunTime += PlayerStunTime; //Stunaa pelaajan pieneksi ajaksi
-
+                shake.Effect1();
                 blood.Play();
             }
             else if (playerDef)
@@ -128,7 +143,6 @@ public class AIScript : MonoBehaviour
             CoolDown = AiDefTime;
         }
 
-
         if (CoolDown <= 0)
         {
             CoolDown = _originalCoolDown;
@@ -136,6 +150,12 @@ public class AIScript : MonoBehaviour
 
 
     }
+
+
+
+
+
+
 
     public void normal()
     {
@@ -149,6 +169,7 @@ public class AIScript : MonoBehaviour
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= dmg;
                 blood.Play();
+                shake.Effect1();
                 mAnimator.SetTrigger("TakeDmg");
                 FightScript.StunTime += PlayerStunTime; //Stunaa pelaajan pieneksi ajaksi
             }
@@ -203,29 +224,29 @@ public class AIScript : MonoBehaviour
 
         healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
       
+
         //AI tappelee oman healtin mukaan.  Tarkistan etta vihu on oikealla kohdalla, ettei se puollusta ja cooldown on 0
-        if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
+        if (healt >= 70 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
         {
             agressive();
-
         }
-        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
+        else if(healt < 70 && healt > 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
         {
             normal();
         }
-        else if(healt <= 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0)
+        else if(healt <= 30 && CoolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
         {
             Defencive();
         }
  
-        
+        //jos AIStunattu
         if(AIStunausAika > 0)
         {
             AIStunausAika -= Time.deltaTime;
         }
 
         CoolDown -= Time.deltaTime;
+
         
- 
     }
 }
