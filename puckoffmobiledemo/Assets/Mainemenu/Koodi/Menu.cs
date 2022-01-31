@@ -9,6 +9,9 @@ public class Menu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject pauseButton;
 
+    public GameObject CitySelectPanel;
+    public GameObject MainMenuPanel;
+
     public void Resume()
     {
         pauseMenu.SetActive(false);
@@ -31,7 +34,8 @@ public class Menu : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        CitySelectPanel.SetActive(true);
+        MainMenuPanel.SetActive(false);
     }
     public void MenuButton()
     {

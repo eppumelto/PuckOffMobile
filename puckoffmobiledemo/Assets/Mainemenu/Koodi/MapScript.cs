@@ -32,7 +32,7 @@ public class MapScript : MonoBehaviour
     }
     private void UnlockMap()
     {
-        if (FindObjectOfType<UiManager>().levels > levelNum)
+        if (UiManager.instance.levels >= levelNum)
             isUnlocked = true;
         else
             isUnlocked = false;
