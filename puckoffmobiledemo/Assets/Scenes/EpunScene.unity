@@ -579,7 +579,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255231073}
-  m_LocalRotation: {x: -0, y: -0, z: 0.04704634, w: 0.9988927}
+  m_LocalRotation: {x: -0, y: -0, z: 0.047046445, w: 0.9988927}
   m_LocalPosition: {x: 2.29, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1579,6 +1579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1425899854}
   pauseButton: {fileID: 857288657}
+  CitySelectPanel: {fileID: 0}
+  MainMenuPanel: {fileID: 0}
 --- !u!114 &857288660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,7 +2334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009549777}
   m_LocalRotation: {x: 0, y: 0, z: 0.70138186, w: 0.7127857}
-  m_LocalPosition: {x: -0.1458128, y: -0.63787526, z: 0}
+  m_LocalPosition: {x: -0.1458128, y: -0.6378753, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1522741578}
@@ -3823,7 +3825,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430313690}
-  m_LocalRotation: {x: 0, y: 0, z: -0.98550314, w: 0.1696575}
+  m_LocalRotation: {x: 0, y: 0, z: -0.98550314, w: 0.16965762}
   m_LocalPosition: {x: 0.37968683, y: -0.72342885, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4431,6 +4433,7 @@ MonoBehaviour:
   Damage: 20
   BlockedDamage: 5
   enemyBlood: {fileID: 0}
+  attackCount: 0
   enemyBlock: {fileID: 0}
   PunchStunTime: 0
   theEnemy: {fileID: 0}
@@ -4494,6 +4497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1191953062}
   pauseButton: {fileID: 1191953062}
+  CitySelectPanel: {fileID: 0}
+  MainMenuPanel: {fileID: 0}
 --- !u!114 &1612200872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4545,7 +4550,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640893840}
-  m_LocalRotation: {x: 0, y: 0, z: -0.25413954, w: 0.9671676}
+  m_LocalRotation: {x: 0, y: 0, z: -0.25413975, w: 0.96716756}
   m_LocalPosition: {x: 3.3343506, y: 0.049450636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
