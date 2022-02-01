@@ -12,8 +12,8 @@ public class eventScript : MonoBehaviour
     public GameObject deathPanel;
     private Animator PlayerAnimator;
 
-    //public List<GameObject> listOfEnemies = new List<GameObject>();
-
+    //PlayerWON
+    public GameObject VictoryPanel;
 
     public void PlayerDead()
     {
@@ -25,28 +25,22 @@ public class eventScript : MonoBehaviour
     }
 
 
+    //pelaaja voitti tason
+    public void PlayerWON()
+    {
+        VictoryPanel.SetActive(true);
+       
+    }
  
-
-
-
-
-   // }
-
-    //public void EnemyDead(GameObject enemy)
-    //{
-    //    if (listOfEnemies.Contains(enemy))
-    //    {
-    //        listOfEnemies.Remove(enemy);
-    //    }
-    //}
 
 
     void Start()
     {
         deathPanel.SetActive(false);
-       // Time.timeScale = 1;
+        VictoryPanel.SetActive(false);
+       
         PlayerAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        //listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+       
     }
 
 
