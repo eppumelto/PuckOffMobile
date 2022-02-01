@@ -14,6 +14,7 @@ public class FightScript : MonoBehaviour
     public int Damage;
     public int BlockedDamage;
     public ParticleSystem enemyBlood;
+    public int attackCount;
 
     //defence
     public static bool block;
