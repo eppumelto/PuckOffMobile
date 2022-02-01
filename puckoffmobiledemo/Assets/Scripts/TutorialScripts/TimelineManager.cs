@@ -9,14 +9,6 @@ public class TimelineManager : MonoBehaviour
     public ObjectPooling objectPooler;
     public float timeToStart;
 
-    private void Start()
-    {
-
-        //TakeDmg.isAlive = false;
-
-        _fightscript.enabled = false;
-    }
-
     private void Update()
     {
         
@@ -33,5 +25,4 @@ public class TimelineManager : MonoBehaviour
 
     }
 
-    //saatan joutua kayttamaan jossain kohtaa 
 }

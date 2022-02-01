@@ -29,7 +29,7 @@ public class eventScript : MonoBehaviour
     public void PlayerWON()
     {
         VictoryPanel.SetActive(true);
-       
+       //voi lisata seuraavan avatun tason ja tallettaa sen
     }
  
 
