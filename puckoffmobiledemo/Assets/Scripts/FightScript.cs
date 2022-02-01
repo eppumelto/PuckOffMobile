@@ -14,7 +14,7 @@ public class FightScript : MonoBehaviour
     public int Damage;
     public int BlockedDamage;
     public ParticleSystem enemyBlood;
-    public int attackCount;
+    public float attackCount;
 
     //defence
     public static bool block;
@@ -52,16 +52,32 @@ public class FightScript : MonoBehaviour
 
     public void _attack()
     {
+      
+
         //attackCooldown pitaa olla 0 ei suojaa ja vihu on oikealla paikalla
         if(attackCooldown <= 0 && !block && MoveToRightPos.cantHit && StunTime <= 0)
         {
             mAnimator.Rebind();
-            mAnimator.SetTrigger("Punch");     //aloittaa animaation
+/*            mAnimator.SetTrigger("Punch"); */    //aloittaa animaation
             attackCooldown = CoolDown;        //resettaa cooldownin
-            
 
-             //tarkistaa ettei vastustaja suojaa
-            if(AIScript.AiDefence == false && !block)
+            attackCount++;
+            if (attackCount == 1)
+            {
+                Debug.Log("Moi");
+                mAnimator.SetTrigger("Punch1");
+
+            }
+            attackCount = Mathf.Clamp(attackCount, 0, 3);
+            if (attackCount >= 2)
+            {
+                Debug.Log("Moi2");
+                mAnimator.SetTrigger("Punch2");
+                attackCount = 0;
+            }
+
+            //tarkistaa ettei vastustaja suojaa
+            if (AIScript.AiDefence == false && !block)
             {
                //veri particle, miinustetaan hp vastustajalta, laitetaan animaatio
                 enemyBlood.Play();
