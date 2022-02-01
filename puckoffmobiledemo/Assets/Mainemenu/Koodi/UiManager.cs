@@ -57,4 +57,13 @@ public class UiManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void BackMapSelection()
+    {
+        mapSelectionPanel.gameObject.SetActive(true);
+        for (int i = 0; i < mapSelections.Length; i++)
+        {
+            levelSelectionPanels[i].gameObject.SetActive(false);
+        }
+        SceneManager.LoadScene("MainMenu");
+    }
 }
