@@ -679,6 +679,7 @@ MonoBehaviour:
   Damage: 100
   BlockedDamage: 5
   enemyBlood: {fileID: 0}
+  attackCount: 0
   enemyBlock: {fileID: 0}
   PunchStunTime: 0
   theEnemy: {fileID: 0}

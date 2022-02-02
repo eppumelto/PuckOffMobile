@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SingleLevel : MonoBehaviour
 {
-    private int levelNum = 0;
+    public static SingleLevel instance;
+
+    public int levelNum = 0;
     public int levelIndex;
 
     public void PressStartButton(int _levelNum) //Tämä metodi triggeröityy kun painat mitä tahansa levle nappia 
@@ -13,7 +15,7 @@ public class SingleLevel : MonoBehaviour
 
         // Vain sinun levelien numero on isompi kuin tallentajan, voit tallentaa uuden recordin
         // PlayerPrefs.Getint("Lv" + levelIndex) default value 0
-        if(levelNum > PlayerPrefs.GetInt("Lv" + levelIndex)) //KEY: Lv1; value Level Number
+        if (levelNum > PlayerPrefs.GetInt("Lv" + levelIndex) && eventScript.Won == true) //KEY: Lv1; value Level Number
         {
             PlayerPrefs.SetInt("Lv" + levelIndex, levelNum);
         }

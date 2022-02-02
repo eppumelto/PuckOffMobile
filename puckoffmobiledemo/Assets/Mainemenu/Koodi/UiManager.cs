@@ -26,8 +26,12 @@ public class UiManager : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            DontDestroyOnLoad(gameObject);
         }
+            DontDestroyOnLoad(gameObject);
+    }
+    private void Start()
+    {
+        //PlayerPrefs.DeleteAll();
     }
     private void Update()
     {
