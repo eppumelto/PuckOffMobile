@@ -5127,7 +5127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
   spawnCooldown: 0
-  BossTxt: {fileID: 0}
+  BossTxt: {fileID: 2076054116}
   BossSpawn: {fileID: 1335447310}
 --- !u!4 &1316853289
 Transform:

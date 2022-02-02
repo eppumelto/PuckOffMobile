@@ -29,13 +29,12 @@ public class eventScript : MonoBehaviour
     public void PlayerWON()
     {
         VictoryPanel.SetActive(true);
-<<<<<<< HEAD
         Won = true;
         SingleLevel.instance.levelNum++;
         PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
-=======
+
        //voi lisata seuraavan avatun tason ja tallettaa sen
->>>>>>> 81cd37a1461bc3c1ba2d9b62660277de617f4c08
+
     }
  
 
