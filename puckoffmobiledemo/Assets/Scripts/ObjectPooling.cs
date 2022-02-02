@@ -65,9 +65,5 @@ public class ObjectPooling : MonoBehaviour
         return objectToSpawn;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }
