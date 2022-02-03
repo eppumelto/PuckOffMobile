@@ -41,7 +41,7 @@ public class BossAI : MonoBehaviour
     void Start()
     {
         _oriCooldown = cooldown; //otetaan alkuperainen cooldown
-        gameObject.GetComponent<TakeDmg>().maxHealth = BossHp; //asetetaan bossin hp
+        //gameObject.GetComponent<TakeDmg>().maxHealth = BossHp; //asetetaan bossin hp
 
     }
 
