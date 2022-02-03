@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossAI : MonoBehaviour
 {
+
+
     //attack systeemi
     public int dmg;
     public int blockDmg;

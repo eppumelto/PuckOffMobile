@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class AIScript : MonoBehaviour
 {
 
-
     //AI statseja
     public static HealthbarScript HealtScript;
 

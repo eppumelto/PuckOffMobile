@@ -568,6 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  isLast: 0
   healthBar: {fileID: 1156054640}
   enemyHead: {fileID: 0}
   headSprites:
@@ -1018,8 +1019,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  Damage: 50
-  BlockedDamage: 15
+  Damage: 75
+  BlockedDamage: 40
   enemyBlood: {fileID: 0}
   attackCount: 0
   enemyBlock: {fileID: 0}
@@ -1082,7 +1083,7 @@ MonoBehaviour:
   pools:
   - tag: Enemy
     prefab: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
-    size: 5
+    size: 2
   - tag: Boss
     prefab: {fileID: 5161257758663484561, guid: fa5a3cd7d26ea5a4e8e1b9aa6c526ad8, type: 3}
     size: 1
