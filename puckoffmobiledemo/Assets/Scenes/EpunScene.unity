@@ -819,7 +819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.12, y: 3.38}
+  m_AnchoredPosition: {x: -3.21, y: 7.11}
   m_SizeDelta: {x: 527.1869, y: 70.7218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368375605
@@ -1399,6 +1399,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706359845}
   m_CullTransparentMesh: 1
+--- !u!1 &833013361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8894609446391774073, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+  m_PrefabInstance: {fileID: 8894609445566206697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &833013363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833013361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Solvers: []
+  m_Weight: 1
+  m_SolverEditorData: []
 --- !u!1 &835066670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,6 +4428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPanel: {fileID: 1536471488}
+  VictoryPanel: {fileID: 0}
 --- !u!114 &1612200871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5886,6 +5907,14 @@ PrefabInstance:
       propertyPath: ShapeModule.radiusThickness
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8894609445032411214, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609445032411214, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8894609445222044016, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: m_Name
       value: vihu
@@ -5944,10 +5973,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8894609445368441141, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8894609445368441141, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894609445368441141, guid: 65c870f1ff5ce0440adda52e70d0e591, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
