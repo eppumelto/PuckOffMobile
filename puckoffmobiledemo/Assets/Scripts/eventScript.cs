@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class eventScript : MonoBehaviour
 {
+   
+
+
     //Scriptit
     private TakeDmg _takedmg;
 
@@ -30,8 +33,8 @@ public class eventScript : MonoBehaviour
     {
        // VictoryPanel.SetActive(true);
         Won = true;
-        //SingleLevel.instance.levelNum++;
-        //PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
+        SingleLevel.instance.levelNum++;
+        PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
         Debug.Log("Voitto");
        //voi lisata seuraavan avatun tason ja tallettaa sen
 
@@ -41,6 +44,7 @@ public class eventScript : MonoBehaviour
 
     void Start()
     {
+       // Debug.Log(SingleLevel.instance.levelNum);
         deathPanel.SetActive(false);
         VictoryPanel.SetActive(false);
        

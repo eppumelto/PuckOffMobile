@@ -9,6 +9,19 @@ public class SingleLevel : MonoBehaviour
     public int levelNum = 0;
     public int levelIndex;
 
+    //void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else if (instance != this)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+
     public void PressStartButton(int _levelNum) //Tämä metodi triggeröityy kun painat mitä tahansa levle nappia 
     {
         levelNum = _levelNum;
