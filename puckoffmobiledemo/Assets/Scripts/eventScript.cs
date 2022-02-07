@@ -28,11 +28,11 @@ public class eventScript : MonoBehaviour
     //pelaaja voitti tason
     public void PlayerWON()
     {
-        VictoryPanel.SetActive(true);
+       // VictoryPanel.SetActive(true);
         Won = true;
-        SingleLevel.instance.levelNum++;
-        PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
-
+        //SingleLevel.instance.levelNum++;
+        //PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
+        Debug.Log("Voitto");
        //voi lisata seuraavan avatun tason ja tallettaa sen
 
     }

@@ -10,7 +10,8 @@ public class TakeDmg : MonoBehaviour
 
     public static bool isAlive;
     private bool firstDeath = true;
-
+    public bool isLast; //kertoo onko vastustaja viimeinen
+    
     //pelaajan kuolema
     public static bool PlayerAlive = true;
     private float _playerHealt;
@@ -77,11 +78,21 @@ public class TakeDmg : MonoBehaviour
         {
             firstDeath = false;
 
+            
+
+
+
             //tarkistetaan onko pelaaja hengissa ja jos on annetaan pieni healt regen pelaajalle
             //PlayerAlive
             _playerHealt = GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth;
             if (_playerHealt > 0)
             {
+                //tarkistan onko se vika vihu vai boss kenet tapetaan
+                if (this.gameObject.GetComponent<TakeDmg>().isLast == true)
+                {
+                    _eventScript.PlayerWON();
+                }
+                
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth += _aiScript.healtToPlayer;
                 //otetaan ai koodissa defence pois ja laitetaan vastustajan animaatioksi kuolema
                 _aiScript.AiDefTime = 0;

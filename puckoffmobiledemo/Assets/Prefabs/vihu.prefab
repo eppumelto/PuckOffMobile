@@ -564,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  isLast: 0
   healthBar: {fileID: 8894609445195473775}
   enemyHead: {fileID: 0}
   headSprites:
