@@ -11,6 +11,25 @@ public class Menu : MonoBehaviour
 
     public GameObject CitySelectPanel;
     public GameObject MainMenuPanel;
+    private GameObject instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this.gameObject;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        DontDestroyOnLoad(gameObject);
+
+    }
+
 
     public void Resume()
     {

@@ -1766,7 +1766,7 @@ GameObject:
   - component: {fileID: 187076047}
   - component: {fileID: 187076046}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3525,7 +3525,7 @@ GameObject:
   - component: {fileID: 406299571}
   - component: {fileID: 406299570}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3890,9 +3890,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &415252468
 MonoBehaviour:
@@ -4087,6 +4087,7 @@ MonoBehaviour:
   - {fileID: 1896245688}
   - {fileID: 698285284}
   - {fileID: 297774505}
+  levelPenel: {fileID: 1716848282}
   mapSelections:
   - {fileID: 864295924}
   - {fileID: 1009471691}
@@ -5734,7 +5735,7 @@ GameObject:
   - component: {fileID: 643660595}
   - component: {fileID: 643660594}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7440,7 +7441,7 @@ GameObject:
   - component: {fileID: 833115563}
   - component: {fileID: 833115562}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8226,7 +8227,7 @@ GameObject:
   - component: {fileID: 920787677}
   - component: {fileID: 920787676}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8359,7 +8360,7 @@ GameObject:
   - component: {fileID: 923964207}
   - component: {fileID: 923964206}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11146,7 +11147,7 @@ GameObject:
   - component: {fileID: 1147061328}
   - component: {fileID: 1147061327}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12401,7 +12402,7 @@ GameObject:
   - component: {fileID: 1268149259}
   - component: {fileID: 1268149258}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13047,7 +13048,7 @@ GameObject:
   - component: {fileID: 1408439746}
   - component: {fileID: 1408439745}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13255,7 +13256,7 @@ GameObject:
   - component: {fileID: 1437506270}
   - component: {fileID: 1437506269}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13386,6 +13387,7 @@ GameObject:
   - component: {fileID: 1447350753}
   - component: {fileID: 1447350752}
   - component: {fileID: 1447350751}
+  - component: {fileID: 1447350754}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13458,6 +13460,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1447350754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447350750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1457960467
 GameObject:
   m_ObjectHideFlags: 0
@@ -14744,8 +14779,8 @@ RectTransform:
   m_Father: {fileID: 1030249543}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.62481433}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16512,7 +16547,7 @@ GameObject:
   - component: {fileID: 1784455993}
   - component: {fileID: 1784455992}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Map4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16725,7 +16760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1814919724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18361,9 +18396,8 @@ GameObject:
   - component: {fileID: 2003742136}
   - component: {fileID: 2003742135}
   - component: {fileID: 2003742137}
-  - component: {fileID: 2003742138}
   m_Layer: 0
-  m_Name: ScriptManager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18412,20 +18446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 1ac2df5cbc10d0046a99bed98082fedf, type: 2}
---- !u!114 &2003742138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003742134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a449a054a88d2d4d83b754beb9d3e4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelNum: 0
-  levelIndex: 1
 --- !u!1 &2011016943
 GameObject:
   m_ObjectHideFlags: 0

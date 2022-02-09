@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class eventScript : MonoBehaviour
 {
@@ -28,10 +29,16 @@ public class eventScript : MonoBehaviour
     //pelaaja voitti tason
     public void PlayerWON()
     {
-       // VictoryPanel.SetActive(true);
+       VictoryPanel.SetActive(true);
+
+        if (SceneManager.GetActiveScene().buildIndex == UiManager.instance.levels)
+        {
+            UiManager.instance.levels++;
+            PlayerPrefs.SetInt("Lv",  UiManager.instance.levels);
+
+        }
+
         Won = true;
-        //SingleLevel.instance.levelNum++;
-        //PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
         Debug.Log("Voitto");
        //voi lisata seuraavan avatun tason ja tallettaa sen
 

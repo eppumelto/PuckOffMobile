@@ -11,6 +11,8 @@ public class UiManager : MonoBehaviour
     public GameObject mapSelectionPanel;
     public GameObject[] levelSelectionPanels;
 
+    public GameObject levelPenel;
+
     public MapScript[] mapSelections;
 
 
@@ -28,9 +30,12 @@ public class UiManager : MonoBehaviour
             }
         }
             DontDestroyOnLoad(gameObject);
+            
     }
     private void Start()
     {
+        //PlayerPrefs.SetInt("Lv ", 1);
+        levels = PlayerPrefs.GetInt("Lv");
         //PlayerPrefs.DeleteAll();
     }
     private void Update()
@@ -60,6 +65,7 @@ public class UiManager : MonoBehaviour
     public void SceneTransition(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        levelPenel.SetActive(false);
     }
     public void BackMapSelection()
     {
