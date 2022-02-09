@@ -21,9 +21,11 @@ public class BossAI : MonoBehaviour
     public ParticleSystem blood;
     public ParticleSystem BlockParticle;
 
+    private Animator bAnimator;
+
     public void BossAttack()
     {
-
+        bAnimator.SetTrigger("Attack");
         //Tekee damagen pelaajaan sen perusteella suojasiko pelaaja iskun vai ei
         if(FightScript.block == true)
         {
@@ -44,7 +46,7 @@ public class BossAI : MonoBehaviour
     {
         _oriCooldown = cooldown; //otetaan alkuperainen cooldown
         //gameObject.GetComponent<TakeDmg>().maxHealth = BossHp; //asetetaan bossin hp
-
+        bAnimator = GameObject.FindWithTag("Boss").GetComponent<Animator>();
     }
 
   

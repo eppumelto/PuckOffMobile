@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class eventScript : MonoBehaviour
 {
+   
+
+
     //Scriptit
     private TakeDmg _takedmg;
 
@@ -39,6 +42,11 @@ public class eventScript : MonoBehaviour
         }
 
         Won = true;
+<<<<<<< HEAD
+=======
+        SingleLevel.instance.levelNum++;
+        PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
+>>>>>>> 79062d34ad8ba9cb0060584f0f58096b1ba732fb
         Debug.Log("Voitto");
        //voi lisata seuraavan avatun tason ja tallettaa sen
 
@@ -48,6 +56,7 @@ public class eventScript : MonoBehaviour
 
     void Start()
     {
+       // Debug.Log(SingleLevel.instance.levelNum);
         deathPanel.SetActive(false);
         VictoryPanel.SetActive(false);
        

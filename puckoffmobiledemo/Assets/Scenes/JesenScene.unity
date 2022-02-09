@@ -380,8 +380,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
+<<<<<<< HEAD
   Damage: 100
   BlockedDamage: 100
+=======
+  Damage: 75
+  BlockedDamage: 15
+>>>>>>> 79062d34ad8ba9cb0060584f0f58096b1ba732fb
   enemyBlood: {fileID: 0}
   attackCount: 0
   enemyBlock: {fileID: 0}
