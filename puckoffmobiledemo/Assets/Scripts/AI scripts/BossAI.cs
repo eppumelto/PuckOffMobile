@@ -23,6 +23,16 @@ public class BossAI : MonoBehaviour
 
     private Animator bAnimator;
 
+    void Start()
+    {
+        GameObject thePlayer = GameObject.Find("Pelaaja");
+        _oriCooldown = cooldown; //otetaan alkuperainen cooldown
+        //gameObject.GetComponent<TakeDmg>().maxHealth = BossHp; //asetetaan bossin hp
+        bAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
+        BlockParticle = thePlayer.transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
+        blood = thePlayer.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+    }
+
     public void BossAttack()
     {
         bAnimator.SetTrigger("Attack");
@@ -42,12 +52,7 @@ public class BossAI : MonoBehaviour
     }
 
 
-    void Start()
-    {
-        _oriCooldown = cooldown; //otetaan alkuperainen cooldown
-        //gameObject.GetComponent<TakeDmg>().maxHealth = BossHp; //asetetaan bossin hp
-        bAnimator = GameObject.FindWithTag("Boss").GetComponent<Animator>();
-    }
+
 
   
     void Update()

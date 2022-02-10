@@ -32,7 +32,7 @@ public class FightScript : MonoBehaviour
     void Start()
     {
         //otetaan animaattorit vihusta ja pelaajasta
-        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+        enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
 
         //tallennan alkuperaisen cooldownin
@@ -77,20 +77,20 @@ public class FightScript : MonoBehaviour
             }
 
             //tarkistaa ettei vastustaja suojaa
-            if (AIScript.AiDefence == false && !block)
+            if (SuperAIScript.AiDefence == false && !block)
             {
                //veri particle, miinustetaan hp vastustajalta, laitetaan animaatio
                 enemyBlood.Play();
-                AIScript.AIStunausAika += PunchStunTime;
+                SuperAIScript.AIStunausAika += PunchStunTime;
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
                 
 
-                enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>(); //otetaan animator
+                enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>(); //otetaan animator
                 enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
                 enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
                
             }
-            else if(AIScript.AiDefence == true)
+            else if(SuperAIScript.AiDefence == true)
             {
                 enemyBlock.Play(); //lyonti blokattiin
                                    /*_hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage;*/ //tekee vahan dmg jos lyonti blokataan
