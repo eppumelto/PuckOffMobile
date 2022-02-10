@@ -42,11 +42,10 @@ public class eventScript : MonoBehaviour
         }
 
         Won = true;
-<<<<<<< HEAD
-=======
+
         SingleLevel.instance.levelNum++;
         PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
->>>>>>> 79062d34ad8ba9cb0060584f0f58096b1ba732fb
+
         Debug.Log("Voitto");
        //voi lisata seuraavan avatun tason ja tallettaa sen
 

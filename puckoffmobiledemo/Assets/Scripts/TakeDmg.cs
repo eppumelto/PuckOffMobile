@@ -46,9 +46,9 @@ public class TakeDmg : MonoBehaviour
         enemiesKilled = 0;
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+        enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
 
-        enemyHead = GameObject.Find("enemyHeadChanger").GetComponent<SpriteRenderer>();
+        enemyHead = GameObject.FindWithTag("enemyHeadChanger").GetComponent<SpriteRenderer>();
     }
 
 
@@ -92,15 +92,17 @@ public class TakeDmg : MonoBehaviour
                 {
                     _eventScript.PlayerWON();
                 }
-                
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth += _aiScript.healtToPlayer;
+             
+
+                  //  GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth += _aiScript.healtToPlayer;
+             
                 //otetaan ai koodissa defence pois ja laitetaan vastustajan animaatioksi kuolema
-                _aiScript.AiDefTime = 0;
+                //_aiScript.AiDefTime = 0;
                 enemyAnimator.Rebind();
                 enemyAnimator.SetTrigger("Die");
 
                 //Vaihdetaan vastustajan paa ja kutsutaan Kuolema methdoia
-                enemyHead.sprite = headSprites[0];
+                //enemyHead.sprite = headSprites[0];
                 Kuolema();
             }
             else if (_playerHealt <= 0)
@@ -128,7 +130,7 @@ public class TakeDmg : MonoBehaviour
     void Kuolema()
     {
         MoveToRightPos.cantHit = false;
-        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+        enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
 
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {

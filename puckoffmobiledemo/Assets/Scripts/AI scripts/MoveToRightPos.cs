@@ -14,24 +14,17 @@ public class MoveToRightPos : MonoBehaviour
     public Transform target;
 
     private Animator enemAnimator;
-    private Animator bAnimator;
+    //private Animator bAnimator;
 
     private void Start()
     {
         target = GameObject.Find("Target").transform;
-        enemAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
-        bAnimator = GameObject.FindWithTag("Boss").GetComponent<Animator>();
-        
-        
+        //enemAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+        enemAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
 
-        if (bAnimator == null)
-        {
-            enemAnimator.SetTrigger("EnemWalk");
-        }
-        else
-        {
-            bAnimator.SetTrigger("Walk");
-        }
+
+        enemAnimator.SetTrigger("Walk");
+    
     }
     void Update()
     {

@@ -32,7 +32,7 @@ public class FightScript : MonoBehaviour
     void Start()
     {
         //otetaan animaattorit vihusta ja pelaajasta
-        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+        enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
 
         //tallennan alkuperaisen cooldownin
@@ -81,11 +81,11 @@ public class FightScript : MonoBehaviour
             {
                //veri particle, miinustetaan hp vastustajalta, laitetaan animaatio
                 enemyBlood.Play();
-                AIScript.AIStunausAika += PunchStunTime;
+                SuperAIScript.AIStunausAika += PunchStunTime;
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
                 
 
-                enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>(); //otetaan animator
+                enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>(); //otetaan animator
                 enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
                 enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
                

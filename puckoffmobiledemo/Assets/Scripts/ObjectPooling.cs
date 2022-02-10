@@ -40,12 +40,12 @@ public class ObjectPooling : MonoBehaviour
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
 
-                if(i + 1 == pool.size && obj.GetComponent<AIScript>() && pools.Count == 1)
+                if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == 1)
                 {
                     obj.GetComponent<TakeDmg>().isLast = true;
                     Debug.Log("Vika vihu");
                 }
-                else if(i + 1 == pool.size && obj.GetComponent<BossAI>() && pools.Count == 2)
+                else if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == 2)
                 {
                     obj.GetComponent<TakeDmg>().isLast = true;
                     Debug.Log("BOSS");

@@ -50,7 +50,7 @@ public class AIScript : MonoBehaviour
         blood = thePlayer.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
 
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
+        enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
 
         shake = GameObject.Find("ScriptManager").GetComponent<CameraShake>();
     }
