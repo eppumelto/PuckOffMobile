@@ -77,7 +77,7 @@ public class FightScript : MonoBehaviour
             }
 
             //tarkistaa ettei vastustaja suojaa
-            if (AIScript.AiDefence == false && !block)
+            if (SuperAIScript.AiDefence == false && !block)
             {
                //veri particle, miinustetaan hp vastustajalta, laitetaan animaatio
                 enemyBlood.Play();
@@ -90,7 +90,7 @@ public class FightScript : MonoBehaviour
                 enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
                
             }
-            else if(AIScript.AiDefence == true)
+            else if(SuperAIScript.AiDefence == true)
             {
                 enemyBlock.Play(); //lyonti blokattiin
                                    /*_hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage;*/ //tekee vahan dmg jos lyonti blokataan

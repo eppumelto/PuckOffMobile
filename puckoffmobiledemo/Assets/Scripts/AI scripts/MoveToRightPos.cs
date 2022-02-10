@@ -11,14 +11,14 @@ public class MoveToRightPos : MonoBehaviour
 
     public float speed;
 
-    public Transform target;
+    //public Transform target;
 
     private Animator enemAnimator;
     //private Animator bAnimator;
 
     private void Start()
     {
-        target = GameObject.Find("Target").transform;
+        //target = GameObject.Find("Target").transform;
         //enemAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
         enemAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
 
@@ -30,10 +30,10 @@ public class MoveToRightPos : MonoBehaviour
     {
 
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
 
 
-        if(transform.position == target.position)
+        if(transform.position == targetPos)
         {
             cantHit = true;
             Destroy(gameObject.GetComponent<MoveToRightPos>());
