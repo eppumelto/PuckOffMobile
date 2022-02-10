@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         else if ( TakeDmg.enemiesKilled == 1 && TakeDmg.isAlive == false && TakeDmg.PlayerAlive)
         {
             BossTxt.SetActive(true);
-            objectPooler.SpawnFromPool("Boss",new Vector3(transform.position.x,transform.position.y, transform.position.z), Quaternion.identity);
+            objectPooler.SpawnFromPool("Boss",new Vector3(transform.position.x,transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
             BossSpawn.Play();
             
             

@@ -1605,7 +1605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153756711686048494, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.44
       objectReference: {fileID: 0}
     - target: {fileID: 9153756711686048494, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2551,7 +2551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   Damage: 100
-  BlockedDamage: 100
+  BlockedDamage: 20
   enemyBlood: {fileID: 0}
   attackCount: 0
   enemyBlock: {fileID: 0}
@@ -3507,7 +3507,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ba0ad7e8745e17e4da52464e38d563c1, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -5774,6 +5774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vihu
       objectReference: {fileID: 0}
+    - target: {fileID: 9061953582646354106, guid: c956359b91572664686886506111f0d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9061953582646354108, guid: c956359b91572664686886506111f0d1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5816,6 +5820,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061953582646354108, guid: c956359b91572664686886506111f0d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061953582646354109, guid: c956359b91572664686886506111f0d1, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9061953582801656063, guid: c956359b91572664686886506111f0d1, type: 3}
