@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -638,7 +638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.27053016, y: 0.17369479}
   m_AnchorMax: {x: 0.3362651, y: 0.202}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0.00012207031}
+  m_AnchoredPosition: {x: 30.999954, y: 44.500122}
   m_SizeDelta: {x: -2.0939941, y: -1.2089844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124094459
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -753,7 +753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.34826508, y: 0.03869479}
   m_AnchorMax: {x: 0.45073494, y: 0.08141935}
-  m_AnchoredPosition: {x: 0.17001343, y: 1.6550293}
+  m_AnchoredPosition: {x: 31.170197, y: 46.15503}
   m_SizeDelta: {x: -0.42999268, y: 2.1010742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135578853
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -877,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -47, y: -1439.2877}
+  m_AnchoredPosition: {x: -47, y: -1439.2883}
   m_SizeDelta: {x: 1360.6995, y: 2878.5754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136281819
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -2372,7 +2372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -3061,7 +3061,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -3462,7 +3462,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -3595,7 +3595,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -3957,7 +3957,6 @@ GameObject:
   - component: {fileID: 416301597}
   - component: {fileID: 416301596}
   - component: {fileID: 416301595}
-  - component: {fileID: 416301599}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -4060,47 +4059,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &416301599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416301594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 315a68a08a0a5b14dbddfc816a9c8219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels: 1
-  mapSelectionPanel: {fileID: 1814919723}
-  levelSelectionPanels:
-  - {fileID: 1716848282}
-  - {fileID: 748324180}
-  - {fileID: 1592960195}
-  - {fileID: 1866759490}
-  - {fileID: 1394850309}
-  - {fileID: 917858991}
-  - {fileID: 993755854}
-  - {fileID: 1477470971}
-  - {fileID: 417464552}
-  - {fileID: 1896245688}
-  - {fileID: 698285284}
-  - {fileID: 297774505}
-  levelPenel: {fileID: 1716848282}
-  mapSelections:
-  - {fileID: 864295924}
-  - {fileID: 1009471691}
-  - {fileID: 1933192872}
-  - {fileID: 1763702563}
-  - {fileID: 1773781979}
-  - {fileID: 1918181131}
-  - {fileID: 1826173412}
-  - {fileID: 1890011449}
-  - {fileID: 666028826}
-  - {fileID: 1686079380}
-  - {fileID: 124094459}
-  - {fileID: 135578853}
 --- !u!1 &417464552
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,7 +5763,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -5967,7 +5925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06873492, y: 0.18400002}
   m_AnchorMax: {x: 0.133, y: 0.21169479}
-  m_AnchoredPosition: {x: 0.5, y: -0.5}
+  m_AnchoredPosition: {x: 31.5, y: 44}
   m_SizeDelta: {x: 0.90600586, y: -0.20898438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &666028826
@@ -6033,7 +5991,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -7511,7 +7469,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -7889,7 +7847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5627952, y: 0.057694793}
   m_AnchorMax: {x: 0.62685555, y: 0.085588075}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 31, y: 45.500244}
   m_SizeDelta: {x: -0.09399414, y: -1.2089844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &864295924
@@ -7955,7 +7913,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -8086,7 +8044,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -8297,7 +8255,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -8430,7 +8388,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -9525,7 +9483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.51173496, y: 0.1143474}
   m_AnchorMax: {x: 0.5764699, y: 0.142}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 31, y: 44.5}
   m_SizeDelta: {x: -0.0940094, y: -1.2089767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1009471691
@@ -9591,7 +9549,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -10199,7 +10157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -10482,7 +10440,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -10749,7 +10707,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -11217,7 +11175,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -11484,7 +11442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -11617,7 +11575,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -12472,7 +12430,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -12680,7 +12638,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -13118,7 +13076,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -13326,7 +13284,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -14569,8 +14527,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635741412}
   m_HandleRect: {fileID: 1635741411}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.37518567
+  m_Value: 1.0000002
+  m_Size: 0.37518564
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14779,7 +14737,7 @@ RectTransform:
   m_Father: {fileID: 1030249543}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.62481433}
+  m_AnchorMin: {x: 0, y: 0.6248144}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -15028,7 +14986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13979527, y: 0.026305212}
   m_AnchorMax: {x: 0.20400001, y: 0.054}
-  m_AnchoredPosition: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 31.5, y: 45}
   m_SizeDelta: {x: -1.0939941, y: 1.7910156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686079380
@@ -15094,7 +15052,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -16132,7 +16090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6014699, y: 0.36969483}
   m_AnchorMax: {x: 0.66573495, y: 0.39722085}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 31, y: 45}
   m_SizeDelta: {x: -0.09399414, y: -0.20898438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763702563
@@ -16198,7 +16156,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -16381,7 +16339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.64373493, y: 0.572}
   m_AnchorMax: {x: 0.708, y: 0.5993474}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 31, y: 44}
   m_SizeDelta: {x: -0.09399414, y: -0.20899963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773781979
@@ -16447,7 +16405,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -16617,7 +16575,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SceneTransition
         m_Mode: 5
@@ -16950,7 +16908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.42600003, y: 0.48369482}
   m_AnchorMax: {x: 0.49100003, y: 0.51000005}
-  m_AnchoredPosition: {x: 0.69999695, y: -0.29999924}
+  m_AnchoredPosition: {x: 31.699951, y: 44.200012}
   m_SizeDelta: {x: -0.09400177, y: -0.20899963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826173412
@@ -17016,7 +16974,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -17385,7 +17343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.16373491, y: 0.32569483}
   m_AnchorMax: {x: 0.22973493, y: 0.35269484}
-  m_AnchoredPosition: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 31.5, y: 45.5}
   m_SizeDelta: {x: -1.0940018, y: -1.2089996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1890011449
@@ -17451,7 +17409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -17790,7 +17748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46473494, y: 0.64869475}
   m_AnchorMax: {x: 0.52953017, y: 0.67600006}
-  m_AnchoredPosition: {x: -0.00009918213, y: 0.5}
+  m_AnchoredPosition: {x: 31, y: 45}
   m_SizeDelta: {x: -0.09399414, y: -0.20898438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1918181131
@@ -17856,7 +17814,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -17905,7 +17863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.71900004, y: 0.18669479}
   m_AnchorMax: {x: 0.782735, y: 0.21400002}
-  m_AnchoredPosition: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 31.5, y: 45.5}
   m_SizeDelta: {x: 0.90599823, y: 0.79100037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933192872
@@ -17971,7 +17929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: PressMapButton
         m_Mode: 3
@@ -18396,6 +18354,7 @@ GameObject:
   - component: {fileID: 2003742136}
   - component: {fileID: 2003742135}
   - component: {fileID: 2003742137}
+  - component: {fileID: 2003742138}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -18446,6 +18405,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 1ac2df5cbc10d0046a99bed98082fedf, type: 2}
+--- !u!114 &2003742138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003742134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315a68a08a0a5b14dbddfc816a9c8219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels: 1
+  mapSelectionPanel: {fileID: 1814919723}
+  levelSelectionPanels:
+  - {fileID: 1716848282}
+  - {fileID: 748324180}
+  - {fileID: 1592960195}
+  - {fileID: 1866759490}
+  - {fileID: 1394850309}
+  - {fileID: 917858991}
+  - {fileID: 993755854}
+  - {fileID: 1477470971}
+  - {fileID: 417464552}
+  - {fileID: 1896245688}
+  - {fileID: 698285284}
+  - {fileID: 297774505}
+  mapSelections:
+  - {fileID: 864295924}
+  - {fileID: 1009471691}
+  - {fileID: 1933192872}
+  - {fileID: 1763702563}
+  - {fileID: 1773781979}
+  - {fileID: 1918181131}
+  - {fileID: 1826173412}
+  - {fileID: 1890011449}
+  - {fileID: 666028826}
+  - {fileID: 1686079380}
+  - {fileID: 124094459}
+  - {fileID: 135578853}
 --- !u!1 &2011016943
 GameObject:
   m_ObjectHideFlags: 0
@@ -18529,7 +18528,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
@@ -19005,7 +19004,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416301599}
+      - m_Target: {fileID: 2003742138}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1

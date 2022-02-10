@@ -11,27 +11,25 @@ public class UiManager : MonoBehaviour
     public GameObject mapSelectionPanel;
     public GameObject[] levelSelectionPanels;
 
-    public GameObject levelPenel;
-
     public MapScript[] mapSelections;
 
 
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            if(instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
-            DontDestroyOnLoad(gameObject);
+    //private void Awake()
+    //{
+    //    if(instance == null)
+    //    {
+    //        instance = this;
+    //    }
+    //    else
+    //    {
+    //        if(instance != this)
+    //        {
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //    DontDestroyOnLoad(gameObject);
             
-    }
+    //}
     private void Start()
     {
         //PlayerPrefs.SetInt("Lv ", 1);
@@ -65,7 +63,7 @@ public class UiManager : MonoBehaviour
     public void SceneTransition(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        levelPenel.SetActive(false);
+
     }
     public void BackMapSelection()
     {
