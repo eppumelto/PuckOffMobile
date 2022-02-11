@@ -32,7 +32,7 @@ public class UiManager : MonoBehaviour
     {
         //PlayerPrefs.SetInt("Lv ", 1);
         levels = PlayerPrefs.GetInt("Lv");
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
     private void Update()
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +22,7 @@ public class SingleLevel : MonoBehaviour
     //    }
     //}
 
-    public void PressStartButton(int _levelNum) //Tämä metodi triggeröityy kun painat mitä tahansa levle nappia 
+    public void PressStartButton(int _levelNum) //Tï¿½mï¿½ metodi triggerï¿½ityy kun painat mitï¿½ tahansa levle nappia 
     {
         levelNum = _levelNum;
 

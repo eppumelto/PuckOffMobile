@@ -7866,7 +7866,7 @@ MonoBehaviour:
   locked: {fileID: 858307699}
   unlocked: {fileID: 1220118119}
   mapIndex: 0
-  levelNum: 1
+  levelNum: 0
   startLevel: 1
   endLevel: 1
 --- !u!114 &864295925
@@ -18417,7 +18417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315a68a08a0a5b14dbddfc816a9c8219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 1
+  levels: 0
   mapSelectionPanel: {fileID: 1814919723}
   levelSelectionPanels:
   - {fileID: 1716848282}
