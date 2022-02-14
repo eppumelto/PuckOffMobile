@@ -4486,6 +4486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOSS
       objectReference: {fileID: 0}
+    - target: {fileID: 5161257758663484561, guid: fa5a3cd7d26ea5a4e8e1b9aa6c526ad8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5161257758663484588, guid: fa5a3cd7d26ea5a4e8e1b9aa6c526ad8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4532,11 +4536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5161257758711382274, guid: fa5a3cd7d26ea5a4e8e1b9aa6c526ad8, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5161257758711382274, guid: fa5a3cd7d26ea5a4e8e1b9aa6c526ad8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5161257759115111587, guid: fa5a3cd7d26ea5a4e8e1b9aa6c526ad8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4602,6 +4606,7 @@ MonoBehaviour:
   enemyBlock: {fileID: 0}
   PunchStunTime: 0
   theEnemy: {fileID: 0}
+  punch1: {fileID: 0}
 --- !u!4 &1612200868
 Transform:
   m_ObjectHideFlags: 0

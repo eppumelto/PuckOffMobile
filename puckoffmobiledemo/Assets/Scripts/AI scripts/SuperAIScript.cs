@@ -24,6 +24,7 @@ public class SuperAIScript : MonoBehaviour
     //Defence system
     private float enemyDefTime;
     public static bool AiDefence;
+    public float Defendingfloat;
 
 
     //Vihujen juttuja
@@ -120,6 +121,7 @@ public class SuperAIScript : MonoBehaviour
         if (rnd >= 7)
         {
             enemyAnimator.SetTrigger("EnemHit");
+
 
             if (FightScript.block == false)
             {
@@ -234,16 +236,18 @@ public class SuperAIScript : MonoBehaviour
 
         if(normiVihu && !BOSS)
         {
-            if (enemyDefTime > 0)
+            if (enemyDefTime > 0 && Defendingfloat <= 0.11)
             {
-                enemyAnimator.SetTrigger("EnemyBlock");
+                //enemyAnimator.SetTrigger("EnemyBlock");
+                enemyAnimator.SetFloat("Defending", Defendingfloat);
                 AiDefence = true;
                 enemyDefTime -= Time.deltaTime;
             }
-            else
+            else if (Defendingfloat > 0)
             {
                 AiDefence = false;
-                enemyAnimator.SetTrigger("EnemUnBlock");
+                //enemyAnimator.SetTrigger("EnemUnBlock");
+                enemyAnimator.SetFloat("Defending", Defendingfloat);
             }
 
 
