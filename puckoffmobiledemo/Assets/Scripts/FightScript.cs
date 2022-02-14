@@ -39,13 +39,13 @@ public class FightScript : MonoBehaviour
         //tallennan alkuperaisen cooldownin
         CoolDown = attackCooldown;
         attackCooldown = 0;
-        theEnemy = GameObject.FindWithTag("Enemy");
+        //theEnemy = GameObject.FindWithTag("Enemy");
 
         //otetaan particlet vastustajalta
-        enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
-        enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
+        //enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+        //enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
 
-        //TakeDmg takeDmg = thePlayer.GetComponent<TakeDmg>();
+
 
     }
 
@@ -88,7 +88,7 @@ public class FightScript : MonoBehaviour
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
                 
 
-                enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>(); //otetaan animator
+                
                 enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
                 enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
                
@@ -129,13 +129,11 @@ public class FightScript : MonoBehaviour
     }
 
 
-  
-
 
     void Update()
     {
-        theEnemy = GameObject.FindWithTag("Enemy");
 
+        
 
         //Tarkistaa suojaako pelaaja ja jos pelaaja lyo niin ei voi suojata heti samaan aikaan
         if (block && Defendingfloat <= 0.11)
@@ -150,16 +148,17 @@ public class FightScript : MonoBehaviour
             Defendingfloat -= Time.deltaTime;
             mAnimator.SetFloat("Defending", Defendingfloat);
         }
+       // theEnemy = GameObject.FindWithTag("Enemy");
 
-       
-        if (TakeDmg.isAlive == false)
-        {
-            theEnemy = null;
-            enemyBlock = null;
-            enemyBlood = null;
-        }
+        //if (TakeDmg.isAlive == false)
+        //{
+        //    theEnemy = null;
+        //    enemyBlock = null;
+        //    enemyBlood = null;
+        //    Debug.Log("Etitttiiii");
+        //}
 
-        else if (TakeDmg.isAlive == true)
+        if (enemyBlock == null || enemyBlood == null)
         {
             enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
             enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();

@@ -43,6 +43,8 @@ public class AIScript : MonoBehaviour
 
     private void Start()
     {
+        FightScript.theEnemy = this.gameObject;
+
         _originalCoolDown = CoolDown;
         GameObject thePlayer = GameObject.Find("Pelaaja");
 

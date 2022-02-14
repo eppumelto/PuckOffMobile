@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+   
         [System.Serializable]
     public class Pool
     {
@@ -24,6 +23,7 @@ public class ObjectPooling : MonoBehaviour
 
     #endregion
     public List<Pool> pools;
+    
 
     public Dictionary<string, Queue<GameObject>> PoolDictionary;
     void Start()
@@ -40,7 +40,9 @@ public class ObjectPooling : MonoBehaviour
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
 
-                if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == pools.)
+
+                //katotaan viiminen vihu
+                if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == 1)
                 {
                     obj.GetComponent<TakeDmg>().isLast = true;
                     Debug.Log("Vika vihu");
