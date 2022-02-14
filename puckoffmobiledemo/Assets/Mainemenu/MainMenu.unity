@@ -657,7 +657,7 @@ MonoBehaviour:
   locked: {fileID: 274339871}
   unlocked: {fileID: 841176490}
   mapIndex: 10
-  levelNum: 11
+  levelNum: 10
   startLevel: 11
   endLevel: 11
 --- !u!114 &124094460
@@ -772,7 +772,7 @@ MonoBehaviour:
   locked: {fileID: 1799835873}
   unlocked: {fileID: 856524750}
   mapIndex: 11
-  levelNum: 12
+  levelNum: 11
   startLevel: 12
   endLevel: 12
 --- !u!114 &135578854
@@ -5945,7 +5945,7 @@ MonoBehaviour:
   locked: {fileID: 690832237}
   unlocked: {fileID: 1592523506}
   mapIndex: 8
-  levelNum: 9
+  levelNum: 8
   startLevel: 9
   endLevel: 9
 --- !u!114 &666028827
@@ -9503,7 +9503,7 @@ MonoBehaviour:
   locked: {fileID: 412324061}
   unlocked: {fileID: 225410314}
   mapIndex: 1
-  levelNum: 2
+  levelNum: 1
   startLevel: 2
   endLevel: 2
 --- !u!114 &1009471692
@@ -15085,7 +15085,7 @@ MonoBehaviour:
   locked: {fileID: 1433293976}
   unlocked: {fileID: 1816994503}
   mapIndex: 9
-  levelNum: 10
+  levelNum: 9
   startLevel: 10
   endLevel: 10
 --- !u!114 &1686079381
@@ -16189,7 +16189,7 @@ MonoBehaviour:
   locked: {fileID: 2042572282}
   unlocked: {fileID: 758904253}
   mapIndex: 3
-  levelNum: 4
+  levelNum: 3
   startLevel: 4
   endLevel: 4
 --- !u!114 &1763702564
@@ -16438,7 +16438,7 @@ MonoBehaviour:
   locked: {fileID: 1036719128}
   unlocked: {fileID: 1779883367}
   mapIndex: 4
-  levelNum: 5
+  levelNum: 4
   startLevel: 5
   endLevel: 5
 --- !u!114 &1773781980
@@ -17007,7 +17007,7 @@ MonoBehaviour:
   locked: {fileID: 91254009}
   unlocked: {fileID: 2120832049}
   mapIndex: 6
-  levelNum: 7
+  levelNum: 6
   startLevel: 7
   endLevel: 7
 --- !u!114 &1826173413
@@ -17442,7 +17442,7 @@ MonoBehaviour:
   locked: {fileID: 1289812832}
   unlocked: {fileID: 656721376}
   mapIndex: 7
-  levelNum: 8
+  levelNum: 7
   startLevel: 8
   endLevel: 8
 --- !u!114 &1890011450
@@ -17847,7 +17847,7 @@ MonoBehaviour:
   locked: {fileID: 1741126258}
   unlocked: {fileID: 238317486}
   mapIndex: 5
-  levelNum: 6
+  levelNum: 5
   startLevel: 6
   endLevel: 6
 --- !u!114 &1918181132
@@ -17962,7 +17962,7 @@ MonoBehaviour:
   locked: {fileID: 1752010898}
   unlocked: {fileID: 1050237477}
   mapIndex: 2
-  levelNum: 3
+  levelNum: 2
   startLevel: 3
   endLevel: 3
 --- !u!114 &1933192873

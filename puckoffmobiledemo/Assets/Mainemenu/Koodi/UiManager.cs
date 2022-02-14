@@ -16,17 +16,20 @@ public class UiManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this);
         }
         else
         {
             if (instance != this)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
+        
     }
     private void Start()
     {
@@ -34,10 +37,7 @@ public class UiManager : MonoBehaviour
         levels = PlayerPrefs.GetInt("Lv");
         //PlayerPrefs.DeleteAll();
     }
-    private void Update()
-    {
 
-    }
     public void PressMapButton(int _mapIndex)
     {
        if(mapSelections[_mapIndex].isUnlocked == true)
