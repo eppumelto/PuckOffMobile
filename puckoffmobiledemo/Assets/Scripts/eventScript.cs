@@ -34,17 +34,17 @@ public class eventScript : MonoBehaviour
     {
        VictoryPanel.SetActive(true);
 
-        if (SceneManager.GetActiveScene().buildIndex == UiManager.instance.levels)
+        if (SceneManager.GetActiveScene().buildIndex == UiManager.instance.levels + 1)
         {
             UiManager.instance.levels++;
             PlayerPrefs.SetInt("Lv",  UiManager.instance.levels);
-
+            Debug.Log("Level up");
         }
 
         Won = true;
-
-        SingleLevel.instance.levelNum++;
-        PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
+        //SingleLevel.instance.levelNum++;
+        //PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
+        
 
         Debug.Log("Voitto");
        //voi lisata seuraavan avatun tason ja tallettaa sen
@@ -53,15 +53,7 @@ public class eventScript : MonoBehaviour
  
 
 
-    void Start()
-    {
-       // Debug.Log(SingleLevel.instance.levelNum);
-        deathPanel.SetActive(false);
-        VictoryPanel.SetActive(false);
-       
-        PlayerAnimator = GameObject.Find("Player").GetComponent<Animator>();
-       
-    }
+ 
 
 
   

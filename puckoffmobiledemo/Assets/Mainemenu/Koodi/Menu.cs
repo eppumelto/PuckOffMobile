@@ -13,22 +13,22 @@ public class Menu : MonoBehaviour
     public GameObject MainMenuPanel;
     private GameObject instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this.gameObject;
-        }
-        else
-        {
-            if (instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
-        DontDestroyOnLoad(gameObject);
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this.gameObject;
+    //    }
+    //    else
+    //    {
+    //        if (instance != this)
+    //        {
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //    DontDestroyOnLoad(gameObject);
 
-    }
+    //}
 
 
     public void Resume()
@@ -56,9 +56,9 @@ public class Menu : MonoBehaviour
         CitySelectPanel.SetActive(true);
         MainMenuPanel.SetActive(false);
     }
-    public void MenuButton()
+    public void MenuButton(string mainMenu)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(mainMenu);
         Time.timeScale = 1f;
     }
     public void Quit()
