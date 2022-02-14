@@ -100,6 +100,7 @@ public class SuperAIScript : MonoBehaviour
 
            enemyDefTime = 1.5f; // aloittaa suojauksen
             coolDown = enemyDefTime;
+            AiDefence = true;
         }
 
 
@@ -143,6 +144,7 @@ public class SuperAIScript : MonoBehaviour
 
             enemyDefTime = 3.5f; // aloittaa suojauksen
             coolDown = enemyDefTime;
+            AiDefence = true;
         }
 
         if (coolDown <= 0)
@@ -187,6 +189,7 @@ public class SuperAIScript : MonoBehaviour
 
             enemyDefTime = 2f; // aloittaa suojauksen
             coolDown = enemyDefTime;
+            AiDefence = true;
         }
 
 
