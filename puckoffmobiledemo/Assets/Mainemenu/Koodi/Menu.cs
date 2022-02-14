@@ -56,6 +56,11 @@ public class Menu : MonoBehaviour
         CitySelectPanel.SetActive(true);
         MainMenuPanel.SetActive(false);
     }
+    public void backToMenu()
+    {
+        CitySelectPanel.SetActive(false);
+        MainMenuPanel.SetActive(true);
+    }
     public void MenuButton(string mainMenu)
     {
         SceneManager.LoadScene(mainMenu);
