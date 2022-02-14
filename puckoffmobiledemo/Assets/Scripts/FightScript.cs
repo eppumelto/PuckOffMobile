@@ -28,6 +28,7 @@ public class FightScript : MonoBehaviour
     private float Defendingfloat;
     private Animator mAnimator;
     private Animator enemyAnimator;
+    public AudioSource punch1;
 
     void Start()
     {
@@ -66,6 +67,7 @@ public class FightScript : MonoBehaviour
             {
                 Debug.Log("Moi");
                 mAnimator.SetTrigger("Punch1");
+                punch1.Play();
 
             }
             attackCount = Mathf.Clamp(attackCount, 0, 3);
@@ -74,6 +76,7 @@ public class FightScript : MonoBehaviour
                 Debug.Log("Moi2");
                 mAnimator.SetTrigger("Punch2");
                 attackCount = 0;
+                punch1.Play();
             }
 
             //tarkistaa ettei vastustaja suojaa
