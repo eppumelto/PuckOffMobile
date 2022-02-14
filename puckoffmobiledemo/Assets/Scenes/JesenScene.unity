@@ -2516,7 +2516,7 @@ GameObject:
   - component: {fileID: 952494730}
   m_Layer: 0
   m_Name: ScriptManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2614,7 +2614,7 @@ MonoBehaviour:
   pools:
   - tag: Enemy
     prefab: {fileID: 9061953582646354106, guid: c956359b91572664686886506111f0d1, type: 3}
-    size: 1
+    size: 2
   - tag: Boss
     prefab: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
     size: 1

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SuperAIScript : MonoBehaviour
 {
+    //koodit joiden kanssa toimiii kivasti
+    private FightScript _fightScript;
+
 
     //voit kertoa mika vihu on
     public bool normiVihu;
@@ -37,6 +40,13 @@ public class SuperAIScript : MonoBehaviour
 
     void Start()
     {
+        _fightScript = GameObject.FindWithTag("Manager").GetComponent<FightScript>();
+
+        _fightScript.theEnemy = this.gameObject; //kerrotaan nykyhetken vihu particleja varten
+        _fightScript.enemyBlood = gameObject.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
+       _fightScript.enemyBlock = gameObject.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+
+
         //otetaan oikea cooldown
         _originalCoolDown = coolDown;
         coolDown = Mathf.Clamp(coolDown, 0, _originalCoolDown);

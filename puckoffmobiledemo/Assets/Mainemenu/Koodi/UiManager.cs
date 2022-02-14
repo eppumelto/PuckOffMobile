@@ -37,10 +37,7 @@ public class UiManager : MonoBehaviour
         levels = PlayerPrefs.GetInt("Lv");
         //PlayerPrefs.DeleteAll();
     }
-    private void Update()
-    {
 
-    }
     public void PressMapButton(int _mapIndex)
     {
        if(mapSelections[_mapIndex].isUnlocked == true)
