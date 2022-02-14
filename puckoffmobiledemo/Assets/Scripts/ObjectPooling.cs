@@ -40,7 +40,7 @@ public class ObjectPooling : MonoBehaviour
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
 
-                if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == 1)
+                if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == pools.)
                 {
                     obj.GetComponent<TakeDmg>().isLast = true;
                     Debug.Log("Vika vihu");
