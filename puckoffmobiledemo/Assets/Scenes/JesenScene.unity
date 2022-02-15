@@ -3180,7 +3180,7 @@ MonoBehaviour:
   enemyBlock: {fileID: 0}
   PunchStunTime: 0
   theEnemy: {fileID: 0}
-  punch1: {fileID: 0}
+  punch1: {fileID: 490883120}
 --- !u!114 &952494730
 MonoBehaviour:
   m_ObjectHideFlags: 0
