@@ -628,7 +628,7 @@ RectTransform:
   m_GameObject: {fileID: 124094457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 2087580609}
   - {fileID: 841176491}
@@ -743,7 +743,7 @@ RectTransform:
   m_GameObject: {fileID: 135578851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 587133699}
   - {fileID: 856524751}
@@ -751,10 +751,10 @@ RectTransform:
   m_Father: {fileID: 136281818}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.372, y: 0.05169479}
-  m_AnchorMax: {x: 0.47412068, y: 0.09769479}
-  m_AnchoredPosition: {x: -0.82980347, y: 3.6550293}
-  m_SizeDelta: {x: -0.42999268, y: -6.898926}
+  m_AnchorMin: {x: 0.38073492, y: 0.05669479}
+  m_AnchorMax: {x: 0.46520478, y: 0.09338958}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.5}
+  m_SizeDelta: {x: -15.462002, y: -15.2654}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135578853
 MonoBehaviour:
@@ -877,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -47, y: -1439.2883}
+  m_AnchoredPosition: {x: -47, y: -1439.2877}
   m_SizeDelta: {x: 1360.6995, y: 2878.5754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136281819
@@ -2127,7 +2127,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2003742137}
-        m_TargetAssemblyTypeName: AudioScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -9474,7 +9474,7 @@ RectTransform:
   m_GameObject: {fileID: 1009471689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1}
   m_Children:
   - {fileID: 1949076700}
   - {fileID: 225410315}
@@ -14528,8 +14528,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635741412}
   m_HandleRect: {fileID: 1635741411}
   m_Direction: 2
-  m_Value: 1.0000002
-  m_Size: 0.37518564
+  m_Value: 1
+  m_Size: 0.37518567
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14738,7 +14738,7 @@ RectTransform:
   m_Father: {fileID: 1030249543}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.6248144}
+  m_AnchorMin: {x: 0, y: 0.62481433}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -16978,7 +16978,7 @@ RectTransform:
   m_GameObject: {fileID: 1826173410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1}
   m_Children:
   - {fileID: 411870092}
   - {fileID: 2120832050}
@@ -18484,7 +18484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc8eaaae1db2824aaf9d37c37863a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 1ac2df5cbc10d0046a99bed98082fedf, type: 2}
+  audioMixer: {fileID: 24100000, guid: c82599231b3a3a24ba7c65c462989e64, type: 2}
 --- !u!114 &2003742138
 MonoBehaviour:
   m_ObjectHideFlags: 0

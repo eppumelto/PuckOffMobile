@@ -19,7 +19,7 @@ public class AIScript : MonoBehaviour
     
 
      //Defence ja fight juttuja
-    private FightScript FightScript;
+   
     public float PlayerStunTime; //kertoo kauan pelaaja stunaantuu kun osuu iskun
     public static float AIStunausAika; 
 
@@ -43,7 +43,7 @@ public class AIScript : MonoBehaviour
 
     private void Start()
     {
-        FightScript.theEnemy = this.gameObject;
+        
 
         _originalCoolDown = CoolDown;
         GameObject thePlayer = GameObject.Find("Pelaaja");
