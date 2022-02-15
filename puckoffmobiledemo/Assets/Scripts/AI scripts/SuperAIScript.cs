@@ -24,8 +24,6 @@ public class SuperAIScript : MonoBehaviour
     //Defence system
     private float enemyDefTime;
     public static bool AiDefence;
-    public float Defendingfloat;
-
 
     //Vihujen juttuja
     private Animator enemyAnimator;
@@ -75,7 +73,7 @@ public class SuperAIScript : MonoBehaviour
 
         if (rnd >= 3)
         {
-            enemyAnimator.SetTrigger("EnemHit");
+            enemyAnimator.SetTrigger("Attack");
             //lyo
             if (FightScript.block == false)
             {
@@ -85,12 +83,13 @@ public class SuperAIScript : MonoBehaviour
                 pAnimator.SetTrigger("TakeDmg");
                 FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
                 shake.Effect1();
+                Debug.Log("Lyönti");
 
             }
             else if (FightScript.block == true)
             {
                 torjunta.Play(); //Lyonti suojattiin
-
+                Debug.Log("Lyönti");
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
             }
 
@@ -101,7 +100,7 @@ public class SuperAIScript : MonoBehaviour
 
            enemyDefTime = 1.5f; // aloittaa suojauksen
             coolDown = enemyDefTime;
-            AiDefence = true;
+            Debug.Log("Block");
         }
 
 
@@ -120,7 +119,7 @@ public class SuperAIScript : MonoBehaviour
 
         if (rnd >= 7)
         {
-            enemyAnimator.SetTrigger("EnemHit");
+            enemyAnimator.SetTrigger("Attack");
 
 
             if (FightScript.block == false)
@@ -146,7 +145,7 @@ public class SuperAIScript : MonoBehaviour
 
             enemyDefTime = 3.5f; // aloittaa suojauksen
             coolDown = enemyDefTime;
-            AiDefence = true;
+           
         }
 
         if (coolDown <= 0)
@@ -170,7 +169,7 @@ public class SuperAIScript : MonoBehaviour
 
         if (rnd >= 5)
         {
-            enemyAnimator.SetTrigger("EnemHit");
+            enemyAnimator.SetTrigger("Attack");
             if (FightScript.block == false)
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;
@@ -191,7 +190,7 @@ public class SuperAIScript : MonoBehaviour
 
             enemyDefTime = 2f; // aloittaa suojauksen
             coolDown = enemyDefTime;
-            AiDefence = true;
+
         }
 
 
@@ -233,21 +232,20 @@ public class SuperAIScript : MonoBehaviour
 
     void Update()
     {
-
-        if(normiVihu && !BOSS)
+        healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
+        if (normiVihu && !BOSS)
         {
-            if (enemyDefTime > 0 && Defendingfloat <= 0.11)
+            if (enemyDefTime > 0)
             {
-                //enemyAnimator.SetTrigger("EnemyBlock");
-                enemyAnimator.SetFloat("Defending", Defendingfloat);
+                //Debug.Log("Huhuu");
+                enemyAnimator.SetTrigger("EnemyBlock");
                 AiDefence = true;
                 enemyDefTime -= Time.deltaTime;
             }
-            else if (Defendingfloat > 0)
+            else 
             {
                 AiDefence = false;
-                //enemyAnimator.SetTrigger("EnemUnBlock");
-                enemyAnimator.SetFloat("Defending", Defendingfloat);
+                enemyAnimator.SetTrigger("EnemyUnBlock");
             }
 
 
@@ -255,14 +253,17 @@ public class SuperAIScript : MonoBehaviour
             if (healt >= 70 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
             {
                 agressive();
+                Debug.Log("Agr");
             }
             else if (healt < 70 && healt > 30 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
             {
                 normal();
+                Debug.Log("Nor");
             }
             else if (healt <= 30 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
             {
                 Defencive();
+                Debug.Log("Def");
             }
 
 

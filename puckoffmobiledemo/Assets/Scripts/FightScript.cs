@@ -25,7 +25,7 @@ public class FightScript : MonoBehaviour
 
     public GameObject theEnemy;
 
-    private float Defendingfloat;
+    public float Defendingfloat;
     private Animator mAnimator;
     private Animator enemyAnimator;
     public AudioSource punch1;
@@ -160,8 +160,8 @@ public class FightScript : MonoBehaviour
 
         if (enemyBlock == null || enemyBlood == null)
         {
-            enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
-            enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
+            //enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+            //enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
         }
 
 
