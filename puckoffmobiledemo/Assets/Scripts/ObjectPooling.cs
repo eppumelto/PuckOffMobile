@@ -7,7 +7,7 @@ public class ObjectPooling : MonoBehaviour
     private GameObject obj;
     public GameObject[] RandomVihut;
     private bool SpawnNormal = true;
-
+    private int round = 0;
 
         [System.Serializable]
     public class Pool
@@ -33,32 +33,34 @@ public class ObjectPooling : MonoBehaviour
     void Start()
     {
         PoolDictionary = new Dictionary<string, Queue<GameObject>>();
+        
 
         foreach (Pool pool in pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
-            
+            round++;
+
             for (int i = 0; i < pool.size; i++)
             {
 
-                if(pool.size != 1 - i && SpawnNormal)
+                if(pool.size != 1 + i && SpawnNormal && round == 1)
                 {
                     //Luo vastustajan randomisti
                     GameObject obj = Instantiate(RandomVihut[Random.Range(0,RandomVihut.Length)]);
                     obj.SetActive(false);
                     objectPool.Enqueue(obj);
+
                 }
                 else
                 {
                     SpawnNormal = false;
-                    
                 }
 
                
 
            
                 //katotaan viiminen vihu
-                if (i + 1 == pool.size && pools.Count == 1 && !SpawnNormal)
+                if (pools.Count == 1 && !SpawnNormal)
                 {
                     //luo viimeisen vastustajan
                     GameObject obj = Instantiate(RandomVihut[Random.Range(0, RandomVihut.Length)]);
@@ -66,9 +68,9 @@ public class ObjectPooling : MonoBehaviour
                     objectPool.Enqueue(obj);
 
                     obj.GetComponent<TakeDmg>().isLast = true;
-
+                    Debug.Log("vika vihu");
                 }
-                else if(i + 1 == pool.size && pools.Count == 2 && !SpawnNormal)
+                else if(pools.Count == 2 && !SpawnNormal && round == 2)
                 {
                     //Luo bossin
                     GameObject obj = Instantiate(pool.prefab);
@@ -76,7 +78,8 @@ public class ObjectPooling : MonoBehaviour
                     objectPool.Enqueue(obj);
 
                     obj.GetComponent<TakeDmg>().isLast = true;
-
+                    
+                    Debug.Log("Vika boss");
                 }
 
             }

@@ -5238,8 +5238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  Damage: 20
-  BlockedDamage: 5
+  Damage: 100
+  BlockedDamage: 100
   enemyBlood: {fileID: 0}
   attackCount: 0
   enemyBlock: {fileID: 0}
@@ -5303,11 +5303,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RandomVihut:
   - {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
-  - {fileID: 9061953582646354106, guid: c956359b91572664686886506111f0d1, type: 3}
+  - {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
   pools:
   - tag: Enemy
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
-    size: 2
+    size: 6
+  - tag: Boss
+    prefab: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
+    size: 1
 --- !u!4 &1968383588
 Transform:
   m_ObjectHideFlags: 0
