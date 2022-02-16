@@ -23,7 +23,7 @@ public class TakeDmg : MonoBehaviour
 
     public static int enemiesKilled;
 
-    private Animator mAnimator;
+    public static Animator mAnimator;
     private Animator enemyAnimator;
 
     public SpriteRenderer enemyHead;
