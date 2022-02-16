@@ -62,25 +62,24 @@ public class ObjectPooling : MonoBehaviour
                 //katotaan viiminen vihu
                 if (pools.Count == 1 && !SpawnNormal)
                 {
+
                     //luo viimeisen vastustajan
                     GameObject obj = Instantiate(RandomVihut[Random.Range(0, RandomVihut.Length)]);
                     obj.SetActive(false);
                     objectPool.Enqueue(obj);
 
                     obj.GetComponent<TakeDmg>().isLast = true;
-                    Debug.Log("vika vihu");
                 }
-                else if(pools.Count == 2 && !SpawnNormal && round == 2)
-                {
-                    //Luo bossin
-                    GameObject obj = Instantiate(pool.prefab);
-                    obj.SetActive(false);
-                    objectPool.Enqueue(obj);
+                    else if(pools.Count == 2 && !SpawnNormal && round == 2)
+                    {
 
-                    obj.GetComponent<TakeDmg>().isLast = true;
-                    
-                    Debug.Log("Vika boss");
-                }
+                        //Luo bossin
+                        GameObject obj = Instantiate(pool.prefab);
+                        obj.SetActive(false);
+                        objectPool.Enqueue(obj);
+
+                        obj.GetComponent<TakeDmg>().isLast = true;
+                    }
 
             }
 

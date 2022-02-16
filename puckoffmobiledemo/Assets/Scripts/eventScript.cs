@@ -40,7 +40,7 @@ public class eventScript : MonoBehaviour
     {
        VictoryPanel.SetActive(true);
 
-        if (SceneManager.GetActiveScene().buildIndex == UiManager.instance.levels + 1)
+        if (SceneManager.GetActiveScene().buildIndex == UiManager.instance.levels + 1 || VictoryPanel == true)
         {
             UiManager.instance.levels++;
             PlayerPrefs.SetInt("Lv",  UiManager.instance.levels);

@@ -83,13 +83,13 @@ public class SuperAIScript : MonoBehaviour
                 pAnimator.SetTrigger("TakeDmg");
                 FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
                 shake.Effect1();
-                Debug.Log("Lyönti");
+
 
             }
             else if (FightScript.block == true)
             {
                 torjunta.Play(); //Lyonti suojattiin
-                Debug.Log("Lyönti");
+
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
             }
 
@@ -100,7 +100,7 @@ public class SuperAIScript : MonoBehaviour
 
            enemyDefTime = 1.5f; // aloittaa suojauksen
             coolDown = enemyDefTime;
-            Debug.Log("Block");
+
         }
 
 
@@ -253,17 +253,17 @@ public class SuperAIScript : MonoBehaviour
             if (healt >= 70 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
             {
                 agressive();
-                Debug.Log("Agr");
+
             }
             else if (healt < 70 && healt > 30 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
             {
                 normal();
-                Debug.Log("Nor");
+
             }
             else if (healt <= 30 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
             {
                 Defencive();
-                Debug.Log("Def");
+
             }
 
 
