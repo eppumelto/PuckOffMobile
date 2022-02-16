@@ -232,7 +232,7 @@ public class SuperAIScript : MonoBehaviour
 
     void Update()
     {
-        healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
+
         if (normiVihu && !BOSS)
         {
             if (enemyDefTime > 0)
@@ -250,17 +250,17 @@ public class SuperAIScript : MonoBehaviour
 
 
             //AI tappelee oman healtin mukaan.  Tarkistan etta vihu on oikealla kohdalla, ettei se puollusta ja cooldown on 0
-            if (healt >= 70 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
+            if (coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive && GetComponent<TakeDmg>().currentHealth >= 70)
             {
                 agressive();
 
             }
-            else if (healt < 70 && healt > 30 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
+            else if (coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive && GetComponent<TakeDmg>().currentHealth < 70 && GetComponent<TakeDmg>().currentHealth > 30)
             {
                 normal();
 
             }
-            else if (healt <= 30 && coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive)
+            else if (coolDown <= 0 && !AiDefence && MoveToRightPos.cantHit && AIStunausAika <= 0 && TakeDmg.PlayerAlive && GetComponent<TakeDmg>().currentHealth <= 30)
             {
                 Defencive();
 
