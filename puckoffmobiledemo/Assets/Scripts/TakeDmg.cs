@@ -84,8 +84,9 @@ public class TakeDmg : MonoBehaviour
 
             //tarkistetaan onko pelaaja hengissa ja jos on annetaan pieni healt regen pelaajalle
             //PlayerAlive
-            _playerHealt = GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth;
-            if (_playerHealt > 0)
+        
+            //VOI MUOKATA TASSA KOHTAA TOSIAAAN JUU
+            if (GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth > 0)
             {
                 //tarkistan onko se vika vihu vai boss kenet tapetaan
                 if (this.gameObject.GetComponent<TakeDmg>().isLast == true)

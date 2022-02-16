@@ -147,21 +147,7 @@ public class FightScript : MonoBehaviour
             Defendingfloat -= Time.deltaTime;
             mAnimator.SetFloat("Defending", Defendingfloat);
         }
-       // theEnemy = GameObject.FindWithTag("Enemy");
-
-        //if (TakeDmg.isAlive == false)
-        //{
-        //    theEnemy = null;
-        //    enemyBlock = null;
-        //    enemyBlood = null;
-        //    Debug.Log("Etitttiiii");
-        //}
-
-        if (enemyBlock == null || enemyBlood == null)
-        {
-            //enemyBlock = theEnemy.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
-            //enemyBlood = theEnemy.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
-        }
+    
 
 
 

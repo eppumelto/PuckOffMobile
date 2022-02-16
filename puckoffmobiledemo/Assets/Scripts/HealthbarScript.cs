@@ -27,13 +27,6 @@ public class HealthbarScript : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
-    public void Update()
-    {
-        /*slider.value = hp;*/ //paivittaa hp mittaria
-        //if(hp <= 0)
-        //{
-        //    Destroy(this.gameObject);
-        //}
-    }
+
 
 }
