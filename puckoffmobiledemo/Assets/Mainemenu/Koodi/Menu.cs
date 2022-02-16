@@ -61,9 +61,9 @@ public class Menu : MonoBehaviour
         CitySelectPanel.SetActive(false);
         MainMenuPanel.SetActive(true);
     }
-    public void MenuButton(string mainMenu)
+    public void MenuButton()
     {
-        SceneManager.LoadScene(mainMenu);
+        SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
     }
     public void Quit()
