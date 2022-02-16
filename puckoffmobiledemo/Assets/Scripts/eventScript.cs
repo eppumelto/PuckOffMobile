@@ -20,6 +20,12 @@ public class eventScript : MonoBehaviour
     public GameObject VictoryPanel;
     public static bool Won = false;//kaytetaan SingleLevel Scriptissa
 
+    public void Start()
+    {
+        PlayerAnimator = TakeDmg.mAnimator;
+    }
+    
+
     public void PlayerDead()
     {
         //_takedmg.headSprites[0];          Toho vaihtaa pelaajan naaman siihe mis on silmat kiinni

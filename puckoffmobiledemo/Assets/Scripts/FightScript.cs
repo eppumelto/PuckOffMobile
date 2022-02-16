@@ -66,7 +66,6 @@ public class FightScript : MonoBehaviour
             attackCount++;
             if (attackCount == 1)
             {
-                Debug.Log("Moi");
                 mAnimator.SetTrigger("Punch1");
                 punch1.Play();
 
@@ -74,7 +73,6 @@ public class FightScript : MonoBehaviour
             attackCount = Mathf.Clamp(attackCount, 0, 3);
             if (attackCount >= 2)
             {
-                Debug.Log("Moi2");
                 mAnimator.SetTrigger("Punch2");
                 attackCount = 0;
                 punch2.Play();
