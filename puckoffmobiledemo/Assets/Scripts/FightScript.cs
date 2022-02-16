@@ -29,6 +29,7 @@ public class FightScript : MonoBehaviour
     private Animator mAnimator;
     private Animator enemyAnimator;
     public AudioSource punch1;
+    public AudioSource punch2;
 
     void Start()
     {
@@ -76,7 +77,7 @@ public class FightScript : MonoBehaviour
                 Debug.Log("Moi2");
                 mAnimator.SetTrigger("Punch2");
                 attackCount = 0;
-                punch1.Play();
+                punch2.Play();
             }
 
             //tarkistaa ettei vastustaja suojaa
