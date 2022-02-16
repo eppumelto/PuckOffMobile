@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-   
+    private GameObject obj;
+    public GameObject[] RandomVihut;
+    private bool SpawnNormal = true;
+
+
         [System.Serializable]
     public class Pool
     {
@@ -33,24 +37,46 @@ public class ObjectPooling : MonoBehaviour
         foreach (Pool pool in pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
-
+            
             for (int i = 0; i < pool.size; i++)
             {
-                GameObject obj = Instantiate(pool.prefab);
-                obj.SetActive(false);
-                objectPool.Enqueue(obj);
 
-
-                //katotaan viiminen vihu
-                if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == 1)
+                if(pool.size != 1 - i && SpawnNormal)
                 {
-                    obj.GetComponent<TakeDmg>().isLast = true;
-                    Debug.Log("Vika vihu");
+                    //Luo vastustajan randomisti
+                    GameObject obj = Instantiate(RandomVihut[Random.Range(0,RandomVihut.Length)]);
+                    obj.SetActive(false);
+                    objectPool.Enqueue(obj);
                 }
-                else if(i + 1 == pool.size && obj.GetComponent<SuperAIScript>() && pools.Count == 2)
+                else
                 {
+                    SpawnNormal = false;
+                    
+                }
+
+               
+
+           
+                //katotaan viiminen vihu
+                if (i + 1 == pool.size && pools.Count == 1 && !SpawnNormal)
+                {
+                    //luo viimeisen vastustajan
+                    GameObject obj = Instantiate(RandomVihut[Random.Range(0, RandomVihut.Length)]);
+                    obj.SetActive(false);
+                    objectPool.Enqueue(obj);
+
                     obj.GetComponent<TakeDmg>().isLast = true;
-                    Debug.Log("BOSS");
+
+                }
+                else if(i + 1 == pool.size && pools.Count == 2 && !SpawnNormal)
+                {
+                    //Luo bossin
+                    GameObject obj = Instantiate(pool.prefab);
+                    obj.SetActive(false);
+                    objectPool.Enqueue(obj);
+
+                    obj.GetComponent<TakeDmg>().isLast = true;
+
                 }
 
             }
