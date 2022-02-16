@@ -18,6 +18,7 @@ public class MoveToRightPos : MonoBehaviour
 
     private void Start()
     {
+        cantHit = false;
         //target = GameObject.Find("Target").transform;
         //enemAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
         enemAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
