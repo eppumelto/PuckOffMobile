@@ -6760,6 +6760,7 @@ GameObject:
   - component: {fileID: 2110424262}
   - component: {fileID: 2110424261}
   - component: {fileID: 2110424260}
+  - component: {fileID: 2110424263}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -6831,7 +6832,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177680357}
+      - m_Target: {fileID: 2110424263}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -6881,3 +6882,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110424258}
   m_CullTransparentMesh: 1
+--- !u!114 &2110424263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110424258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889f3a57ca7a0a84e968794153c2b4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 331772795}
+  pauseButton: {fileID: 683612047}
+  CitySelectPanel: {fileID: 0}
+  MainMenuPanel: {fileID: 0}
