@@ -727,7 +727,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 177680357}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -1026,7 +1026,9 @@ MonoBehaviour:
   enemyBlock: {fileID: 0}
   PunchStunTime: 0
   theEnemy: {fileID: 0}
+  Defendingfloat: 0
   punch1: {fileID: 0}
+  punch2: {fileID: 0}
 --- !u!114 &177680359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,6 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfecf0eca0e190c42b1b370a16735a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RandomVihut: []
   pools:
   - tag: Enemy
     prefab: {fileID: 9061953582646354106, guid: c956359b91572664686886506111f0d1, type: 3}
@@ -3832,8 +3835,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4146,8 +4149,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5946,8 +5949,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Return
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6300,7 +6303,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 177680357}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: MenuButton
         m_Mode: 1
@@ -6757,6 +6760,7 @@ GameObject:
   - component: {fileID: 2110424262}
   - component: {fileID: 2110424261}
   - component: {fileID: 2110424260}
+  - component: {fileID: 2110424263}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -6828,7 +6832,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2110424263}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -6878,3 +6882,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110424258}
   m_CullTransparentMesh: 1
+--- !u!114 &2110424263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110424258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889f3a57ca7a0a84e968794153c2b4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 331772795}
+  pauseButton: {fileID: 683612047}
+  CitySelectPanel: {fileID: 0}
+  MainMenuPanel: {fileID: 0}
