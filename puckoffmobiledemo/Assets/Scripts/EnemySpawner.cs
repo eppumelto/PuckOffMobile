@@ -5,20 +5,24 @@ using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemy;
-    public float spawnCooldown = 2;
-    private  float cooldown;
+    //koodit joiden kanssa toimii
     private TakeDmg takeDmg;
-
     ObjectPooling objectPooler;
 
-    //Boss juttuja
-    public GameObject BossTxt;
+    public GameObject enemy;                //vihu
+    public float spawnCooldown = 2;        //Spawncooldown
+    
 
-    public AudioSource BossSpawn;
+  
+
+    //Boss juttuja
+    public GameObject BossTxt;          //Boss text joka tulee kun boss spawnataan
+    public AudioSource BossSpawn;      //Audio joka laitetaan kun boss tulee
+
 
     void Start()
     {
+            //otetaan koodit
         takeDmg = GameObject.Find("Pelaaja").GetComponent<TakeDmg>();
         objectPooler = ObjectPooling.Instance;
       
@@ -26,18 +30,18 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //jos vihu on kuollut ja spawncooldown on 0 ja pelaaja on hengissä
         if (TakeDmg.isAlive == false && spawnCooldown <= 0 && TakeDmg.PlayerAlive)
         {
             objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
             spawnCooldown = 2;
         }
-
+        //jos vihuja tapettu ainakin 1 niin spawnaa bossin
         else if ( TakeDmg.enemiesKilled == 2 && TakeDmg.isAlive == false && TakeDmg.PlayerAlive && objectPooler.pools.Count == 2)
         {
             BossTxt.SetActive(true);
             objectPooler.SpawnFromPool("Boss",new Vector3(transform.position.x,transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
             BossSpawn.Play();
-            
             
         }
 
@@ -48,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-
+        //cooldown miinustuu
         if (TakeDmg.isAlive == false)
         {
             spawnCooldown -= Time.deltaTime;

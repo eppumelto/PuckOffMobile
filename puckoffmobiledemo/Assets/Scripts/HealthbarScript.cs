@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class HealthbarScript : MonoBehaviour
 {
-    public Slider slider;
-    public Gradient gradient;
-    public Image fill;
-    //public float hp = 100;
+    public Slider slider;           //hp slider
+    public Gradient gradient;      //canvasin gradient
+    public Image fill;            //kuva
+
     
 
-    // Pelaajan maksimi health
+    //otetaan Pelaajan maksimi health
     public void MaxHealth (int health)
     {
         slider.maxValue = health;
@@ -20,7 +20,7 @@ public class HealthbarScript : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-
+    //asetetaan hp ja laitetaan hp väri sen mukaan
     public void SetHealth(int health)
     {
         slider.value = health;

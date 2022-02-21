@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    private GameObject obj;
-    public GameObject[] RandomVihut;
-    private bool SpawnNormal = true;
-    private int round = 0;
+    private GameObject obj;             //otetaan luotu objecti tähän
+    public GameObject[] RandomVihut;   //Lista vihuista joita randomisti luodaan
+    private bool SpawnNormal = true;  //kertoo luodaanko vielä normaaleja vai bossi
+    private int round = 0;           //forech kohtaan kertoo mones kierros menossa
+
 
         [System.Serializable]
     public class Pool
@@ -29,23 +30,23 @@ public class ObjectPooling : MonoBehaviour
     public List<Pool> pools;
     
 
-    public Dictionary<string, Queue<GameObject>> PoolDictionary;
+    public Dictionary<string, Queue<GameObject>> PoolDictionary;        
     void Start()
     {
-        PoolDictionary = new Dictionary<string, Queue<GameObject>>();
-        
+        PoolDictionary = new Dictionary<string, Queue<GameObject>>();  //jono :DDDD
+
 
         foreach (Pool pool in pools)
         {
-            Queue<GameObject> objectPool = new Queue<GameObject>();
-            round++;
+            Queue<GameObject> objectPool = new Queue<GameObject>();          //tekee uuden queuen
+            round++;                                                        //kertoo mones kierros
 
             for (int i = 0; i < pool.size; i++)
             {
-
+                //jos ei ole viimeinen poolissa ja spawnataan normaaleja vihuja ja eka kierros
                 if(pool.size != 1 + i && SpawnNormal && round == 1)
                 {
-                    //Luo vastustajan randomisti
+                    //Luo vastustajan randomisti asettaa sen falseksi ja laittaa jonoon
                     GameObject obj = Instantiate(RandomVihut[Random.Range(0,RandomVihut.Length)]);
                     obj.SetActive(false);
                     objectPool.Enqueue(obj);
@@ -53,6 +54,7 @@ public class ObjectPooling : MonoBehaviour
                 }
                 else
                 {
+                    //jos on viimeinen jota spawnataan
                     SpawnNormal = false;
                 }
 
@@ -67,9 +69,10 @@ public class ObjectPooling : MonoBehaviour
                     GameObject obj = Instantiate(RandomVihut[Random.Range(0, RandomVihut.Length)]);
                     obj.SetActive(false);
                     objectPool.Enqueue(obj);
-
+                    //kertoo että se on viimeinen vastustaja
                     obj.GetComponent<TakeDmg>().isLast = true;
                 }
+                        //jos round2 ja ei luoda normi vihua
                     else if(pools.Count == 2 && !SpawnNormal && round == 2)
                     {
 

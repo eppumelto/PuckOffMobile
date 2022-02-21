@@ -25,7 +25,7 @@ public class CameraShake : MonoBehaviour
             virtualCameraNoise = VirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         // Jos cinemachinea ei ole, koodi ei updatee

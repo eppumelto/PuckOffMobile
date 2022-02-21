@@ -25,7 +25,7 @@ public class eventScript : MonoBehaviour
         PlayerAnimator = TakeDmg.mAnimator;
     }
     
-
+    //pelaaja kuoli
     public void PlayerDead()
     {
         //_takedmg.headSprites[0];          Toho vaihtaa pelaajan naaman siihe mis on silmat kiinni
@@ -48,12 +48,7 @@ public class eventScript : MonoBehaviour
         }
 
         Won = true;
-        //SingleLevel.instance.levelNum++;
-        //PlayerPrefs.SetInt("Lv" + SingleLevel.instance.levelIndex, SingleLevel.instance.levelNum);
-        
 
-        Debug.Log("Voitto");
-       //voi lisata seuraavan avatun tason ja tallettaa sen
 
     }
  

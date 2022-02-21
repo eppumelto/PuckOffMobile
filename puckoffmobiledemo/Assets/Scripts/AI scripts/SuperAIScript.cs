@@ -8,42 +8,42 @@ public class SuperAIScript : MonoBehaviour
     private FightScript _fightScript;
 
 
-    //voit kertoa mika vihu on
+    //voit kertoa Unityssa milla tyylilla vastustaja tappelee
     public bool normiVihu;
     public bool BOSS;
 
+    //cooldown ja alkuperainen cooldown
     public float coolDown;
-         
     private float _originalCoolDown;
 
-    //attack system
-    public int EnemyDMG;
-    public int blockedDmg;
-    public float stunPlayerTime;
+    //Attack system
+    public int EnemyDMG;              //dmg jota vihu tekee jos pelaaja ei suojaa
+    public int blockedDmg;           //dmg jos pelaaja suojaa
+    public float stunPlayerTime;    //aika kauaksi aikaa pelaaja stunaantuu jos osuu
 
     //Defence system
-    private float enemyDefTime;
-    public static bool AiDefence;
+    private float enemyDefTime;         //kertoo kauan vastustaja joutuu suojaamaan
+    public static bool AiDefence;      //kertoo suojaako vastustaja
 
-    //Vihujen juttuja
-    private Animator enemyAnimator;
-    private int healt;
-    public static float AIStunausAika;
+    //Vihujen tietoja ja componentteja
+    private Animator enemyAnimator;         //vastustajan animator
+    private int healt;                     //vastustajan healt
+    public static float AIStunausAika;    //Kertoo onko vihu stunattu
 
-    //pelaajan juttuja
-    private Animator pAnimator;
-    private CameraShake shake;
-    private float playerHP;
-    public ParticleSystem veri;
-    public ParticleSystem torjunta;
+    //pelaajan tietoja ja componentteja
+    private Animator pAnimator;             //pelaajan animator
+    private CameraShake shake;             //kameraan ns effect
+    private float playerHP;               //pelaajan hp
+    public ParticleSystem veri;          //veri particle
+    public ParticleSystem torjunta;     //torjunta particle
 
     void Start()
     {
-        _fightScript = GameObject.FindWithTag("Manager").GetComponent<FightScript>();
+        _fightScript = GameObject.FindWithTag("Manager").GetComponent<FightScript>(); //otetaan manager jotta voidaan vaihtaa particlet
 
         _fightScript.theEnemy = this.gameObject; //kerrotaan nykyhetken vihu particleja varten
-        _fightScript.enemyBlood = gameObject.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
-       _fightScript.enemyBlock = gameObject.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+        _fightScript.enemyBlood = gameObject.transform.GetChild(2).GetComponentInChildren<ParticleSystem>(); //otetaan veri particle
+       _fightScript.enemyBlock = gameObject.transform.GetChild(1).GetComponentInChildren<ParticleSystem>(); //otetaan block particle
 
 
         //otetaan oikea cooldown
@@ -52,45 +52,51 @@ public class SuperAIScript : MonoBehaviour
         
 
 
-        //ai jutut
-        enemyAnimator = gameObject.GetComponent<Animator>();
-        veri = GameObject.Find("Pelaaja").transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
-        torjunta = GameObject.Find("Pelaaja").transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
-        healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;
+        //Otetaan pelaajan particlet ja vastustajan hp
+        enemyAnimator = gameObject.GetComponent<Animator>();           //otetaan animator
+
+        veri = GameObject.Find("Pelaaja").transform.GetChild(1).GetComponentInChildren<ParticleSystem>();       //veri particle
+        torjunta = GameObject.Find("Pelaaja").transform.GetChild(0).GetComponentInChildren<ParticleSystem>();  //block particle
+        healt = GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth;                        //vihun healt
 
 
-        //pelaajan jutut
-        pAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        shake = GameObject.Find("ScriptManager").GetComponent<CameraShake>();
-       playerHP = GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth;
+        //pelaajan animator ja hp, kamera effect
+        pAnimator = GameObject.Find("Player").GetComponent<Animator>();                     //pelaajan animator
+        shake = GameObject.Find("ScriptManager").GetComponent<CameraShake>();              //otetaan kamera ravistelua varten
+       playerHP = GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth;       //pelaajan hp
     }
 
 
     public void agressive()
     {
-        //isompi mahis lyoda
+        //Agressive, eli arpoo random numeron ja jos luku on isompi kuin 2 vastustaja iskee muuten vastustaja suojaa
         int rnd = Random.Range(0, 10);
 
+
+        //lyö
         if (rnd >= 3)
         {
-            enemyAnimator.SetTrigger("Attack");
-            //lyo
+            enemyAnimator.SetTrigger("Attack"); //lyomis animaatio
+
+            //jos pelaaja ei suojaa
             if (FightScript.block == false)
             {
-                //PlayerHealtbar.GetComponent<HealthbarScript>().hp -= dmg;
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;
-                veri.Play();
-                pAnimator.SetTrigger("TakeDmg");
-                FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
-                shake.Effect1();
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;   //tekee damagea pelaajaan
 
+                veri.Play();   //veri particle
+                shake.Effect1();    //kamera effect
+                pAnimator.SetTrigger("TakeDmg");         //pelaajan animaatio
+
+
+                FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
 
             }
+            //jos pelaaja suojaa
             else if (FightScript.block == true)
             {
-                torjunta.Play(); //Lyonti suojattiin
+                torjunta.Play(); //suojaus particle
 
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;     //tekee damagea pelaajaan
             }
 
         }
@@ -114,7 +120,7 @@ public class SuperAIScript : MonoBehaviour
 
     public void Defencive()
     {
-        //Isompi mahis suojata
+        //Isompi mahis suojata muuten sama kuin Agressive
         int rnd = Random.Range(0, 10);
 
         if (rnd >= 7)
@@ -206,20 +212,21 @@ public class SuperAIScript : MonoBehaviour
 
 
 
-
+    //eka bossi on aivokuollut ja siksi se osaa vain iskeä
     public void BossAttack()
     {
-        enemyAnimator.SetTrigger("Attack");
+        enemyAnimator.SetTrigger("Attack"); //Boss attack animaatio alkaa
+        
         //Tekee damagen pelaajaan sen perusteella suojasiko pelaaja iskun vai ei
         if (FightScript.block == true)
         {
             GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;  //pelaaja suojasi iskun
-            torjunta.Play();
+            torjunta.Play();                                                                //torjunta particle
         }
         else
         {
             GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;  //Pelaaja ei suojannut iskua
-            veri.Play();
+            veri.Play();                                                                  //veri particle
         }
 
         coolDown = _originalCoolDown;    //resettaa cooldownin
@@ -232,20 +239,20 @@ public class SuperAIScript : MonoBehaviour
 
     void Update()
     {
-
+        //katotaan, että onko normi vihu vai boss
         if (normiVihu && !BOSS)
         {
+            //jos vastustaja suojaus aika on isompi kuin 0 silloin se suojaa
             if (enemyDefTime > 0)
             {
-                //Debug.Log("Huhuu");
-                enemyAnimator.SetTrigger("EnemyBlock");
-                AiDefence = true;
-                enemyDefTime -= Time.deltaTime;
+                enemyAnimator.SetTrigger("EnemyBlock");     //block animaatio
+                AiDefence = true;                          //suojaa bool true
+                enemyDefTime -= Time.deltaTime;           //otetaan aikaa pois suojauksesta
             }
             else 
             {
-                AiDefence = false;
-                enemyAnimator.SetTrigger("EnemyUnBlock");
+                AiDefence = false;                          //ei suojaa
+                enemyAnimator.SetTrigger("EnemyUnBlock");  //animaatio pois
             }
 
 
@@ -266,9 +273,11 @@ public class SuperAIScript : MonoBehaviour
 
             }
 
-
+         
         }
-        else if(BOSS && !normiVihu && coolDown <= 0 && TakeDmg.PlayerAlive)
+        
+           //sama kuin aikaisempi, mutta boss systeemillä
+        if(BOSS && !normiVihu && coolDown <= 0 && TakeDmg.PlayerAlive)
         {
             BossAttack();
         }
