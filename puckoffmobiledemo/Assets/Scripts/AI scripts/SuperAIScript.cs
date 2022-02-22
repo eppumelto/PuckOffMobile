@@ -277,7 +277,7 @@ public class SuperAIScript : MonoBehaviour
         }
         
            //sama kuin aikaisempi, mutta boss systeemillä
-        if(BOSS && !normiVihu && coolDown <= 0 && TakeDmg.PlayerAlive)
+        if(BOSS && !normiVihu && coolDown <= 0 && TakeDmg.PlayerAlive && MoveToRightPos.cantHit == true)
         {
             BossAttack();
         }
