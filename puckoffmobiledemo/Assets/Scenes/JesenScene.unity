@@ -6825,13 +6825,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuickBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 414660101921783390, guid: 2dcdbc5629c01fb409c63def674cbb21, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 414660101031121417, guid: 2dcdbc5629c01fb409c63def674cbb21, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 414660101921783390, guid: 2dcdbc5629c01fb409c63def674cbb21, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 414660101921783390, guid: 2dcdbc5629c01fb409c63def674cbb21, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dcdbc5629c01fb409c63def674cbb21, type: 3}
@@ -6844,27 +6848,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1932542020657415978, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1932542020657415978, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1932542021961402416, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1446424905}
-    - target: {fileID: 1932542021961402429, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 6.556
-      objectReference: {fileID: 0}
     - target: {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_Name
       value: VihuV3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1932542022024642490, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_RootOrder

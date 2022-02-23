@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.56, y: 2.548198}
+  m_AnchoredPosition: {x: 5.56, y: 2.35}
   m_SizeDelta: {x: 527.1869, y: 70.7218}
   m_Pivot: {x: 1, y: 1}
 --- !u!223 &414660100718098801
@@ -438,6 +438,9 @@ MonoBehaviour:
   EnemyDMG: 5
   blockedDmg: 2
   stunPlayerTime: 0.2
+  AgreDeftime: 0.5
+  DefenDeftime: 2
+  normalDeftime: 1
   veri: {fileID: 0}
   torjunta: {fileID: 0}
 --- !u!114 &414660101031121414

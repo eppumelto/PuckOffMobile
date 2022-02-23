@@ -23,6 +23,12 @@ public class SuperAIScript : MonoBehaviour
 
     //Defence system
     private float enemyDefTime;         //kertoo kauan vastustaja joutuu suojaamaan
+
+    //kertoo kauan vastustaja suojaa eri tilanteissa
+    public float AgreDeftime;       //agressiivinen
+    public float DefenDeftime;     //defensive
+    public float normalDeftime;   //normal
+
     public static bool AiDefence;      //kertoo suojaako vastustaja
 
     //Vihujen tietoja ja componentteja
@@ -104,7 +110,7 @@ public class SuperAIScript : MonoBehaviour
         else if (rnd <= 2)
         {
 
-           enemyDefTime = 1.5f; // aloittaa suojauksen
+           enemyDefTime = AgreDeftime; // aloittaa suojauksen
             coolDown = enemyDefTime;
 
         }
@@ -149,7 +155,7 @@ public class SuperAIScript : MonoBehaviour
         else if (rnd <= 6)
         {
 
-            enemyDefTime = 3.5f; // aloittaa suojauksen
+            enemyDefTime = DefenDeftime; // aloittaa suojauksen
             coolDown = enemyDefTime;
            
         }
@@ -194,7 +200,7 @@ public class SuperAIScript : MonoBehaviour
         else if (rnd <= 4)
         {
 
-            enemyDefTime = 2f; // aloittaa suojauksen
+            enemyDefTime = normalDeftime; // aloittaa suojauksen
             coolDown = enemyDefTime;
 
         }
