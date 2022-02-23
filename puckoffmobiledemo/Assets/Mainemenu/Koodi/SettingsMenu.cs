@@ -25,13 +25,14 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         volSlider.value = PlayerPrefs.GetFloat("MVolume", 1f);
-        audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("MVolume"));
+        audioMixer.SetFloat("volume", PlayerPrefs.GetFloat("MVolume"));
 
         qualityDropDown.value = PlayerPrefs.GetInt(prefName, 3);
     }
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        PlayerPrefs.SetFloat("MVolume", volume);
+        audioMixer.SetFloat("volume", PlayerPrefs.GetFloat("MVolume"));
     }
 
     public void SetQuality(int qualityIndex)
