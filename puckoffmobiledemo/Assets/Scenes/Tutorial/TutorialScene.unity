@@ -1083,7 +1083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfecf0eca0e190c42b1b370a16735a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RandomVihut: []
+  RandomVihut:
+  - {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
+  - {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
   pools:
   - tag: Enemy
     prefab: {fileID: 9061953582646354106, guid: c956359b91572664686886506111f0d1, type: 3}
