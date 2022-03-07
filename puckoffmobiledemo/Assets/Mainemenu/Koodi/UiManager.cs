@@ -7,7 +7,6 @@ public class UiManager : MonoBehaviour
 {
     private BussiKoodi _bussikoodi;
     private GameObject ukkeli;
-    private float step;
 
     public static UiManager instance;
 
@@ -40,29 +39,27 @@ public class UiManager : MonoBehaviour
     {
         //PlayerPrefs.SetInt("Lv ", 1);
         levels = PlayerPrefs.GetInt("Lv");
-        ukkeli = GameObject.Find("Ukkeli");
+        
         //PlayerPrefs.DeleteAll();
     }
 
-
-
+    
     public void PressMapButton(int _mapIndex)       //nappia on painettu
     {
    
        if(mapSelections[_mapIndex].isUnlocked == true) //jos kenttä on auki
         {
-
-            if (ukkeli.transform.position == mapSelections[_mapIndex].GetComponent<Button>().transform.position)
+            ukkeli = GameObject.FindWithTag("ukkeli");
+            if (ukkeli.transform.position == mapSelections[_mapIndex].gameObject.GetComponent<Button>().transform.position)
             {
                 levelSelectionPanels[_mapIndex].gameObject.SetActive(true);
                 mapSelectionPanel.gameObject.SetActive(false);
             }
-
             
-           
+
             ukkeli.transform.position = mapSelections[_mapIndex].GetComponent<Button>().transform.position;
 
-            //levelClicked(_mapIndex, _mapIndex); // kutsuu toisen methodin levelClicked
+          
 
        }
        else

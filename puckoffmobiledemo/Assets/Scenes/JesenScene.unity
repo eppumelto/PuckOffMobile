@@ -5798,7 +5798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb15ad5ad7d7e14891e7734846c5133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
+  attackCooldown: 0.7
   Damage: 20
   BlockedDamage: 20
   enemyBlood: {fileID: 0}
@@ -6927,6 +6927,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1446424905}
+    - target: {fileID: 1932542022024642170, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
+      propertyPath: stunPlayerTime
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_Name
       value: VihuV3

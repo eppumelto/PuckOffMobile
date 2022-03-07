@@ -8,6 +8,7 @@ TagManager:
   - Boss
   - enemyHeadChanger
   - Manager
+  - ukkeli
   layers:
   - Default
   - TransparentFX
