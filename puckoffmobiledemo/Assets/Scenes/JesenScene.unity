@@ -5798,9 +5798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb15ad5ad7d7e14891e7734846c5133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0.7
+  attackCooldown: 1
   Damage: 20
-  BlockedDamage: 20
+  BlockedDamage: 10
   enemyBlood: {fileID: 0}
   attackCount: 0
   enemyBlock: {fileID: 0}
