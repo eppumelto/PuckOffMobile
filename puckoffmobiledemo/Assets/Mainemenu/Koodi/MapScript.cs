@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapScript : MonoBehaviour
 {
@@ -12,10 +13,18 @@ public class MapScript : MonoBehaviour
     public int levelNum;//how many level until map unlock
     public int startLevel; 
     public int endLevel;
+
+    private Button btn;
+    private void Start()
+    {
+        btn = this.gameObject.GetComponent<Button>(); 
+    }
+
     private void Update()
     {
         UpdateMap();
         UnlockMap();
+
     }
     private void UpdateMap()
     {
