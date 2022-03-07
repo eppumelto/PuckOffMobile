@@ -287,6 +287,11 @@ public class SuperAIScript : MonoBehaviour
         {
             BossAttack();
         }
+        else if(BOSS && coolDown > 0 && TakeDmg.PlayerAlive && MoveToRightPos.cantHit == true)
+        {
+            Debug.Log(coolDown);
+        }
+        
 
 
         
