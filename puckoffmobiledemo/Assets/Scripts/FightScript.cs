@@ -27,14 +27,16 @@ public class FightScript : MonoBehaviour
 
     public float Defendingfloat;
     private Animator mAnimator;
-    private Animator enemyAnimator;
+
+    [SerializeField]
+    public Animator enemyAnimator;
+
     public AudioSource punch1;
     public AudioSource punch2;
 
     void Start()
     {
         //otetaan animaattorit vihusta ja pelaajasta
-        enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
 
         //tallennan alkuperaisen cooldownin
@@ -50,7 +52,7 @@ public class FightScript : MonoBehaviour
 
     }
 
-  
+
 
     public void _attack()
     {
@@ -86,11 +88,12 @@ public class FightScript : MonoBehaviour
                 SuperAIScript.AIStunausAika += PunchStunTime;
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
 
-                Debug.Log("Dmg");
+                
 
-                enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
+                //enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
+                
                 enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
-               
+                Debug.Log("Dmg");
             }
             else if(SuperAIScript.AiDefence == true)
             {
