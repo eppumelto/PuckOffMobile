@@ -50,7 +50,7 @@ public class SuperAIScript : MonoBehaviour
         _fightScript.theEnemy = this.gameObject; //kerrotaan nykyhetken vihu particleja varten
         _fightScript.enemyBlood = gameObject.transform.GetChild(2).GetComponentInChildren<ParticleSystem>(); //otetaan veri particle
        _fightScript.enemyBlock = gameObject.transform.GetChild(1).GetComponentInChildren<ParticleSystem>(); //otetaan block particle
-
+       
 
         //otetaan oikea cooldown
         _originalCoolDown = coolDown;
@@ -60,6 +60,8 @@ public class SuperAIScript : MonoBehaviour
 
         //Otetaan pelaajan particlet ja vastustajan hp
         enemyAnimator = gameObject.GetComponent<Animator>();           //otetaan animator
+
+        _fightScript.enemyAnimator = enemyAnimator;
 
         veri = GameObject.Find("Pelaaja").transform.GetChild(1).GetComponentInChildren<ParticleSystem>();       //veri particle
         torjunta = GameObject.Find("Pelaaja").transform.GetChild(0).GetComponentInChildren<ParticleSystem>();  //block particle
@@ -94,7 +96,6 @@ public class SuperAIScript : MonoBehaviour
                 veri.Play();   //veri particle
                 shake.Effect1();    //kamera effect
                 pAnimator.SetTrigger("TakeDmg");         //pelaajan animaatio
-
 
                 FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
 
