@@ -85,9 +85,9 @@ public class FightScript : MonoBehaviour
                 enemyBlood.Play();
                 SuperAIScript.AIStunausAika += PunchStunTime;
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
-                
 
-                
+                Debug.Log("Dmg");
+
                 enemyAnimator.Rebind();                                           //animator unohtaa aikaisemman animaation
                 enemyAnimator.SetTrigger("EnemyDmg");                            //asettaa oikean animaation
                
@@ -98,8 +98,9 @@ public class FightScript : MonoBehaviour
                                    /*_hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage;*/ //tekee vahan dmg jos lyonti blokataan
                
                     GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
+                Debug.Log("Block");
 
-               
+
             }
 
            

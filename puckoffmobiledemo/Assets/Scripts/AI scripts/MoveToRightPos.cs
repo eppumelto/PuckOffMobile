@@ -38,6 +38,7 @@ public class MoveToRightPos : MonoBehaviour
             cantHit = true;
             Destroy(gameObject.GetComponent<MoveToRightPos>());
             enemAnimator.SetTrigger("WalkStop");
+            enemAnimator.Rebind();
         }
 
     }

@@ -70,6 +70,8 @@ public class SuperAIScript : MonoBehaviour
         pAnimator = GameObject.Find("Player").GetComponent<Animator>();                     //pelaajan animator
         shake = GameObject.Find("ScriptManager").GetComponent<CameraShake>();              //otetaan kamera ravistelua varten
        playerHP = GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth;       //pelaajan hp
+
+        FightScript.block = false;
     }
 
 
@@ -250,7 +252,8 @@ public class SuperAIScript : MonoBehaviour
         {
             //jos vastustaja suojaus aika on isompi kuin 0 silloin se suojaa
             if (enemyDefTime > 0)
-            {
+            {   
+
                 enemyAnimator.SetTrigger("EnemyBlock");     //block animaatio
                 AiDefence = true;                          //suojaa bool true
                 enemyDefTime -= Time.deltaTime;           //otetaan aikaa pois suojauksesta
