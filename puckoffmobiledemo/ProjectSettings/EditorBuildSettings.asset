@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/JesenScene.unity
     guid: eb91aa706ae715a429768fac3114f040
   - enabled: 1
-    path: Assets/Scenes/AaronScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Levelit/Kouvola.unity
+    guid: f9159595a10796f4e9c7f898c9e8a384
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Savonlinna.unity
+    guid: 91fa2a0565053f54f9c9c6237e6f9b31
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Kajaani.unity
+    guid: 757026fce90a896438741e47c136450e
   - enabled: 1
     path: Assets/Scenes/Tutorial/TutorialScene.unity
     guid: e3edb460145ab824fbbf1ced4776274d
