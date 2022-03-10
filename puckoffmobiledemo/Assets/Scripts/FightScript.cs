@@ -33,6 +33,7 @@ public class FightScript : MonoBehaviour
 
     public AudioSource punch1;
     public AudioSource punch2;
+    public AudioSource BlockSound;
 
     void Start()
     {
@@ -99,8 +100,8 @@ public class FightScript : MonoBehaviour
             {
                 enemyBlock.Play(); //lyonti blokattiin
                                    /*_hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage;*/ //tekee vahan dmg jos lyonti blokataan
-               
-                    GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
+                BlockSound.Play();
+                GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
                 Debug.Log("Block");
 
 

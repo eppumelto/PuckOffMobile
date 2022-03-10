@@ -43,6 +43,9 @@ public class SuperAIScript : MonoBehaviour
     public ParticleSystem veri;          //veri particle
     public ParticleSystem torjunta;     //torjunta particle
 
+    //aania
+    public AudioSource BlockSound; 
+
     void Start()
     {
         _fightScript = GameObject.FindWithTag("Manager").GetComponent<FightScript>(); //otetaan manager jotta voidaan vaihtaa particlet
@@ -106,6 +109,7 @@ public class SuperAIScript : MonoBehaviour
             else if (FightScript.block == true)
             {
                 torjunta.Play(); //suojaus particle
+                BlockSound.Play();
 
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;     //tekee damagea pelaajaan
             }
@@ -151,7 +155,7 @@ public class SuperAIScript : MonoBehaviour
             else if (FightScript.block)
             {
                torjunta.Play(); //Lyonti suojattiin
-
+                BlockSound.Play();
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
 
             }
@@ -198,6 +202,7 @@ public class SuperAIScript : MonoBehaviour
             else if (FightScript.block)
             {
                 torjunta.Play(); //Lyonti suojattiin
+                BlockSound.Play();
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
             }
 
@@ -235,8 +240,10 @@ public class SuperAIScript : MonoBehaviour
             if (FightScript.block == true)
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;  //pelaaja suojasi iskun
-                torjunta.Play();                                                                //torjunta particle
-            }
+                torjunta.Play();
+            //torjunta particle
+                BlockSound.Play();
+        }
             else
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;  //Pelaaja ei suojannut iskua
