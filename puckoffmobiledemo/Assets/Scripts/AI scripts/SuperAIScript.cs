@@ -74,6 +74,8 @@ public class SuperAIScript : MonoBehaviour
        playerHP = GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth;       //pelaajan hp
 
         FightScript.block = false;
+
+        
     }
 
 
@@ -224,19 +226,22 @@ public class SuperAIScript : MonoBehaviour
     //eka bossi on aivokuollut ja siksi se osaa vain iskeä
     public void BossAttack()
     {
-        enemyAnimator.SetTrigger("Attack"); //Boss attack animaatio alkaa
         
-        //Tekee damagen pelaajaan sen perusteella suojasiko pelaaja iskun vai ei
-        if (FightScript.block == true)
-        {
-            GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;  //pelaaja suojasi iskun
-            torjunta.Play();                                                                //torjunta particle
-        }
-        else
-        {
-            GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;  //Pelaaja ei suojannut iskua
-            veri.Play();                                                                  //veri particle
-        }
+
+
+     
+
+            //Tekee damagen pelaajaan sen perusteella suojasiko pelaaja iskun vai ei
+            if (FightScript.block == true)
+            {
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;  //pelaaja suojasi iskun
+                torjunta.Play();                                                                //torjunta particle
+            }
+            else
+            {
+                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;  //Pelaaja ei suojannut iskua
+                veri.Play();                                                                  //veri particle
+            }
 
         coolDown = _originalCoolDown;    //resettaa cooldownin
     }
@@ -289,7 +294,8 @@ public class SuperAIScript : MonoBehaviour
            //sama kuin aikaisempi, mutta boss systeemillä
         if(BOSS && !normiVihu && coolDown <= 0 && TakeDmg.PlayerAlive && MoveToRightPos.cantHit == true)
         {
-            BossAttack();
+            enemyAnimator.SetTrigger("Attack"); //Boss attack animaatio alkaa
+        
         }
         else if(BOSS && coolDown > 0 && TakeDmg.PlayerAlive && MoveToRightPos.cantHit == true)
         {
