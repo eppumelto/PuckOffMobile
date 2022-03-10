@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class UiManager : MonoBehaviour
 {
-    private BussiKoodi _bussikoodi;
     private GameObject ukkeli;
 
     public static UiManager instance;
