@@ -5373,15 +5373,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normiVihu: 1
   BOSS: 0
-  coolDown: 2
+  coolDown: 1
   EnemyDMG: 10
   blockedDmg: 10
   stunPlayerTime: 0.3
-  AgreDeftime: 0
-  DefenDeftime: 0
-  normalDeftime: 0
+  AgreDeftime: 1
+  DefenDeftime: 1
+  normalDeftime: 1
   veri: {fileID: 0}
   torjunta: {fileID: 0}
+  BlockSound: {fileID: 0}
 --- !u!1 &5888207808847875586
 GameObject:
   m_ObjectHideFlags: 0

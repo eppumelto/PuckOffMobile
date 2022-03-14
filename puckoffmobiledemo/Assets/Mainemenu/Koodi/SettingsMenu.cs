@@ -10,7 +10,7 @@ public class SettingsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public Dropdown qualityDropDown;
     public Slider volSlider;
-
+    
 
     const string prefName = "optionValue";
 
@@ -28,11 +28,23 @@ public class SettingsMenu : MonoBehaviour
         audioMixer.SetFloat("volume", PlayerPrefs.GetFloat("MVolume"));
 
         qualityDropDown.value = PlayerPrefs.GetInt(prefName, 3);
+
+        if(PlayerPrefs.GetFloat("MVolume") == 0)
+        {
+            AudioListener.volume = 0;
+        }
+
     }
     public void SetVolume(float volume)
     {
         PlayerPrefs.SetFloat("MVolume", volume);
         audioMixer.SetFloat("volume", PlayerPrefs.GetFloat("MVolume"));
+
+        if(volume == 0)
+        {
+            AudioListener.volume = 0;
+        }
+
     }
 
     public void SetQuality(int qualityIndex)
