@@ -8,13 +8,17 @@ public class UiManager : MonoBehaviour
     private GameObject ukkeli;
 
     public static UiManager instance;
+    public Button playBtn;
+    private int levelSelected;
 
     public int levels;
     public GameObject mapSelectionPanel;
     public GameObject[] levelSelectionPanels;
-
+   
 
     public MapScript[] mapSelections;
+
+    
 
 
     private void Awake()
@@ -38,26 +42,28 @@ public class UiManager : MonoBehaviour
     {
         //PlayerPrefs.SetInt("Lv ", 1);
         levels = PlayerPrefs.GetInt("Lv");
-        
+        playBtn.enabled = false;
         //PlayerPrefs.DeleteAll();
     }
 
     
     public void PressMapButton(int _mapIndex)       //nappia on painettu
     {
-   
+
+        levelSelected = _mapIndex;
+
        if(mapSelections[_mapIndex].isUnlocked == true) //jos kenttä on auki
         {
             ukkeli = GameObject.FindWithTag("ukkeli");
-            if (ukkeli.transform.position == mapSelections[_mapIndex].gameObject.GetComponent<Button>().transform.position)
-            {
-                levelSelectionPanels[_mapIndex].gameObject.SetActive(true);
-                mapSelectionPanel.gameObject.SetActive(false);
-            }
+            //if (ukkeli.transform.position == mapSelections[_mapIndex].gameObject.GetComponent<Button>().transform.position)
+            //{
+            //    levelSelectionPanels[_mapIndex].gameObject.SetActive(true);
+            //    mapSelectionPanel.gameObject.SetActive(false);
+            //}
             
 
             ukkeli.transform.position = mapSelections[_mapIndex].GetComponent<Button>().transform.position;
-
+            playBtn.enabled = true;
           
 
        }
@@ -67,8 +73,12 @@ public class UiManager : MonoBehaviour
        }
     }
 
-    
-    
+
+   public void pressPlayBtn()
+    {
+            levelSelectionPanels[levelSelected].gameObject.SetActive(true);
+            mapSelectionPanel.gameObject.SetActive(false);
+    }
 
 
     public void BackButton()
@@ -79,6 +89,7 @@ public class UiManager : MonoBehaviour
             levelSelectionPanels[i].gameObject.SetActive(false);
         }
     }
+
     public void SceneTransition(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
