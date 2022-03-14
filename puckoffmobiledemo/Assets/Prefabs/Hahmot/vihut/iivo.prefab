@@ -5286,11 +5286,11 @@ MonoBehaviour:
   isLast: 0
   healthBar: {fileID: 5888207808847875585}
   enemyAnimator: {fileID: 0}
-  enemyHead: {fileID: 0}
+  enemyHead: {fileID: 2677661773804349666}
   headSprites:
+  - {fileID: 21300000, guid: 45d03fce73906f547858118a5f5fbac7, type: 3}
   - {fileID: 21300000, guid: 0e00c40ef4ac76e4c9199304b74980d8, type: 3}
   - {fileID: 21300000, guid: d009a2230fe0b044dbfee2c9ab811f09, type: 3}
-  - {fileID: 21300000, guid: 45d03fce73906f547858118a5f5fbac7, type: 3}
 --- !u!114 &5888207808829176861
 MonoBehaviour:
   m_ObjectHideFlags: 0

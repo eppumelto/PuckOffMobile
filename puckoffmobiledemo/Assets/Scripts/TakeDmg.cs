@@ -56,6 +56,9 @@ public class TakeDmg : MonoBehaviour
     void Update()
     {
         HeadChange();
+
+
+
        //pieni cooldown vihun kuolemaan
         if (!firstDeath && DesPawnTime <= 100f)
         {
@@ -138,7 +141,7 @@ public class TakeDmg : MonoBehaviour
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
 
-
+            
                 this.gameObject.SetActive(false);
                 isAlive = false;
                 enemiesKilled = enemiesKilled + 1;
@@ -170,6 +173,11 @@ public class TakeDmg : MonoBehaviour
             {
                 enemyHead.sprite = headSprites[2];
             }
+            else if(currentHealth <= 0)
+            {
+                enemyHead.sprite = headSprites[0];
+            }
+            
         }
 
 
