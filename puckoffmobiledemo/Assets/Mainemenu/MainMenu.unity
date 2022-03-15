@@ -986,7 +986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -47, y: 359.2877}
+  m_AnchoredPosition: {x: -47, y: 359.28748}
   m_SizeDelta: {x: 1360.6995, y: 2878.5754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136281819
@@ -6980,7 +6980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "L\xE4tk\xE4Pojat"
+  m_text: GeeGee
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9291,7 +9291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "L\xE4tk\xE4Pojat"
+  m_text: Sakko
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14645,8 +14645,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635741412}
   m_HandleRect: {fileID: 1635741411}
   m_Direction: 2
-  m_Value: -0.00000013574113
-  m_Size: 0.37518567
+  m_Value: 0
+  m_Size: 0.37441972
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
