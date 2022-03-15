@@ -9,6 +9,7 @@ public class UiManager : MonoBehaviour
 
     public static UiManager instance;
     public Button playBtn;
+    public GameObject playObject; //playbuttonin gameobject (juu oisin voinnu teha sen eri taval :))
     private int levelSelected;
 
     public int levels;
@@ -43,6 +44,7 @@ public class UiManager : MonoBehaviour
         //PlayerPrefs.SetInt("Lv ", 1);
         levels = PlayerPrefs.GetInt("Lv");
         playBtn.enabled = false;
+        playObject.SetActive(false);
         //PlayerPrefs.DeleteAll();
     }
 
@@ -64,7 +66,7 @@ public class UiManager : MonoBehaviour
 
             ukkeli.transform.position = mapSelections[_mapIndex].GetComponent<Button>().transform.position;
             playBtn.enabled = true;
-          
+            playObject.SetActive(true);
 
        }
        else
