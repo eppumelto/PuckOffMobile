@@ -9,6 +9,7 @@ TagManager:
   - enemyHeadChanger
   - Manager
   - ukkeli
+  - Sound
   layers:
   - Default
   - TransparentFX
