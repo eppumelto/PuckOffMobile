@@ -15,6 +15,8 @@ public class MoveToRightPos : MonoBehaviour
 
     private Animator enemAnimator; //vihu animator
 
+    private GameObject Player;
+
 
     private void Start()
     {
@@ -22,8 +24,12 @@ public class MoveToRightPos : MonoBehaviour
 
         enemAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();    //otetaan animator
 
+        Player = GameObject.FindWithTag("Pelaaja");
+
 
         enemAnimator.SetTrigger("Walk");   // vihu animaatio
+
+        targetPos = Player.transform.position;
     
     }
     void Update()
