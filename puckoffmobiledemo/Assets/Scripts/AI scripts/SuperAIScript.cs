@@ -49,6 +49,7 @@ public class SuperAIScript : MonoBehaviour
     void Start()
     {
         _fightScript = GameObject.FindWithTag("Manager").GetComponent<FightScript>(); //otetaan manager jotta voidaan vaihtaa particlet
+        BlockSound = GameObject.FindWithTag("Sound").GetComponent<AudioSource>();
 
         _fightScript.theEnemy = this.gameObject; //kerrotaan nykyhetken vihu particleja varten
         _fightScript.enemyBlood = gameObject.transform.GetChild(2).GetComponentInChildren<ParticleSystem>(); //otetaan veri particle

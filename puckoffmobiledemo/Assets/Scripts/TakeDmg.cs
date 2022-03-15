@@ -20,7 +20,7 @@ public class TakeDmg : MonoBehaviour
     private AIScript _aiScript;
     public HealthbarScript healthBar;
     private eventScript _eventScript;
-
+    private FightScript fightScript;
 
     public static int enemiesKilled;
 
