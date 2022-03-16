@@ -5401,7 +5401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4707765311461698066
 Transform:
   m_ObjectHideFlags: 0
@@ -5461,8 +5461,8 @@ MonoBehaviour:
   blockedDmg: 10
   stunPlayerTime: 0.3
   AgreDeftime: 1
-  DefenDeftime: 1
-  normalDeftime: 1
+  DefenDeftime: 3
+  normalDeftime: 2
   veri: {fileID: 0}
   torjunta: {fileID: 0}
 --- !u!114 &4707765311461698070
@@ -5525,6 +5525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   distFromPlayer: 1
+  Korkeus: 0
 --- !u!1 &4707765311484323930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5558,7 +5559,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -5.6700134, y: -0.02999878}
   m_SizeDelta: {x: -37.22, y: -12.09}
   m_Pivot: {x: 0.5, y: 0.5}
