@@ -5251,8 +5251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928afdadcc271014a973ea591cf36b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPos: {x: 1.07, y: -0.94, z: 0}
   speed: 4
+  distFromPlayer: 1
 --- !u!95 &7144299354614833004
 Animator:
   serializedVersion: 3
@@ -5330,7 +5330,6 @@ MonoBehaviour:
   normalDeftime: 1
   veri: {fileID: 0}
   torjunta: {fileID: 0}
-  BlockSound: {fileID: 0}
 --- !u!1 &5888207808847875586
 GameObject:
   m_ObjectHideFlags: 0

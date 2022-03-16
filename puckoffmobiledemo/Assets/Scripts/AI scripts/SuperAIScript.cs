@@ -44,12 +44,12 @@ public class SuperAIScript : MonoBehaviour
     public ParticleSystem torjunta;     //torjunta particle
 
     //aania
-    public AudioSource BlockSound; 
+    //public AudioSource BlockSound; 
 
     void Start()
     {
         _fightScript = GameObject.FindWithTag("Manager").GetComponent<FightScript>(); //otetaan manager jotta voidaan vaihtaa particlet
-        BlockSound = GameObject.FindWithTag("Sound").GetComponent<AudioSource>();
+
 
         _fightScript.theEnemy = this.gameObject; //kerrotaan nykyhetken vihu particleja varten
         _fightScript.enemyBlood = gameObject.transform.GetChild(2).GetComponentInChildren<ParticleSystem>(); //otetaan veri particle
@@ -93,6 +93,7 @@ public class SuperAIScript : MonoBehaviour
         if (rnd >= 3)
         {
             enemyAnimator.SetTrigger("Attack"); //lyomis animaatio
+            FindObjectOfType<AudioManager>().Play("Punch1");
 
             //jos pelaaja ei suojaa
             if (FightScript.block == false)
@@ -110,9 +111,9 @@ public class SuperAIScript : MonoBehaviour
             else if (FightScript.block == true)
             {
                 torjunta.Play(); //suojaus particle
-                BlockSound.Play();
+                FindObjectOfType<AudioManager>().Play("Block");
 
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;     //tekee damagea pelaajaan
+        GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;     //tekee damagea pelaajaan
             }
 
         }
@@ -142,6 +143,7 @@ public class SuperAIScript : MonoBehaviour
         if (rnd >= 7)
         {
             enemyAnimator.SetTrigger("Attack");
+            FindObjectOfType<AudioManager>().Play("Punch1");
 
 
             if (FightScript.block == false)
@@ -156,7 +158,7 @@ public class SuperAIScript : MonoBehaviour
             else if (FightScript.block)
             {
                torjunta.Play(); //Lyonti suojattiin
-                BlockSound.Play();
+                FindObjectOfType<AudioManager>().Play("Block");
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
 
             }
@@ -192,6 +194,7 @@ public class SuperAIScript : MonoBehaviour
         if (rnd >= 5)
         {
             enemyAnimator.SetTrigger("Attack");
+            FindObjectOfType<AudioManager>().Play("Punch1");
             if (FightScript.block == false)
             {
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;
@@ -203,7 +206,7 @@ public class SuperAIScript : MonoBehaviour
             else if (FightScript.block)
             {
                 torjunta.Play(); //Lyonti suojattiin
-                BlockSound.Play();
+                FindObjectOfType<AudioManager>().Play("Block");
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
             }
 
@@ -243,7 +246,7 @@ public class SuperAIScript : MonoBehaviour
                 GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;  //pelaaja suojasi iskun
                 torjunta.Play();
             //torjunta particle
-                BlockSound.Play();
+            FindObjectOfType<AudioManager>().Play("Block");
         }
             else
             {

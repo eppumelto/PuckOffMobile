@@ -5,12 +5,13 @@ using UnityEngine;
 public class MoveToRightPos : MonoBehaviour
 {
 
-    public Vector3 targetPos;       //positio johon vihu liikkuu
+    private Vector3 targetPos;       //positio johon vihu liikkuu
     //kertoo voiko vihua lyoda
     public static bool cantHit;    //boolia muokataan myos TakeDmg scriptissa
     
 
     public float speed;         //kertoo kuinka nopeasti vihu liikkuu
+    public int distFromPlayer;
 
 
     private Animator enemAnimator; //vihu animator
@@ -24,13 +25,14 @@ public class MoveToRightPos : MonoBehaviour
 
         enemAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();    //otetaan animator
 
-        Player = GameObject.FindWithTag("Pelaaja");
+        Player = GameObject.FindWithTag("Player");
 
 
         enemAnimator.SetTrigger("Walk");   // vihu animaatio
 
-        targetPos = Player.transform.position;
-    
+        targetPos = Player.transform.position + new Vector3(distFromPlayer,0,0);
+
+
     }
     void Update()
     {

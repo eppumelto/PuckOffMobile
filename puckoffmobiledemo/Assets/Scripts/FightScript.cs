@@ -31,9 +31,9 @@ public class FightScript : MonoBehaviour
     [SerializeField]
     public Animator enemyAnimator;
 
-    public AudioSource punch1;
-    public AudioSource punch2;
-    public AudioSource BlockSound;
+    //public AudioSource punch1;
+    //public AudioSource punch2;
+    //public AudioSource BlockSound;
 
     void Start()
     {
@@ -70,7 +70,7 @@ public class FightScript : MonoBehaviour
             if (attackCount == 1)
             {
                 mAnimator.SetTrigger("Punch1");
-                punch1.Play();
+                FindObjectOfType<AudioManager>().Play("Punch1");
 
             }
             attackCount = Mathf.Clamp(attackCount, 0, 3);
@@ -78,7 +78,7 @@ public class FightScript : MonoBehaviour
             {
                 mAnimator.SetTrigger("Punch2");
                 attackCount = 0;
-                punch2.Play();
+                FindObjectOfType<AudioManager>().Play("Punch2");
             }
 
             //tarkistaa ettei vastustaja suojaa
@@ -100,7 +100,7 @@ public class FightScript : MonoBehaviour
             {
                 enemyBlock.Play(); //lyonti blokattiin
                                    /*_hpBar.GetComponent<HealthbarScript>().hp -= BlockedDamage;*/ //tekee vahan dmg jos lyonti blokataan
-                BlockSound.Play();
+                FindObjectOfType<AudioManager>().Play("Block");
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= BlockedDamage;
                 Debug.Log("Block");
 
