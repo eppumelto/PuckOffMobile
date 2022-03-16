@@ -5252,7 +5252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  distFromPlayer: 1
+  distFromPlayer: 1.4
+  Korkeus: 0.7
 --- !u!95 &7144299354614833004
 Animator:
   serializedVersion: 3

@@ -10932,7 +10932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9153756711686048494
 Transform:
   m_ObjectHideFlags: 0
@@ -10985,8 +10985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928afdadcc271014a973ea591cf36b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPos: {x: 1.2, y: 0, z: 0}
   speed: 4
+  distFromPlayer: 2.2
+  Korkeus: 2
 --- !u!95 &392566318119488763
 Animator:
   serializedVersion: 3
@@ -11051,7 +11052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normiVihu: 0
   BOSS: 1
-  coolDown: 6
+  coolDown: 4
   EnemyDMG: 100
   blockedDmg: 10
   stunPlayerTime: 1
@@ -11060,7 +11061,6 @@ MonoBehaviour:
   normalDeftime: 0
   veri: {fileID: 0}
   torjunta: {fileID: 0}
-  BlockSound: {fileID: 0}
 --- !u!1 &9153756711763324739
 GameObject:
   m_ObjectHideFlags: 0
