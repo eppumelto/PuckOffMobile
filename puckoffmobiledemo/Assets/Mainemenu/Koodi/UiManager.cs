@@ -71,6 +71,7 @@ public class UiManager : MonoBehaviour
        }
        else
        {
+            playObject.SetActive(false);
             Debug.Log("This map is not available");
        }
     }
