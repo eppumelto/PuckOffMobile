@@ -5557,25 +5557,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 18662325718355191, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1366022153377463203, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
-      propertyPath: korkeus
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1366022153377463203, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
-      propertyPath: targetPos.x
-      value: -1.08
-      objectReference: {fileID: 0}
     - target: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
       propertyPath: m_Name
       value: BOSS Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9153756711686048494, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
       propertyPath: m_RootOrder
