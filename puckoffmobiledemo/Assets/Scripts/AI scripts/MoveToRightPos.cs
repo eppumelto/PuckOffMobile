@@ -27,10 +27,10 @@ public class MoveToRightPos : MonoBehaviour
 
         Player = GameObject.FindWithTag("Player");
 
-
+        targetPos = Player.transform.position + new Vector3(distFromPlayer, 0, 0);
         enemAnimator.SetTrigger("Walk");   // vihu animaatio
 
-        targetPos = Player.transform.position + new Vector3(distFromPlayer,0,0);
+       
 
 
     }
