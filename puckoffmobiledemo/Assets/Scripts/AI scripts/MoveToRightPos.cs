@@ -12,7 +12,7 @@ public class MoveToRightPos : MonoBehaviour
 
     public float speed;         //kertoo kuinka nopeasti vihu liikkuu
     public int distFromPlayer;
-
+    public float korkeus;
 
     private Animator enemAnimator; //vihu animator
 
@@ -27,7 +27,7 @@ public class MoveToRightPos : MonoBehaviour
 
         Player = GameObject.FindWithTag("Player");
 
-        targetPos = Player.transform.position + new Vector3(distFromPlayer, 0, 0);
+        targetPos = Player.transform.position + new Vector3(distFromPlayer, korkeus, 0);
         enemAnimator.SetTrigger("Walk");   // vihu animaatio
 
        
