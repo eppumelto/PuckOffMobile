@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016023311842761278}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9999922, w: 0.0039706184}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99999213, w: 0.003971017}
   m_LocalPosition: {x: 0.7691761, y: 2.2513545, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -176,7 +176,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271018144883869654}
-  m_LocalRotation: {x: -0, y: -0, z: 0.14286473, w: 0.9897423}
+  m_LocalRotation: {x: -0, y: -0, z: 0.14286447, w: 0.9897423}
   m_LocalPosition: {x: 3.22, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -206,7 +206,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542658141541903803}
-  m_LocalRotation: {x: -0, y: -0, z: -0.00000360608, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0000031888485, w: 1}
   m_LocalPosition: {x: 3.91, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1048,7 +1048,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1739,7 +1739,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 200
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5866,7 +5866,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8267348089461807326}
-  m_LocalRotation: {x: 0, y: 0, z: -0.99693376, w: 0.078250185}
+  m_LocalRotation: {x: 0, y: 0, z: -0.99693376, w: 0.078250445}
   m_LocalPosition: {x: 0.6221788, y: -1.9636384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6334,7 +6334,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7025,7 +7025,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 50
         minScalar: 30
         maxCurve:
           serializedVersion: 2
