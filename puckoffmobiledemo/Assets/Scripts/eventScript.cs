@@ -40,11 +40,20 @@ public class eventScript : MonoBehaviour
     {
        VictoryPanel.SetActive(true);
 
-        if (SceneManager.GetActiveScene().buildIndex == UiManager.instance.levels + 1)
+        if(SceneManager.GetActiveScene().name != "TutorialScene")
         {
-            UiManager.instance.levels++;
-            PlayerPrefs.SetInt("Lv",  UiManager.instance.levels);
-            Debug.Log("Level up");
+
+            if (SceneManager.GetActiveScene().buildIndex == UiManager.instance.levels + 1)
+            {
+                UiManager.instance.levels++;
+                PlayerPrefs.SetInt("Lv", UiManager.instance.levels);
+                Debug.Log("Level up");
+            }
+
+        }
+        else
+        {
+            Debug.Log("Tutorial");
         }
 
         Won = true;
