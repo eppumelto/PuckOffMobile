@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShakeDuration: 0.5
-  ShakeAmplitude: 0.1
+  ShakeAmplitude: 0.6
   ShakeFrequency: 2
   VirtualCamera: {fileID: 1917985844}
 --- !u!114 &79166281
@@ -477,9 +477,9 @@ MonoBehaviour:
   - tag: Enemy
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
     size: 2
-  - tag: Enemy
+  - tag: Boss
     prefab: {fileID: 1707443532}
-    size: 3
+    size: 1
 --- !u!4 &79166283
 Transform:
   m_ObjectHideFlags: 0
