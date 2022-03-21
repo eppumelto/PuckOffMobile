@@ -66,7 +66,7 @@ public class FightScript : MonoBehaviour
             mAnimator.Rebind();
 /*            mAnimator.SetTrigger("Punch"); */    //aloittaa animaation
             attackCooldown = CoolDown;        //resettaa cooldownin
-            shake.Effect1();
+            
 
             attackCount++;
             if (attackCount == 1)
