@@ -89,6 +89,7 @@ public class FightScript : MonoBehaviour
                //veri particle, miinustetaan hp vastustajalta, laitetaan animaatio
                 enemyBlood.Play();
                 SuperAIScript.AIStunausAika += PunchStunTime;
+                shake.Effect1();
                 GameObject.FindWithTag("Enemy").GetComponent<TakeDmg>().currentHealth -= Damage;
 
                 

@@ -21,6 +21,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Levelit/Kajaani.unity
     guid: 757026fce90a896438741e47c136450e
   - enabled: 1
+    path: Assets/Scenes/Levelit/Kuusamo.unity
+    guid: bc84f6dfb10a19241b676759540ca3ac
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Rovaniemi.unity
+    guid: ed139488f3e5d91428e0377acdc7e5f3
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Oulu.unity
+    guid: c5527ef40b299364c9bcb05023c684f9
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Vaasa.unity
+    guid: 080a91046ce41cf43b1337956cb85d08
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Pori.unity
+    guid: 8dbbc679fe8c57e47baf639f5b6b263d
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Turku.unity
+    guid: d38a90e175cc72d4e94806e19dc6eb18
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Tampere.unity
+    guid: 6de3234dd4ef3d14ebc1c831b995229d
+  - enabled: 1
+    path: Assets/Scenes/Levelit/Helsinki.unity
+    guid: 6ab28871e0a41a1449750d29f32279f4
+  - enabled: 1
     path: Assets/Scenes/Tutorial/TutorialScene.unity
     guid: e3edb460145ab824fbbf1ced4776274d
   m_configObjects: {}
