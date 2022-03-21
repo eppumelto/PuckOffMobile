@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class FightScript : MonoBehaviour
 {
-    
+    private CameraShake shake;
 
     //attack
     public float attackCooldown;
@@ -39,6 +39,7 @@ public class FightScript : MonoBehaviour
     {
         //otetaan animaattorit vihusta ja pelaajasta
         mAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        shake = GameObject.Find("ScriptManager").GetComponent<CameraShake>();
 
         //tallennan alkuperaisen cooldownin
         CoolDown = attackCooldown;
@@ -65,6 +66,7 @@ public class FightScript : MonoBehaviour
             mAnimator.Rebind();
 /*            mAnimator.SetTrigger("Punch"); */    //aloittaa animaation
             attackCooldown = CoolDown;        //resettaa cooldownin
+            
 
             attackCount++;
             if (attackCount == 1)
