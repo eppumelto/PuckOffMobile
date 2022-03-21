@@ -2253,7 +2253,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Kuusamo
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &187076047
@@ -4474,7 +4474,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Vaasa
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &406299571
@@ -6434,7 +6434,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Rovaniemi
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &643660595
@@ -8279,7 +8279,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Helsinki
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &833115563
@@ -9104,7 +9104,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Pori
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &920787677
@@ -9237,7 +9237,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Turku
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &923964207
@@ -13543,7 +13543,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Oulu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1408439746
@@ -13751,7 +13751,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Tampere
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1437506270
