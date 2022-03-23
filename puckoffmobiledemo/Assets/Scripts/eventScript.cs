@@ -34,7 +34,8 @@ public class eventScript : MonoBehaviour
         //_takedmg.headSprites[0];          Toho vaihtaa pelaajan naaman siihe mis on silmat kiinni
         deathPanel.SetActive(true);   
         PlayerAnimator.SetTrigger("Die");
-        pauseBtn.SetActive(false);        
+        pauseBtn.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Die1");
     }
 
 

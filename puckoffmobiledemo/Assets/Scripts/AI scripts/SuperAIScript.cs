@@ -82,6 +82,32 @@ public class SuperAIScript : MonoBehaviour
         
     }
 
+    public void attack()
+    {
+        //jos pelaaja ei suojaa
+        if (FightScript.block == false)
+        {
+            FindObjectOfType<AudioManager>().Play("Punch1");
+            GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;   //tekee damagea pelaajaan
+
+            veri.Play();   //veri particle
+            shake.Effect1();    //kamera effect
+            pAnimator.SetTrigger("TakeDmg");         //pelaajan animaatio
+
+            FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
+
+        }
+        //jos pelaaja suojaa
+        else if (FightScript.block == true)
+        {
+            torjunta.Play(); //suojaus particle
+            FindObjectOfType<AudioManager>().Play("Block");
+
+            GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;     //tekee damagea pelaajaan
+        }
+
+    }
+
 
     public void agressive()
     {
@@ -93,35 +119,14 @@ public class SuperAIScript : MonoBehaviour
         if (rnd >= 3)
         {
             enemyAnimator.SetTrigger("Attack"); //lyomis animaatio
-            FindObjectOfType<AudioManager>().Play("Punch1");
 
-            //jos pelaaja ei suojaa
-            if (FightScript.block == false)
-            {
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;   //tekee damagea pelaajaan
 
-                veri.Play();   //veri particle
-                shake.Effect1();    //kamera effect
-                pAnimator.SetTrigger("TakeDmg");         //pelaajan animaatio
-
-                FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
-
-            }
-            //jos pelaaja suojaa
-            else if (FightScript.block == true)
-            {
-                torjunta.Play(); //suojaus particle
-                FindObjectOfType<AudioManager>().Play("Block");
-
-        GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;     //tekee damagea pelaajaan
-            }
-
+           
         }
         //defendaa
         else if (rnd <= 2)
         {
-
-           enemyDefTime = AgreDeftime; // aloittaa suojauksen
+            enemyDefTime = normalDeftime; // aloittaa suojauksen
             coolDown = enemyDefTime;
 
         }
@@ -146,30 +151,15 @@ public class SuperAIScript : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Punch1");
 
 
-            if (FightScript.block == false)
-            {
-
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;
-                pAnimator.SetTrigger("TakeDmg");
-                FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
-                shake.Effect1();
-                veri.Play();
-            }
-            else if (FightScript.block)
-            {
-               torjunta.Play(); //Lyonti suojattiin
-                FindObjectOfType<AudioManager>().Play("Block");
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
-
-            }
+            
 
         }
         else if (rnd <= 6)
         {
 
-            enemyDefTime = DefenDeftime; // aloittaa suojauksen
+            enemyDefTime = normalDeftime; // aloittaa suojauksen
             coolDown = enemyDefTime;
-           
+
         }
 
         if (coolDown <= 0)
@@ -195,21 +185,7 @@ public class SuperAIScript : MonoBehaviour
         {
             enemyAnimator.SetTrigger("Attack");
             FindObjectOfType<AudioManager>().Play("Punch1");
-            if (FightScript.block == false)
-            {
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;
-                veri.Play();
-                shake.Effect1();
-                pAnimator.SetTrigger("TakeDmg");
-                FightScript.StunTime +=stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
-            }
-            else if (FightScript.block)
-            {
-                torjunta.Play(); //Lyonti suojattiin
-                FindObjectOfType<AudioManager>().Play("Block");
-                GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= blockedDmg;
-            }
-
+           
         }
         else if (rnd <= 4)
         {
