@@ -102,8 +102,8 @@ public class TakeDmg : MonoBehaviour
             {
 
 
-                    _player.GetComponent<TakeDmg>().currentHealth += this.gameObject.GetComponent<SuperAIScript>().GiveHealt;
-               _player.GetComponent<TakeDmg>().currentHealth = Mathf.Clamp(_player.GetComponent<TakeDmg>().currentHealth, -10, 100);
+               //     _player.GetComponent<TakeDmg>().currentHealth += this.gameObject.GetComponent<SuperAIScript>().GiveHealt;
+               //_player.GetComponent<TakeDmg>().currentHealth = Mathf.Clamp(_player.GetComponent<TakeDmg>().currentHealth, -10, 100);
 
                 //tarkistan onko se vika vihu vai boss kenet tapetaan
                 if (this.gameObject.GetComponent<TakeDmg>().isLast == true)
@@ -147,6 +147,9 @@ public class TakeDmg : MonoBehaviour
 
     void Kuolema()
     {
+        _player.GetComponent<TakeDmg>().currentHealth += this.gameObject.GetComponent<SuperAIScript>().GiveHealt;
+        _player.GetComponent<TakeDmg>().currentHealth = Mathf.Clamp(_player.GetComponent<TakeDmg>().currentHealth, -10, 100);
+
         MoveToRightPos.cantHit = false;
         enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
 
@@ -154,11 +157,10 @@ public class TakeDmg : MonoBehaviour
         {
 
 
-            
-                this.gameObject.SetActive(false);
-            
-                
-                isAlive = false;
+          
+            this.gameObject.SetActive(false);
+
+            isAlive = false;
                 enemiesKilled = enemiesKilled + 1;
 
 
