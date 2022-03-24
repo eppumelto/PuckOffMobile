@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TakeDmg : MonoBehaviour
 {
+    private GameObject _player;
+
+
     public int maxHealth = 100;
     public int currentHealth;
     private float DesPawnTime = 2;
@@ -17,7 +20,7 @@ public class TakeDmg : MonoBehaviour
     private float _playerHealt;
     private bool firstime;
 
-    private AIScript _aiScript;
+
     public HealthbarScript healthBar;
     private eventScript _eventScript;
     private FightScript fightScript;
@@ -38,18 +41,22 @@ public class TakeDmg : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.MaxHealth(maxHealth);
         isAlive = true;
-
         
 
-        _aiScript = GameObject.FindWithTag("Enemy").GetComponent<AIScript>();
+        _player = GameObject.FindWithTag("Player");
+
         _eventScript = GameObject.Find("ScriptManager").GetComponent<eventScript>();
 
         enemiesKilled = 0;
 
-        mAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        mAnimator = _player.GetComponent<Animator>();    //GameObject.Find("Player").GetComponent<Animator>();
         enemyAnimator = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
 
         enemyHead = GameObject.FindWithTag("enemyHeadChanger").GetComponent<SpriteRenderer>();
+
+
+        
+
     }
 
 
@@ -93,6 +100,11 @@ public class TakeDmg : MonoBehaviour
             //VOI MUOKATA TASSA KOHTAA TOSIAAAN JUU
             if (GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth > 0)
             {
+
+
+                    _player.GetComponent<TakeDmg>().currentHealth += this.gameObject.GetComponent<SuperAIScript>().GiveHealt;
+               _player.GetComponent<TakeDmg>().currentHealth = Mathf.Clamp(_player.GetComponent<TakeDmg>().currentHealth, -10, 100);
+
                 //tarkistan onko se vika vihu vai boss kenet tapetaan
                 if (this.gameObject.GetComponent<TakeDmg>().isLast == true)
                 {
@@ -141,8 +153,11 @@ public class TakeDmg : MonoBehaviour
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
 
+
             
                 this.gameObject.SetActive(false);
+            
+                
                 isAlive = false;
                 enemiesKilled = enemiesKilled + 1;
 
