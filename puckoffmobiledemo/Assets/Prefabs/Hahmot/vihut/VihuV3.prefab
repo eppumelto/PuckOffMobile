@@ -592,7 +592,7 @@ MonoBehaviour:
   AgreDeftime: 1
   DefenDeftime: 3.5
   normalDeftime: 2
-  GiveHealt: 0
+  GiveHealt: 10
   veri: {fileID: 0}
   torjunta: {fileID: 0}
 --- !u!1 &1932542022024642309
