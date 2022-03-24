@@ -2588,6 +2588,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1932542020657415978, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932542020657415978, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1932542022024642170, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: GiveHealt
       value: 10
@@ -2595,6 +2603,10 @@ PrefabInstance:
     - target: {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_Name
       value: VihuV3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1932542022024642490, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
       propertyPath: m_RootOrder
