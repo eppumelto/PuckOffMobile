@@ -35,6 +35,7 @@ public class SuperAIScript : MonoBehaviour
     private Animator enemyAnimator;         //vastustajan animator
     private int healt;                     //vastustajan healt
     public static float AIStunausAika;    //Kertoo onko vihu stunattu
+    public int GiveHealt;
 
     //pelaajan tietoja ja componentteja
     private Animator pAnimator;             //pelaajan animator

@@ -5322,13 +5322,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normiVihu: 1
   BOSS: 0
-  coolDown: 1
+  coolDown: 1.5
   EnemyDMG: 10
   blockedDmg: 10
   stunPlayerTime: 0.3
   AgreDeftime: 1
   DefenDeftime: 3
   normalDeftime: 2
+  GiveHealt: 10
   veri: {fileID: 0}
   torjunta: {fileID: 0}
 --- !u!1 &5888207808847875586
