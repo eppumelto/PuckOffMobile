@@ -10,6 +10,7 @@ TagManager:
   - Manager
   - ukkeli
   - Sound
+  - CityPanel
   layers:
   - Default
   - TransparentFX
