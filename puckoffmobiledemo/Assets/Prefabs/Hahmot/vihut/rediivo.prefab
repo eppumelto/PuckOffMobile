@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2697568915561678507}
   m_LocalRotation: {x: 0.122236416, y: 0.123336546, z: 0.69194156, w: -0.7007591}
-  m_LocalPosition: {x: 1.7, y: 0.45, z: -0.057}
+  m_LocalPosition: {x: 1.5, y: 0.01, z: -0.001}
   m_LocalScale: {x: 1.06, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6483783385035638025}
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.53, y: 3.72}
+  m_Size: {x: 4.19, y: 4.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -5236,9 +5236,9 @@ MonoBehaviour:
   enemyAnimator: {fileID: 0}
   enemyHead: {fileID: 2677661773804349666}
   headSprites:
-  - {fileID: 21300000, guid: 45d03fce73906f547858118a5f5fbac7, type: 3}
-  - {fileID: 21300000, guid: 0e00c40ef4ac76e4c9199304b74980d8, type: 3}
-  - {fileID: 21300000, guid: d009a2230fe0b044dbfee2c9ab811f09, type: 3}
+  - {fileID: 21300000, guid: a2fd5667401fa184a96d0fab98875b55, type: 3}
+  - {fileID: 21300000, guid: f5c7ade21daada34fa108422256c72cc, type: 3}
+  - {fileID: 21300000, guid: de7c196e00b8cd2429902fffc2ca15a0, type: 3}
 --- !u!114 &5888207808829176861
 MonoBehaviour:
   m_ObjectHideFlags: 0
