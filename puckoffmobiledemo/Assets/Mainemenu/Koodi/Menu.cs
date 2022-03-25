@@ -12,10 +12,20 @@ public class Menu : MonoBehaviour
     public GameObject MainMenuPanel;
     private GameObject instance;
 
+    bool firstRun = true;
 
 
 
-  
+
+    private void Start()
+    {
+        if (GameObject.FindGameObjectsWithTag("LevelManager").Length <= 1 && SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            CitySelectPanel.SetActive(false);
+        }
+    }
+
+
 
 
 
