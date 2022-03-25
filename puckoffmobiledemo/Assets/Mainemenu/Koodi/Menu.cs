@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("LevelManager").Length <= 1 && SceneManager.GetActiveScene().name == "MainMenu")
+        if ( SceneManager.GetActiveScene().name == "MainMenu" && GameObject.FindGameObjectsWithTag("LevelManager").Length <= 1)
         {
             CitySelectPanel.SetActive(false);
         }
