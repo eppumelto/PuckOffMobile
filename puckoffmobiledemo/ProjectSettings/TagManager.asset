@@ -11,6 +11,7 @@ TagManager:
   - ukkeli
   - Sound
   - CityPanel
+  - LevelManager
   layers:
   - Default
   - TransparentFX
@@ -53,13 +54,4 @@ TagManager:
     locked: 0
   - name: ground
     uniqueID: 3877239287
-    locked: 0
-  - name: ui
-    uniqueID: 4027728007
-    locked: 0
-  - name: player
-    uniqueID: 1696014921
-    locked: 0
-  - name: New Layer
-    uniqueID: 3404320759
     locked: 0
