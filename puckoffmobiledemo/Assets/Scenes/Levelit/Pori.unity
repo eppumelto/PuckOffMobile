@@ -418,11 +418,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
---- !u!1 &60214658 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
-  m_PrefabInstance: {fileID: 60214657}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &60939731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,15 +2073,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RandomVihut:
-  - {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
+  - {fileID: 5888207808829176862, guid: f5d6beb5a4ff1bf49b1c24ddcc7761eb, type: 3}
   - {fileID: 5888207808829176862, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
   pools:
   - tag: Enemy
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
-    size: 2
-  - tag: Boss
-    prefab: {fileID: 60214658}
-    size: 1
+    size: 3
 --- !u!4 &649231753
 Transform:
   m_ObjectHideFlags: 0
@@ -6633,6 +6625,10 @@ PrefabInstance:
     - target: {fileID: 5888207808829176862, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
       propertyPath: m_Name
       value: iivo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888207808829176862, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6004945416532316820, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
       propertyPath: coolDown

@@ -4762,6 +4762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: iivo
       objectReference: {fileID: 0}
+    - target: {fileID: 5888207808829176862, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6004945416532316820, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
       propertyPath: coolDown
       value: 1.5
@@ -6790,7 +6794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849500552001504834, guid: 7a99b9c51959d5e4b926ee23bc504d9b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1793310404258898429, guid: 7a99b9c51959d5e4b926ee23bc504d9b, type: 3}
       propertyPath: m_RootOrder

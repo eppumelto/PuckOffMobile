@@ -5457,7 +5457,7 @@ MonoBehaviour:
   normiVihu: 1
   BOSS: 0
   coolDown: 2
-  EnemyDMG: 10
+  EnemyDMG: 15
   blockedDmg: 10
   stunPlayerTime: 0.3
   AgreDeftime: 1
