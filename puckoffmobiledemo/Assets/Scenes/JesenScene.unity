@@ -473,9 +473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RandomVihut:
   - {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
-  - {fileID: 5888207808829176862, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
-  - {fileID: 1762756049}
-  - {fileID: 4707765311461698056, guid: 0a8fa6a0bac4a344cae38235678550c1, type: 3}
   pools:
   - tag: Enemy
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
@@ -5423,11 +5420,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749534924}
   m_CullTransparentMesh: 1
---- !u!1 &1762756049 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4707765311461698056, guid: f8816c868a369bd4db27162c037bd0ee, type: 3}
-  m_PrefabInstance: {fileID: 1788744582}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767730394
 GameObject:
   m_ObjectHideFlags: 0

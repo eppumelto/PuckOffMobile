@@ -2489,6 +2489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: iivo
       objectReference: {fileID: 0}
+    - target: {fileID: 5888207808829176862, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6004945416532316820, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
       propertyPath: coolDown
       value: 1.5

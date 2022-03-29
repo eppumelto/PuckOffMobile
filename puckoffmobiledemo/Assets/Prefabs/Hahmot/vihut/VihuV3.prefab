@@ -585,7 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normiVihu: 1
   BOSS: 0
-  coolDown: 2
+  coolDown: 1.5
   EnemyDMG: 10
   blockedDmg: 10
   stunPlayerTime: 0.3
@@ -1265,7 +1265,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1696014921
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1668b597bd07cf143bc8e4cdc1f59949, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
