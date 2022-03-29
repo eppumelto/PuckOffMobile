@@ -36,6 +36,7 @@ public class eventScript : MonoBehaviour
         PlayerAnimator.SetTrigger("Die");
         pauseBtn.SetActive(false);
         FindObjectOfType<AudioManager>().Play("Die1");
+
     }
 
 

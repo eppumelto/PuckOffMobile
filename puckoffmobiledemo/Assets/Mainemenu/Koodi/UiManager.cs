@@ -107,12 +107,7 @@ public class UiManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void ImageDisable()
-    {
-        image = image.GetComponent<Image>();
 
-        image.enabled = !image.enabled;
-    }
     public void BackMapSelection()
     {
         mapSelectionPanel.gameObject.SetActive(true);
