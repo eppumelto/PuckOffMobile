@@ -19,8 +19,9 @@ public class UiManager : MonoBehaviour
 
     public MapScript[] mapSelections;
 
-    
+    public Animator transitionAnim;
 
+    public Image image;
 
     private void Awake()
     {
@@ -95,8 +96,22 @@ public class UiManager : MonoBehaviour
 
     public void SceneTransition(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(SceneLoad(sceneName));
 
+    }
+
+    IEnumerator SceneLoad(string sceneName)
+    {
+        transitionAnim.SetTrigger("end");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void ImageDisable()
+    {
+        image = image.GetComponent<Image>();
+
+        image.enabled = !image.enabled;
     }
     public void BackMapSelection()
     {
