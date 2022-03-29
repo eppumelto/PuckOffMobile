@@ -1980,10 +1980,7 @@ MonoBehaviour:
   pools:
   - tag: Enemy
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
-    size: 2
-  - tag: Boss
-    prefab: {fileID: 1580803128}
-    size: 1
+    size: 4
 --- !u!4 &437389270
 Transform:
   m_ObjectHideFlags: 0
@@ -5103,11 +5100,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
---- !u!1 &1580803128 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
-  m_PrefabInstance: {fileID: 1580803127}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1588256940
 GameObject:
   m_ObjectHideFlags: 0
