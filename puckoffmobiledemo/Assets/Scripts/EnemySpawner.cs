@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
         if (TakeDmg.isAlive == false && spawnCooldown <= 0 && TakeDmg.PlayerAlive)
         {
             objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
-            spawnCooldown = 2;
+            spawnCooldown = 0;
         }
         //jos vihuja tapettu ainakin 1 niin spawnaa bossin
         else if ( TakeDmg.enemiesKilled == 2 && TakeDmg.isAlive == false && TakeDmg.PlayerAlive && objectPooler.pools.Count == 2)
