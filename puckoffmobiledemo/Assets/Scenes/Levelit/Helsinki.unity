@@ -4547,7 +4547,7 @@ MonoBehaviour:
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
     size: 4
   - tag: Boss
-    prefab: {fileID: 1766408147}
+    prefab: {fileID: 9153756711686048467, guid: e88688c796f2da1499bc012cb7afe7ac, type: 3}
     size: 1
 --- !u!4 &1364000820
 Transform:
@@ -5692,11 +5692,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5d6beb5a4ff1bf49b1c24ddcc7761eb, type: 3}
---- !u!1 &1766408147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4162900754763968052, guid: 14ea087a3142f0b4a819d112b3ae9c3c, type: 3}
-  m_PrefabInstance: {fileID: 822340226}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1800418479
 GameObject:
   m_ObjectHideFlags: 0
