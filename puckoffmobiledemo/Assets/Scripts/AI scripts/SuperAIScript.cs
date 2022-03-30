@@ -88,13 +88,13 @@ public class SuperAIScript : MonoBehaviour
         //jos pelaaja ei suojaa
         if (FightScript.block == false)
         {
-            FindObjectOfType<AudioManager>().Play("Punch1");
+            
             GameObject.Find("Pelaaja").GetComponent<TakeDmg>().currentHealth -= EnemyDMG;   //tekee damagea pelaajaan
 
             veri.Play();   //veri particle
             shake.Effect1();    //kamera effect
             pAnimator.SetTrigger("TakeDmg");         //pelaajan animaatio
-
+            FindObjectOfType<AudioManager>().Play("Punch1");
             FightScript.StunTime += stunPlayerTime; //Stunaa pelaajan pieneksi ajaksi
 
         }
@@ -149,7 +149,7 @@ public class SuperAIScript : MonoBehaviour
         if (rnd >= 7)
         {
             enemyAnimator.SetTrigger("Attack");
-            FindObjectOfType<AudioManager>().Play("Punch1");
+  
 
 
             
@@ -185,7 +185,7 @@ public class SuperAIScript : MonoBehaviour
         if (rnd >= 5)
         {
             enemyAnimator.SetTrigger("Attack");
-            FindObjectOfType<AudioManager>().Play("Punch1");
+        
            
         }
         else if (rnd <= 4)
