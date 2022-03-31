@@ -4381,6 +4381,8 @@ MonoBehaviour:
   RandomVihut:
   - {fileID: 1932542022024642307, guid: bd0bebdcf4eaa0446a6216f7587b1771, type: 3}
   - {fileID: 5888207808829176862, guid: f1eb8af2a3c6a1147af5584a0780634e, type: 3}
+  - {fileID: 5888207808829176862, guid: f5d6beb5a4ff1bf49b1c24ddcc7761eb, type: 3}
+  - {fileID: 2215035089553389013, guid: 0a8fa6a0bac4a344cae38235678550c1, type: 3}
   pools:
   - tag: Enemy
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}

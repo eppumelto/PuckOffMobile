@@ -478,7 +478,7 @@ MonoBehaviour:
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
     size: 2
   - tag: Boss
-    prefab: {fileID: 0}
+    prefab: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
     size: 1
 --- !u!4 &79166283
 Transform:
