@@ -47,6 +47,9 @@ public class UiManager : MonoBehaviour
         playBtn.enabled = false;
         playObject.SetActive(false);
         //PlayerPrefs.DeleteAll();
+
+      
+
     }
 
     
