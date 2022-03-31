@@ -2277,6 +2277,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 400a4850748c56444b9084ffec052d30, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &815118693
 Transform:
   m_ObjectHideFlags: 0
@@ -4034,7 +4040,7 @@ MonoBehaviour:
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
     size: 2
   - tag: Boss
-    prefab: {fileID: 1520551660}
+    prefab: {fileID: 4162900754763968052, guid: 14ea087a3142f0b4a819d112b3ae9c3c, type: 3}
     size: 1
 --- !u!4 &1244342687
 Transform:
@@ -5235,11 +5241,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
---- !u!1 &1520551660 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9153756711686048467, guid: 904efd455c0a39247a9e23f69ac7f41f, type: 3}
-  m_PrefabInstance: {fileID: 1520551659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524788839
 GameObject:
   m_ObjectHideFlags: 0
