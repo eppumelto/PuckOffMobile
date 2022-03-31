@@ -3059,7 +3059,7 @@ MonoBehaviour:
   pools:
   - tag: Enemy
     prefab: {fileID: 8184165310182250050, guid: 2c856cbd756eef940b865a2aac9e2e7a, type: 3}
-    size: 4
+    size: 3
 --- !u!4 &814715319
 Transform:
   m_ObjectHideFlags: 0
